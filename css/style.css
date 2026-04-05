@@ -1,73 +1,90 @@
-/* University of Sydney theme with Masterbrand Ochre accent */
+/* Brand Colors */
 :root {
-  --navy: #006699;      /* main dark blue */
-  --ochre: #e64626;     /* Masterbrand Ochre */
-  --light-grey: #F5F5F5; /* background color */
-}
-
-body, h1, h2, h3, p, ul, li {
-  margin: 0;
-  padding: 0;
+  --ochre: #FFB81C;        /* Masterbrand Ochre accent */
+  --heritage-blue: #00274D; /* Traditional dark blue */
+  --light-gray: #F5F5F5;    /* Page background */
+  --white: #FFFFFF;
+  --font-sans: 'Arial', sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: var(--light-grey);
-  color: #000;
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--light-gray);
+  color: var(--heritage-blue);
 }
 
-/* Header & Navigation */
+/* Header */
 header {
-  background-color: var(--ochre);
-  color: white;
-  padding: 20px 0;
+  background-color: var(--heritage-blue); /* dark blue */
+  color: var(--white);
+  padding: 1rem 2rem;
 }
 
 header .container {
-  width: 90%;
-  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+/* Navigation Tabs */
 header nav a {
-  color: white;
+  color: var(--white);       /* default tab color */
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  margin-left: 0.5rem;
   text-decoration: none;
-  margin-left: 20px;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover or Active Tab */
+header nav a:hover,
+header nav a.active {
+  background-color: var(--ochre); /* ochre highlight for tabs */
+  color: var(--heritage-blue);    /* text contrasts against ochre */
+}
+
+/* Main content */
+main {
+  padding: 2rem;
+}
+
+main section {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main img {
+  border-radius: 50%;
+  margin: 1rem 0;
+  border: 4px solid var(--ochre);
+}
+
+main a {
+  color: var(--heritage-blue);
+  text-decoration: none;
   font-weight: bold;
 }
 
-header nav a:hover {
+main a:hover {
   color: var(--ochre);
-}
-
-/* Sections */
-section {
-  width: 80%;
-  margin: auto;
-  padding: 50px 0;
-}
-
-section h2, section h3 {
-  color: var(--ochre);
-  border-bottom: 3px solid var(--ochre);
-  margin-bottom: 15px;
-  padding-bottom: 5px;
-}
-
-/* Gallery images */
-.gallery img {
-  width: 200px;
-  margin: 10px;
-  border-radius: 8px;
+  text-decoration: underline;
 }
 
 /* Footer */
 footer {
+  background-color: var(--heritage-blue);
+  color: var(--white);
   text-align: center;
-  padding: 20px;
-  background-color: var(--ochre);
-  color: white;
+  padding: 1rem;
+  border-top: 4px solid var(--ochre);
+  font-size: 0.9rem;
 }
