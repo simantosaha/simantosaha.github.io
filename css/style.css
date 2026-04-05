@@ -1,3 +1,8 @@
+/* ========================
+   University of Sydney Theme
+   style.css
+======================== */
+
 /* Brand Colors */
 :root {
   --ochre: #FFB81C;        /* Masterbrand Ochre accent */
@@ -7,6 +12,7 @@
   --font-sans: 'Arial', sans-serif;
 }
 
+/* Body */
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -14,9 +20,11 @@ body {
   color: var(--heritage-blue);
 }
 
-/* Header */
+/* ========================
+   Header
+======================== */
 header {
-  background-color: var(--heritage-blue); /* dark blue */
+  background-color: var(--heritage-blue);
   color: var(--white);
   padding: 1rem 2rem;
 }
@@ -44,14 +52,21 @@ header nav a {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hover or Active Tab */
-header nav a:hover,
+/* Current Page Tab */
 header nav a.active {
-  background-color: var(--ochre); /* ochre highlight for tabs */
-  color: var(--heritage-blue);    /* text contrasts against ochre */
+  background-color: var(--ochre);  /* ochre box for current page */
+  color: var(--heritage-blue);     /* contrast text */
 }
 
-/* Main content */
+/* Hover Effect for Tabs */
+header nav a:hover {
+  background-color: var(--ochre);
+  color: var(--heritage-blue);
+}
+
+/* ========================
+   Main Content
+======================== */
 main {
   padding: 2rem;
 }
@@ -62,10 +77,14 @@ main section {
   text-align: center;
 }
 
+main h2 {
+  margin-bottom: 1rem;
+}
+
 main img {
   border-radius: 50%;
   margin: 1rem 0;
-  border: 4px solid var(--ochre);
+  border: 4px solid var(--ochre); /* ochre border for profile image */
 }
 
 main a {
@@ -79,12 +98,33 @@ main a:hover {
   text-decoration: underline;
 }
 
-/* Footer */
+/* ========================
+   Footer
+======================== */
 footer {
   background-color: var(--heritage-blue);
   color: var(--white);
   text-align: center;
   padding: 1rem;
-  border-top: 4px solid var(--ochre);
+  border-top: 4px solid var(--ochre); /* subtle accent */
   font-size: 0.9rem;
+}
+
+/* ========================
+   Responsive Design
+======================== */
+@media (max-width: 600px) {
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav {
+    margin-top: 0.5rem;
+  }
+
+  header nav a {
+    margin-left: 0;
+    margin-right: 0.5rem;
+  }
 }
