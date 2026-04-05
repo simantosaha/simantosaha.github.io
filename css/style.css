@@ -1,11 +1,10 @@
-/* University of Melbourne theme */
 :root {
-  --navy: #1A1A60;
-  --gold: #FFCD00;
+  --navy: #006699;
+  --gold: #FFCC33;
   --light-grey: #F5F5F5;
 }
 
-body, h1, h2, h3, p, ul, li { margin: 0; padding: 0; }
+body, h1, h2, h3, p { margin: 0; padding: 0; }
 body { font-family: Arial, sans-serif; line-height: 1.6; background: var(--light-grey); color: #000; }
 
 /* Header & Nav */
@@ -14,12 +13,9 @@ header .container { width: 90%; margin: auto; display: flex; justify-content: sp
 header nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; }
 header nav a:hover { color: var(--gold); }
 
-/* Sections */
+/* Section */
 section { width: 80%; margin: auto; padding: 50px 0; }
-section h2, section h3 { color: var(--navy); border-bottom: 3px solid var(--gold); margin-bottom: 15px; padding-bottom: 5px; }
-
-/* Gallery */
-.gallery img { width: 200px; margin: 10px; border-radius: 8px; }
+section h2 { color: var(--navy); border-bottom: 3px solid var(--gold); margin-bottom: 15px; padding-bottom: 5px; }
 
 /* Footer */
 footer { text-align: center; padding: 20px; background: var(--navy); color: white; }
