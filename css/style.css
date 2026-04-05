@@ -1,7 +1,7 @@
-/* ========================
+/* =========================
    University of Sydney Theme
-   style.css
-======================== */
+   All Pages with Ochre Tabs
+========================= */
 
 /* Brand Colors */
 :root {
@@ -20,9 +20,9 @@ body {
   color: var(--heritage-blue);
 }
 
-/* ========================
+/* =========================
    Header
-======================== */
+========================= */
 header {
   background-color: var(--heritage-blue);
   color: var(--white);
@@ -40,33 +40,33 @@ header h1 {
   font-size: 1.8rem;
 }
 
-/* Navigation Tabs */
+/* Navigation Tabs: All in Ochre */
 header nav a {
-  color: var(--white);       /* default tab color */
-  background-color: transparent;
+  color: var(--heritage-blue);     /* text on ochre tabs */
+  background-color: var(--ochre);  /* all tabs in ochre */
   padding: 0.5rem 1rem;
   margin-left: 0.5rem;
   text-decoration: none;
   font-weight: bold;
   border-radius: 4px;
   transition: background-color 0.3s, color 0.3s;
+  display: inline-block;
 }
 
-/* Current Page Tab */
-header nav a.active {
-  background-color: var(--ochre);  /* ochre box for current page */
-  color: var(--heritage-blue);     /* contrast text */
-}
-
-/* Hover Effect for Tabs */
+/* Hover Effect */
 header nav a:hover {
-  background-color: var(--ochre);
+  background-color: #ffca3d;       /* slightly lighter ochre on hover */
   color: var(--heritage-blue);
 }
 
-/* ========================
+/* Active Page Highlight */
+header nav a.active {
+  box-shadow: inset 0 -4px 0 var(--heritage-blue); /* subtle underline for active page */
+}
+
+/* =========================
    Main Content
-======================== */
+========================= */
 main {
   padding: 2rem;
 }
@@ -98,9 +98,9 @@ main a:hover {
   text-decoration: underline;
 }
 
-/* ========================
+/* =========================
    Footer
-======================== */
+========================= */
 footer {
   background-color: var(--heritage-blue);
   color: var(--white);
@@ -110,9 +110,9 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ========================
+/* =========================
    Responsive Design
-======================== */
+========================= */
 @media (max-width: 600px) {
   header .container {
     flex-direction: column;
@@ -126,5 +126,6 @@ footer {
   header nav a {
     margin-left: 0;
     margin-right: 0.5rem;
+    margin-bottom: 0.3rem;
   }
 }
