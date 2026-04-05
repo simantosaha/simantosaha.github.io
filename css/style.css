@@ -1,21 +1,73 @@
+/* University of Sydney theme with Masterbrand Ochre accent */
 :root {
-  --navy: #006699;
-  --gold: #FFCC33;
-  --light-grey: #F5F5F5;
+  --navy: #006699;      /* main dark blue */
+  --ochre: #e64626;     /* Masterbrand Ochre */
+  --light-grey: #F5F5F5; /* background color */
 }
 
-body, h1, h2, h3, p { margin: 0; padding: 0; }
-body { font-family: Arial, sans-serif; line-height: 1.6; background: var(--light-grey); color: #000; }
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
 
-/* Header & Nav */
-header { background: var(--navy); color: white; padding: 20px 0; }
-header .container { width: 90%; margin: auto; display: flex; justify-content: space-between; align-items: center; }
-header nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; }
-header nav a:hover { color: var(--gold); }
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--light-grey);
+  color: #000;
+}
 
-/* Section */
-section { width: 80%; margin: auto; padding: 50px 0; }
-section h2 { color: var(--navy); border-bottom: 3px solid var(--gold); margin-bottom: 15px; padding-bottom: 5px; }
+/* Header & Navigation */
+header {
+  background-color: var(--navy);
+  color: white;
+  padding: 20px 0;
+}
+
+header .container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+header nav a:hover {
+  color: var(--ochre);
+}
+
+/* Sections */
+section {
+  width: 80%;
+  margin: auto;
+  padding: 50px 0;
+}
+
+section h2, section h3 {
+  color: var(--navy);
+  border-bottom: 3px solid var(--ochre);
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+}
+
+/* Gallery images */
+.gallery img {
+  width: 200px;
+  margin: 10px;
+  border-radius: 8px;
+}
 
 /* Footer */
-footer { text-align: center; padding: 20px; background: var(--navy); color: white; }
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--navy);
+  color: white;
+}
