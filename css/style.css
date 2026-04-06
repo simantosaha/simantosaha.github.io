@@ -1,96 +1,112 @@
 /* =========================
-   University of Sydney Theme
-   All Pages with Ochre Tabs
+   al-folio Inspired Theme
+   University of Sydney Style
 ========================= */
 
 /* Brand Colors */
 :root {
-  --ochre: #FFB81C;        /* Masterbrand Ochre accent */
-  --heritage-blue: #00274D; /* Traditional dark blue */
-  --light-gray: #F5F5F5;    /* Page background */
-  --white: #FFFFFF;
-  --font-sans: 'Arial', sans-serif;
+  --ochre: #FFB81C;
+  --heritage-blue: #00274D;
+  --light-gray: #fafafa;
+  --text-dark: #333333;
+  --white: #ffffff;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-/* Body */
+/* Base */
 body {
   margin: 0;
   font-family: var(--font-sans);
   background-color: var(--light-gray);
-  color: var(--heritage-blue);
+  color: var(--text-dark);
+  line-height: 1.6;
 }
 
 /* =========================
-   Header
+   Header (al-folio style)
 ========================= */
 header {
   background-color: var(--heritage-blue);
   color: var(--white);
-  padding: 1rem 2rem;
+  border-bottom: 3px solid var(--ochre);
 }
 
 header .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 header h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
   margin: 0;
-  font-size: 1.8rem;
 }
 
-/* Navigation Tabs: All in Ochre */
+/* Navigation */
+header nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Ochre Tabs (clean al-folio style) */
 header nav a {
-  color: var(--heritage-blue);     /* text on ochre tabs */
-  background-color: var(--ochre);  /* all tabs in ochre */
-  padding: 0.5rem 1rem;
-  margin-left: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
   text-decoration: none;
-  font-weight: bold;
+  padding: 0.4rem 0.8rem;
   border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
-  display: inline-block;
-}
-
-/* Hover Effect */
-header nav a:hover {
-  background-color: #ffca3d;       /* slightly lighter ochre on hover */
+  background-color: var(--ochre);
   color: var(--heritage-blue);
+  transition: all 0.2s ease;
 }
 
-/* Active Page Highlight */
+/* Hover */
+header nav a:hover {
+  opacity: 0.85;
+}
+
+/* Active Page */
 header nav a.active {
-  box-shadow: inset 0 -4px 0 var(--heritage-blue); /* subtle underline for active page */
+  box-shadow: inset 0 -3px 0 var(--heritage-blue);
 }
 
 /* =========================
-   Main Content
+   Main Content (al-folio spacing)
 ========================= */
 main {
-  padding: 2rem;
-}
-
-main section {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
 main h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid var(--ochre);
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+main p {
   margin-bottom: 1rem;
 }
 
+/* Profile Image */
 main img {
   border-radius: 50%;
   margin: 1rem 0;
-  border: 4px solid var(--ochre); /* ochre border for profile image */
+  border: 3px solid var(--ochre);
 }
 
+/* Links */
 main a {
   color: var(--heritage-blue);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 main a:hover {
@@ -99,19 +115,20 @@ main a:hover {
 }
 
 /* =========================
-   Footer
+   Footer (minimal al-folio style)
 ========================= */
 footer {
+  margin-top: 3rem;
   background-color: var(--heritage-blue);
   color: var(--white);
   text-align: center;
   padding: 1rem;
-  border-top: 4px solid var(--ochre); /* subtle accent */
-  font-size: 0.9rem;
+  font-size: 0.85rem;
+  border-top: 3px solid var(--ochre);
 }
 
 /* =========================
-   Responsive Design
+   Responsive
 ========================= */
 @media (max-width: 600px) {
   header .container {
@@ -121,11 +138,10 @@ footer {
 
   header nav {
     margin-top: 0.5rem;
+    flex-wrap: wrap;
   }
 
-  header nav a {
-    margin-left: 0;
-    margin-right: 0.5rem;
-    margin-bottom: 0.3rem;
+  main {
+    margin: 1.5rem auto;
   }
 }
