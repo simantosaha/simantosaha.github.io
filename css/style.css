@@ -1,137 +1,16 @@
-/* =========================
-   Minimal al-folio Style (Ochre accents)
-========================= */
-
-/* Brand Colors */
-:root {
-  --ochre: #FFB81C;
-  --heritage-blue: #00274D;
-  --text-dark: #333333;
-  --white: #ffffff;
-  --border-light: #e0e0e0;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-}
-
-/* Base */
-body {
-  margin: 0;
-  font-family: var(--font-sans);
-  background-color: var(--white);
-  color: var(--text-dark);
-  line-height: 1.6;
-}
-
-/* =========================
-   Header
-========================= */
+/* Header */
 header {
   background-color: var(--white);
-  border-bottom: 2px solid var(--ochre); /* ochre line BELOW header */
+  border-bottom: 0.5px solid var(--heritage-blue); /* thin blue line */
 }
 
-header .container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin: 0;
-}
-
-/* Navigation */
-header nav {
-  display: flex;
-  gap: 0.5rem;
-}
-
-/* Ochre Tabs */
-header nav a {
-  font-size: 0.95rem;
-  font-weight: 500;
-  text-decoration: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  background-color: var(--ochre);
-  color: var(--heritage-blue);
-  transition: all 0.2s ease;
-}
-
-/* Hover */
-header nav a:hover {
-  opacity: 0.85;
-}
-
-/* Active Page */
-header nav a.active {
-  box-shadow: inset 0 -3px 0 var(--heritage-blue);
-}
-
-/* =========================
-   Main Content
-========================= */
-main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-main p {
-  margin-bottom: 1rem;
-}
-
-/* Profile Image */
-main img {
-  border-radius: 50%;
-  margin: 1rem 0;
-  border: 3px solid var(--ochre);
-}
-
-/* Links */
-main a {
-  color: var(--heritage-blue);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-main a:hover {
-  color: var(--ochre);
-  text-decoration: underline;
-}
-
-/* =========================
-   Footer
-========================= */
+/* Footer */
 footer {
   margin-top: 3rem;
   background-color: var(--white);
-  border-top: 2px solid var(--ochre); /* ochre line ABOVE footer */
+  border-top: 0.5px solid var(--heritage-blue); /* thin blue line */
   color: #666;
   text-align: center;
   padding: 1rem;
   font-size: 0.85rem;
-}
-
-/* =========================
-   Responsive
-========================= */
-@media (max-width: 600px) {
-  header .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header nav {
-    margin-top: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  main {
-    margin: 1.5rem auto;
-  }
 }
