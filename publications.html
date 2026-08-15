@@ -1,0 +1,546 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Publications | Your Name</title>
+
+    <style>
+        :root {
+            --sydney-blue: #0B3C5D;
+            --sydney-dark-blue: #062C43;
+            --sydney-gold: #E5A823;
+            --text: #222222;
+            --muted: #5F6368;
+            --light-grey: #F5F6F7;
+            --border: #D9DDE1;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        header {
+            background: var(--sydney-blue);
+            border-bottom: 5px solid var(--sydney-gold);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 75px;
+            padding: 0 25px;
+        }
+
+        .site-name {
+            color: white;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.35rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .site-subtitle {
+            color: #DCE8EF;
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 27px 15px;
+            font-size: 0.95rem;
+            border-bottom: 4px solid transparent;
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--sydney-dark-blue);
+            border-bottom-color: var(--sydney-gold);
+        }
+
+        /* =========================
+           MAIN
+           ========================= */
+
+        main {
+            max-width: 950px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+
+        .page-title {
+            color: var(--sydney-blue);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 2.7rem;
+            margin: 0;
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 4px;
+            background: var(--sydney-gold);
+            margin: 20px 0 40px;
+        }
+
+        .intro {
+            color: #555;
+            font-size: 1.05rem;
+            margin-bottom: 55px;
+        }
+
+        /* =========================
+           SECTION HEADINGS
+           ========================= */
+
+        .publication-section {
+            margin-bottom: 65px;
+        }
+
+        .publication-section h2 {
+            color: var(--sydney-blue);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.9rem;
+            margin-bottom: 30px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--sydney-gold);
+        }
+
+        /* =========================
+           PUBLICATION LIST
+           ========================= */
+
+        .publication-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: publication;
+        }
+
+        .publication {
+            counter-increment: publication;
+            position: relative;
+
+            display: grid;
+            grid-template-columns: 50px 1fr;
+            gap: 15px;
+
+            padding: 20px 15px;
+            margin-bottom: 8px;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .publication::before {
+            content: counter(publication) ".";
+            color: var(--sydney-blue);
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: left;
+        }
+
+        .publication:hover {
+            background: var(--light-grey);
+        }
+
+        .publication-text {
+            color: #333;
+        }
+
+        .publication-text strong {
+            color: var(--text);
+        }
+
+        .publication-title {
+            font-weight: 600;
+        }
+
+        .publication-journal {
+            font-style: italic;
+        }
+
+        .publication-year {
+            font-weight: bold;
+        }
+
+        /* Links */
+
+        .publication-links {
+            margin-top: 8px;
+        }
+
+        .publication-links a {
+            display: inline-block;
+            color: var(--sydney-blue);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-right: 18px;
+        }
+
+        .publication-links a:hover {
+            color: var(--sydney-gold);
+        }
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            background: var(--sydney-dark-blue);
+            color: #DCE8EF;
+            margin-top: 90px;
+            padding: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer .gold {
+            color: var(--sydney-gold);
+        }
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 750px) {
+
+            .nav-container {
+                flex-direction: column;
+                padding: 15px 10px 0;
+            }
+
+            .site-name {
+                margin-bottom: 10px;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                padding: 12px 10px;
+                font-size: 0.9rem;
+            }
+
+            main {
+                margin-top: 40px;
+            }
+
+            .page-title {
+                font-size: 2.2rem;
+            }
+
+            .publication {
+                grid-template-columns: 35px 1fr;
+                gap: 10px;
+                padding: 18px 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header>
+        <div class="nav-container">
+
+            <a href="index.html" class="site-name">
+                Your Name
+                <span class="site-subtitle">Academic Website</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="research.html">Research</a>
+                <a href="publications.html" class="active">Publications</a>
+                <a href="cv.html">CV</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+
+    <main>
+
+        <h1 class="page-title">Publications</h1>
+
+        <div class="gold-line"></div>
+
+        <p class="intro">
+            A selection of my peer-reviewed journal articles and conference
+            publications. Publications are listed in reverse chronological
+            order, with the most recent work first.
+        </p>
+
+
+        <!-- =========================
+             JOURNAL ARTICLES
+             ========================= -->
+
+        <section class="publication-section">
+
+            <h2>Journal Articles</h2>
+
+            <ol class="publication-list">
+
+                <!-- Publication 1 -->
+
+                <li class="publication">
+
+                    <div class="publication-text">
+
+                        <span class="publication-title">
+                            Title of your most recent journal article.
+                        </span>
+
+                        <br>
+
+                        Your Name, Co-Author Name, Co-Author Name.
+
+                        <br>
+
+                        <span class="publication-journal">
+                            Journal Name
+                        </span>,
+                        <span class="publication-year">2026</span>.
+
+                        <div class="publication-links">
+                            <a href="#" target="_blank">DOI</a>
+                            <a href="#" target="_blank">PDF</a>
+                        </div>
+
+                    </div>
+
+                </li>
+
+
+                <!-- Publication 2 -->
+
+                <li class="publication">
+
+                    <div class="publication-text">
+
+                        <span class="publication-title">
+                            Title of your second journal article.
+                        </span>
+
+                        <br>
+
+                        Your Name, Co-Author Name.
+
+                        <br>
+
+                        <span class="publication-journal">
+                            Journal Name
+                        </span>,
+                        <span class="publication-year">2025</span>.
+
+                        <div class="publication-links">
+                            <a href="#" target="_blank">DOI</a>
+                            <a href="#" target="_blank">PDF</a>
+                        </div>
+
+                    </div>
+
+                </li>
+
+
+                <!-- Publication 3 -->
+
+                <li class="publication">
+
+                    <div class="publication-text">
+
+                        <span class="publication-title">
+                            Title of another journal article.
+                        </span>
+
+                        <br>
+
+                        Your Name, Co-Author Name, Co-Author Name.
+
+                        <br>
+
+                        <span class="publication-journal">
+                            Journal Name
+                        </span>,
+                        <span class="publication-year">2024</span>.
+
+                        <div class="publication-links">
+                            <a href="#" target="_blank">DOI</a>
+                            <a href="#" target="_blank">PDF</a>
+                        </div>
+
+                    </div>
+
+                </li>
+
+
+                <!-- Add more journal articles here -->
+
+            </ol>
+
+        </section>
+
+
+        <!-- =========================
+             CONFERENCE PAPERS / ABSTRACTS
+             ========================= -->
+
+        <section class="publication-section">
+
+            <h2>Conference Papers / Abstracts</h2>
+
+            <ol class="publication-list">
+
+                <!-- Conference 1 -->
+
+                <li class="publication">
+
+                    <div class="publication-text">
+
+                        <span class="publication-title">
+                            Title of your most recent conference paper or abstract.
+                        </span>
+
+                        <br>
+
+                        Your Name, Co-Author Name.
+
+                        <br>
+
+                        <span class="publication-journal">
+                            Name of Conference
+                        </span>,
+                        <span class="publication-year">2026</span>.
+
+                        <div class="publication-links">
+                            <a href="#" target="_blank">Abstract</a>
+                            <a href="#" target="_blank">PDF</a>
+                        </div>
+
+                    </div>
+
+                </li>
+
+
+                <!-- Conference 2 -->
+
+                <li class="publication">
+
+                    <div class="publication-text">
+
+                        <span class="publication-title">
+                            Title of another conference paper or abstract.
+                        </span>
+
+                        <br>
+
+                        Your Name, Co-Author Name, Co-Author Name.
+
+                        <br>
+
+                        <span class="publication-journal">
+                            Name of Conference
+                        </span>,
+                        <span class="publication-year">2025</span>.
+
+                        <div class="publication-links">
+                            <a href="#" target="_blank">Abstract</a>
+                            <a href="#" target="_blank">PDF</a>
+                        </div>
+
+                    </div>
+
+                </li>
+
+
+                <!-- Conference 3 -->
+
+                <li class="publication">
+
+                    <div class="publication-text">
+
+                        <span class="publication-title">
+                            Title of another conference paper or abstract.
+                        </span>
+
+                        <br>
+
+                        Your Name, Co-Author Name.
+
+                        <br>
+
+                        <span class="publication-journal">
+                            Name of Conference
+                        </span>,
+                        <span class="publication-year">2024</span>.
+
+                        <div class="publication-links">
+                            <a href="#" target="_blank">Abstract</a>
+                            <a href="#" target="_blank">PDF</a>
+                        </div>
+
+                    </div>
+
+                </li>
+
+
+                <!-- Add more conference papers / abstracts here -->
+
+            </ol>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+        <span class="gold">©</span> 2026 Your Name ·
+        The University of Sydney
+    </footer>
+
+</body>
+</html>
+```
