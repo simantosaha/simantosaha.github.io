@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -115,7 +114,25 @@
         }
 
         /* =========================
-           SECTION HEADINGS
+           LOADING / ERROR
+           ========================= */
+
+        #loading {
+            color: var(--muted);
+            padding: 25px 0;
+        }
+
+        #error {
+            display: none;
+            padding: 20px;
+            background: #FFF4F4;
+            border-left: 4px solid #B42318;
+            color: #8A1C1C;
+            margin-bottom: 40px;
+        }
+
+        /* =========================
+           PUBLICATION SECTION
            ========================= */
 
         .publication-section {
@@ -139,41 +156,33 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            counter-reset: publication;
         }
 
         .publication {
-            counter-increment: publication;
-            position: relative;
-
             display: grid;
             grid-template-columns: 50px 1fr;
             gap: 15px;
 
             padding: 20px 15px;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
 
             border-bottom: 1px solid var(--border);
-        }
 
-        .publication::before {
-            content: counter(publication) ".";
-            color: var(--sydney-blue);
-            font-weight: bold;
-            font-size: 1rem;
-            text-align: left;
+            transition: background 0.2s ease;
         }
 
         .publication:hover {
             background: var(--light-grey);
         }
 
-        .publication-text {
-            color: #333;
+        .publication-number {
+            color: var(--sydney-blue);
+            font-weight: bold;
+            font-size: 1rem;
         }
 
-        .publication-text strong {
-            color: var(--text);
+        .publication-text {
+            color: #333;
         }
 
         .publication-title {
@@ -188,23 +197,39 @@
             font-weight: bold;
         }
 
-        /* Links */
+        .authors {
+            margin-top: 2px;
+        }
+
+        /* =========================
+           PUBLICATION LINKS
+           ========================= */
 
         .publication-links {
-            margin-top: 8px;
+            margin-top: 9px;
         }
 
         .publication-links a {
             display: inline-block;
             color: var(--sydney-blue);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             font-weight: 600;
             margin-right: 18px;
         }
 
         .publication-links a:hover {
             color: var(--sydney-gold);
+        }
+
+        /* =========================
+           EMPTY SECTION
+           ========================= */
+
+        .empty-message {
+            color: var(--muted);
+            font-style: italic;
+            padding: 15px 0;
         }
 
         /* =========================
@@ -304,10 +329,16 @@
         <div class="gold-line"></div>
 
         <p class="intro">
-            A selection of my peer-reviewed journal articles and conference
-            publications. Publications are listed in reverse chronological
-            order, with the most recent work first.
+            My publications include peer-reviewed journal articles and
+            conference papers and abstracts. Publications are listed in
+            reverse chronological order, with the most recent work first.
         </p>
+
+        <div id="error"></div>
+
+        <div id="loading">
+            Loading publications...
+        </div>
 
 
         <!-- =========================
@@ -318,104 +349,7 @@
 
             <h2>Journal Articles</h2>
 
-            <ol class="publication-list">
-
-                <!-- Publication 1 -->
-
-                <li class="publication">
-
-                    <div class="publication-text">
-
-                        <span class="publication-title">
-                            Title of your most recent journal article.
-                        </span>
-
-                        <br>
-
-                        Your Name, Co-Author Name, Co-Author Name.
-
-                        <br>
-
-                        <span class="publication-journal">
-                            Journal Name
-                        </span>,
-                        <span class="publication-year">2026</span>.
-
-                        <div class="publication-links">
-                            <a href="#" target="_blank">DOI</a>
-                            <a href="#" target="_blank">PDF</a>
-                        </div>
-
-                    </div>
-
-                </li>
-
-
-                <!-- Publication 2 -->
-
-                <li class="publication">
-
-                    <div class="publication-text">
-
-                        <span class="publication-title">
-                            Title of your second journal article.
-                        </span>
-
-                        <br>
-
-                        Your Name, Co-Author Name.
-
-                        <br>
-
-                        <span class="publication-journal">
-                            Journal Name
-                        </span>,
-                        <span class="publication-year">2025</span>.
-
-                        <div class="publication-links">
-                            <a href="#" target="_blank">DOI</a>
-                            <a href="#" target="_blank">PDF</a>
-                        </div>
-
-                    </div>
-
-                </li>
-
-
-                <!-- Publication 3 -->
-
-                <li class="publication">
-
-                    <div class="publication-text">
-
-                        <span class="publication-title">
-                            Title of another journal article.
-                        </span>
-
-                        <br>
-
-                        Your Name, Co-Author Name, Co-Author Name.
-
-                        <br>
-
-                        <span class="publication-journal">
-                            Journal Name
-                        </span>,
-                        <span class="publication-year">2024</span>.
-
-                        <div class="publication-links">
-                            <a href="#" target="_blank">DOI</a>
-                            <a href="#" target="_blank">PDF</a>
-                        </div>
-
-                    </div>
-
-                </li>
-
-
-                <!-- Add more journal articles here -->
-
-            </ol>
+            <div id="journal-articles"></div>
 
         </section>
 
@@ -428,104 +362,7 @@
 
             <h2>Conference Papers / Abstracts</h2>
 
-            <ol class="publication-list">
-
-                <!-- Conference 1 -->
-
-                <li class="publication">
-
-                    <div class="publication-text">
-
-                        <span class="publication-title">
-                            Title of your most recent conference paper or abstract.
-                        </span>
-
-                        <br>
-
-                        Your Name, Co-Author Name.
-
-                        <br>
-
-                        <span class="publication-journal">
-                            Name of Conference
-                        </span>,
-                        <span class="publication-year">2026</span>.
-
-                        <div class="publication-links">
-                            <a href="#" target="_blank">Abstract</a>
-                            <a href="#" target="_blank">PDF</a>
-                        </div>
-
-                    </div>
-
-                </li>
-
-
-                <!-- Conference 2 -->
-
-                <li class="publication">
-
-                    <div class="publication-text">
-
-                        <span class="publication-title">
-                            Title of another conference paper or abstract.
-                        </span>
-
-                        <br>
-
-                        Your Name, Co-Author Name, Co-Author Name.
-
-                        <br>
-
-                        <span class="publication-journal">
-                            Name of Conference
-                        </span>,
-                        <span class="publication-year">2025</span>.
-
-                        <div class="publication-links">
-                            <a href="#" target="_blank">Abstract</a>
-                            <a href="#" target="_blank">PDF</a>
-                        </div>
-
-                    </div>
-
-                </li>
-
-
-                <!-- Conference 3 -->
-
-                <li class="publication">
-
-                    <div class="publication-text">
-
-                        <span class="publication-title">
-                            Title of another conference paper or abstract.
-                        </span>
-
-                        <br>
-
-                        Your Name, Co-Author Name.
-
-                        <br>
-
-                        <span class="publication-journal">
-                            Name of Conference
-                        </span>,
-                        <span class="publication-year">2024</span>.
-
-                        <div class="publication-links">
-                            <a href="#" target="_blank">Abstract</a>
-                            <a href="#" target="_blank">PDF</a>
-                        </div>
-
-                    </div>
-
-                </li>
-
-
-                <!-- Add more conference papers / abstracts here -->
-
-            </ol>
+            <div id="conference-papers"></div>
 
         </section>
 
@@ -541,6 +378,645 @@
         The University of Sydney
     </footer>
 
+
+    <!-- =========================
+         JAVASCRIPT
+         ========================= -->
+
+    <script>
+
+        /*
+         * ==========================================
+         * CONFIGURATION
+         * ==========================================
+         */
+
+        // Change this to the name you want highlighted
+        // in the author list.
+        const YOUR_NAME = "Your Name";
+
+
+        /*
+         * ==========================================
+         * LOAD BIBTEX FILE
+         * ==========================================
+         */
+
+        fetch("publications.bib")
+            .then(response => {
+
+                if (!response.ok) {
+                    throw new Error(
+                        "Could not find publications.bib"
+                    );
+                }
+
+                return response.text();
+            })
+
+            .then(bibtex => {
+
+                const publications = parseBibTeX(bibtex);
+
+                displayPublications(publications);
+
+                document.getElementById("loading").style.display = "none";
+            })
+
+            .catch(error => {
+
+                document.getElementById("loading").style.display = "none";
+
+                const errorBox = document.getElementById("error");
+
+                errorBox.style.display = "block";
+
+                errorBox.innerHTML =
+                    "<strong>Unable to load publications.</strong><br>" +
+                    error.message +
+                    "<br><br>" +
+                    "Make sure that <strong>publications.bib</strong> " +
+                    "is in the same folder as publications.html.";
+            });
+
+
+        /*
+         * ==========================================
+         * BASIC BIBTEX PARSER
+         * ==========================================
+         *
+         * This parser handles standard BibTeX entries
+         * such as:
+         *
+         * @article{...}
+         * @inproceedings{...}
+         * @conference{...}
+         * @misc{...}
+         */
+
+        function parseBibTeX(text) {
+
+            const publications = [];
+
+            /*
+             * Remove comments
+             */
+            text = text.replace(
+                /^[ \t]*%.*$/gm,
+                ""
+            );
+
+            /*
+             * Find BibTeX entries.
+             */
+            const entryRegex =
+                /@([a-zA-Z]+)\s*\{\s*([^,]+),([\s\S]*?)\n\s*\}/g;
+
+            let match;
+
+            while ((match = entryRegex.exec(text)) !== null) {
+
+                const type = match[1].toLowerCase();
+                const key = match[2].trim();
+                const body = match[3];
+
+                const fields = parseFields(body);
+
+                publications.push({
+                    type: type,
+                    key: key,
+                    ...fields
+                });
+            }
+
+            return publications;
+        }
+
+
+        /*
+         * ==========================================
+         * PARSE BIBTEX FIELDS
+         * ==========================================
+         */
+
+        function parseFields(body) {
+
+            const fields = {};
+
+            /*
+             * Handles:
+             *
+             * title = {Title}
+             * year = {2026}
+             * author = {Smith, John and Jones, Jane}
+             *
+             */
+
+            const fieldRegex =
+                /([a-zA-Z][a-zA-Z0-9_-]*)\s*=\s*(\{(?:[^{}]|\{[^{}]*\})*\}|"[^"]*"|[^,\n]+)\s*,?/g;
+
+            let match;
+
+            while ((match = fieldRegex.exec(body)) !== null) {
+
+                const fieldName =
+                    match[1].toLowerCase();
+
+                let value =
+                    match[2].trim();
+
+                value = cleanBibValue(value);
+
+                fields[fieldName] = value;
+            }
+
+            return fields;
+        }
+
+
+        /*
+         * ==========================================
+         * CLEAN BIBTEX VALUES
+         * ==========================================
+         */
+
+        function cleanBibValue(value) {
+
+            // Remove outer braces
+            if (
+                value.startsWith("{") &&
+                value.endsWith("}")
+            ) {
+                value =
+                    value.substring(
+                        1,
+                        value.length - 1
+                    );
+            }
+
+            // Remove quotation marks
+            if (
+                value.startsWith('"') &&
+                value.endsWith('"')
+            ) {
+                value =
+                    value.substring(
+                        1,
+                        value.length - 1
+                    );
+            }
+
+            /*
+             * Remove simple LaTeX braces.
+             */
+            value = value.replace(/[{}]/g, "");
+
+            /*
+             * Basic LaTeX character replacements.
+             */
+            value = value
+                .replace(/\\&/g, "&")
+                .replace(/\\%/g, "%")
+                .replace(/\\_/g, "_")
+                .replace(/\\-/g, "-")
+                .replace(/~/g, " ");
+
+            return value.trim();
+        }
+
+
+        /*
+         * ==========================================
+         * DISPLAY PUBLICATIONS
+         * ==========================================
+         */
+
+        function displayPublications(publications) {
+
+            /*
+             * Sort newest → oldest.
+             */
+
+            publications.sort((a, b) => {
+
+                const yearA =
+                    parseInt(a.year) || 0;
+
+                const yearB =
+                    parseInt(b.year) || 0;
+
+                return yearB - yearA;
+            });
+
+
+            /*
+             * Separate publication types.
+             */
+
+            const journalArticles =
+                publications.filter(
+                    publication =>
+                        publication.type === "article"
+                );
+
+
+            const conferencePapers =
+                publications.filter(
+                    publication =>
+                        [
+                            "inproceedings",
+                            "conference",
+                            "incollection",
+                            "misc"
+                        ].includes(publication.type)
+                );
+
+
+            /*
+             * Render both sections.
+             */
+
+            renderList(
+                journalArticles,
+                "journal-articles"
+            );
+
+            renderList(
+                conferencePapers,
+                "conference-papers"
+            );
+        }
+
+
+        /*
+         * ==========================================
+         * RENDER PUBLICATION LIST
+         * ==========================================
+         */
+
+        function renderList(publications, containerID) {
+
+            const container =
+                document.getElementById(containerID);
+
+            container.innerHTML = "";
+
+            if (publications.length === 0) {
+
+                container.innerHTML =
+                    '<div class="empty-message">' +
+                    'No publications listed.' +
+                    '</div>';
+
+                return;
+            }
+
+
+            publications.forEach(
+                (publication, index) => {
+
+                    const item =
+                        document.createElement("div");
+
+                    item.className = "publication";
+
+
+                    /*
+                     * Number
+                     */
+
+                    const number =
+                        document.createElement("div");
+
+                    number.className =
+                        "publication-number";
+
+                    number.textContent =
+                        (index + 1) + ".";
+
+
+                    /*
+                     * Publication text
+                     */
+
+                    const text =
+                        document.createElement("div");
+
+                    text.className =
+                        "publication-text";
+
+
+                    /*
+                     * Title
+                     */
+
+                    const title =
+                        document.createElement("span");
+
+                    title.className =
+                        "publication-title";
+
+                    title.textContent =
+                        formatTitle(
+                            publication.title ||
+                            "Untitled publication"
+                        );
+
+                    text.appendChild(title);
+
+
+                    /*
+                     * Authors
+                     */
+
+                    if (publication.author) {
+
+                        const authorDiv =
+                            document.createElement("div");
+
+                        authorDiv.className =
+                            "authors";
+
+                        authorDiv.innerHTML =
+                            formatAuthors(
+                                publication.author
+                            );
+
+                        text.appendChild(authorDiv);
+                    }
+
+
+                    /*
+                     * Journal or conference
+                     */
+
+                    const venue =
+                        publication.journal ||
+                        publication.booktitle ||
+                        publication.publisher ||
+                        "";
+
+
+                    if (venue) {
+
+                        const venueDiv =
+                            document.createElement("span");
+
+                        venueDiv.className =
+                            "publication-journal";
+
+                        venueDiv.textContent =
+                            venue;
+
+                        text.appendChild(
+                            document.createElement("br")
+                        );
+
+                        text.appendChild(venueDiv);
+                    }
+
+
+                    /*
+                     * Year
+                     */
+
+                    if (publication.year) {
+
+                        const yearSpan =
+                            document.createElement("span");
+
+                        yearSpan.className =
+                            "publication-year";
+
+                        yearSpan.textContent =
+                            ", " + publication.year + ".";
+
+                        text.appendChild(yearSpan);
+                    }
+
+
+                    /*
+                     * Links
+                     */
+
+                    const links =
+                        createPublicationLinks(
+                            publication
+                        );
+
+                    if (links) {
+                        text.appendChild(links);
+                    }
+
+
+                    item.appendChild(number);
+                    item.appendChild(text);
+
+                    container.appendChild(item);
+                }
+            );
+        }
+
+
+        /*
+         * ==========================================
+         * FORMAT AUTHORS
+         * ==========================================
+         */
+
+        function formatAuthors(authorString) {
+
+            const authors =
+                authorString
+                    .split(/\s+and\s+/i)
+                    .map(author => author.trim());
+
+            return authors
+                .map(author => {
+
+                    let formatted =
+                        formatAuthorName(author);
+
+                    /*
+                     * Highlight your own name.
+                     */
+
+                    if (
+                        YOUR_NAME &&
+                        formatted
+                            .toLowerCase()
+                            .includes(
+                                YOUR_NAME.toLowerCase()
+                            )
+                    ) {
+                        formatted =
+                            "<strong>" +
+                            formatted +
+                            "</strong>";
+                    }
+
+                    return formatted;
+                })
+                .join(", ");
+        }
+
+
+        /*
+         * ==========================================
+         * FORMAT INDIVIDUAL AUTHOR
+         * ==========================================
+         */
+
+        function formatAuthorName(author) {
+
+            /*
+             * BibTeX supports:
+             *
+             * Smith, John
+             * John Smith
+             *
+             * Keep the original author order where
+             * possible.
+             */
+
+            if (author.includes(",")) {
+
+                const parts =
+                    author.split(",");
+
+                const lastName =
+                    parts[0].trim();
+
+                const firstName =
+                    parts.slice(1)
+                        .join(",")
+                        .trim();
+
+                return firstName
+                    ? firstName + " " + lastName
+                    : lastName;
+            }
+
+            return author;
+        }
+
+
+        /*
+         * ==========================================
+         * FORMAT TITLE
+         * ==========================================
+         */
+
+        function formatTitle(title) {
+
+            return title
+                .replace(/\s+/g, " ")
+                .trim();
+        }
+
+
+        /*
+         * ==========================================
+         * CREATE DOI / PDF / URL LINKS
+         * ==========================================
+         */
+
+        function createPublicationLinks(publication) {
+
+            const links = [];
+
+
+            /*
+             * DOI
+             */
+
+            if (publication.doi) {
+
+                const doi =
+                    publication.doi
+                        .replace(
+                            /^https?:\/\/doi\.org\//i,
+                            ""
+                        );
+
+                links.push(
+                    createLink(
+                        "DOI",
+                        "https://doi.org/" + doi
+                    )
+                );
+            }
+
+
+            /*
+             * PDF
+             */
+
+            if (publication.pdf) {
+
+                links.push(
+                    createLink(
+                        "PDF",
+                        publication.pdf
+                    )
+                );
+            }
+
+
+            /*
+             * URL
+             */
+
+            if (publication.url) {
+
+                links.push(
+                    createLink(
+                        "Link",
+                        publication.url
+                    )
+                );
+            }
+
+
+            if (links.length === 0) {
+                return null;
+            }
+
+
+            const container =
+                document.createElement("div");
+
+            container.className =
+                "publication-links";
+
+            links.forEach(link =>
+                container.appendChild(link)
+            );
+
+            return container;
+        }
+
+
+        /*
+         * ==========================================
+         * CREATE LINK ELEMENT
+         * ==========================================
+         */
+
+        function createLink(text, url) {
+
+            const link =
+                document.createElement("a");
+
+            link.href = url;
+            link.textContent = text;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+
+            return link;
+        }
+
+    </script>
+
 </body>
 </html>
-```
