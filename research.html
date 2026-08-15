@@ -1,292 +1,335 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Research | Your Name</title>
 
-    <title>Research | Dr. Alex Morgan</title>
+    <style>
+        :root {
+            --sydney-blue: #0B3C5D;
+            --sydney-dark-blue: #062C43;
+            --sydney-gold: #E5A823;
+            --text: #222222;
+            --muted: #5F6368;
+            --light-grey: #F5F6F7;
+            --border: #D9DDE1;
+            --white: #FFFFFF;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        * {
+            box-sizing: border-box;
+        }
 
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+        }
+
+        /* Header */
+
+        header {
+            background: var(--sydney-blue);
+            border-bottom: 5px solid var(--sydney-gold);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 75px;
+            padding: 0 25px;
+        }
+
+        .site-name {
+            color: white;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.35rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .site-subtitle {
+            color: #DCE8EF;
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 27px 15px;
+            font-size: 0.95rem;
+            border-bottom: 4px solid transparent;
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--sydney-dark-blue);
+            border-bottom-color: var(--sydney-gold);
+        }
+
+        /* Main */
+
+        main {
+            max-width: 950px;
+            margin: 60px auto;
+            padding: 0 30px;
+        }
+
+        .page-title {
+            color: var(--sydney-blue);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 2.7rem;
+            margin: 0;
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 4px;
+            background: var(--sydney-gold);
+            margin: 20px 0 35px;
+        }
+
+        .intro {
+            font-size: 1.08rem;
+            color: #444;
+            max-width: 800px;
+            margin-bottom: 55px;
+        }
+
+        /* Research areas */
+
+        h2 {
+            color: var(--sydney-blue);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.8rem;
+            margin-top: 50px;
+            margin-bottom: 25px;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .research-card {
+            padding: 25px;
+            background: var(--light-grey);
+            border-left: 4px solid var(--sydney-blue);
+            transition: 0.2s ease;
+        }
+
+        .research-card:hover {
+            border-left-color: var(--sydney-gold);
+            transform: translateY(-2px);
+        }
+
+        .research-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: var(--sydney-blue);
+            font-size: 1.2rem;
+        }
+
+        .research-card p {
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        /* Current research */
+
+        .current-research {
+            margin-top: 50px;
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--sydney-gold);
+            background: white;
+        }
+
+        .current-research h2 {
+            margin-top: 0;
+        }
+
+        /* Footer */
+
+        footer {
+            background: var(--sydney-dark-blue);
+            color: #DCE8EF;
+            margin-top: 90px;
+            padding: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer .gold {
+            color: var(--sydney-gold);
+        }
+
+        /* Mobile */
+
+        @media (max-width: 750px) {
+
+            .nav-container {
+                flex-direction: column;
+                padding: 15px 10px 0;
+            }
+
+            .site-name {
+                margin-bottom: 10px;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                padding: 12px 10px;
+                font-size: 0.9rem;
+            }
+
+            main {
+                margin-top: 40px;
+            }
+
+            .page-title {
+                font-size: 2.2rem;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
+    <!-- Header -->
 
-<header class="navbar">
+    <header>
+        <div class="nav-container">
 
-    <div class="nav-container">
-
-        <a href="index.html" class="logo">
-            <span class="logo-mark"></span>
-            Alex Morgan
-        </a>
-
-        <button
-            class="menu-button"
-            onclick="toggleMenu()"
-        >
-            ☰
-        </button>
-
-        <nav id="navigation">
-
-            <a href="index.html">Home</a>
-
-            <a href="about.html">About</a>
-
-            <a href="research.html" class="active">
-                Research
+            <a href="index.html" class="site-name">
+                Your Name
+                <span class="site-subtitle">Academic Website</span>
             </a>
 
-            <a href="publications.html">Publications</a>
-
-            <a href="projects.html">Projects</a>
-
-            <a href="cv.html">CV</a>
-
-            <a href="contact.html">Contact</a>
-
-        </nav>
-
-    </div>
-
-</header>
-
-
-<main>
-
-
-<section class="page-header">
-
-    <p class="eyebrow">
-        RESEARCH
-    </p>
-
-    <h1>
-        Research directions
-    </h1>
-
-    <p>
-        Exploring reliable artificial intelligence, scientific
-        machine learning, and human-AI collaboration.
-    </p>
-
-</section>
-
-
-<section class="section">
-
-
-    <div class="research-item">
-
-        <div class="research-number">
-            01
-        </div>
-
-        <div>
-
-            <h3>
-                Reliable Artificial Intelligence
-            </h3>
-
-            <p>
-                Modern AI systems are increasingly being used in
-                scientific and high-impact applications. My research
-                investigates techniques for improving robustness,
-                reliability, and interpretability.
-            </p>
-
-            <ul>
-
-                <li>
-                    Model interpretability
-                </li>
-
-                <li>
-                    Robust machine learning
-                </li>
-
-                <li>
-                    Uncertainty estimation
-                </li>
-
-                <li>
-                    Responsible AI
-                </li>
-
-            </ul>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="research.html" class="active">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="cv.html">CV</a>
+                <a href="contact.html">Contact</a>
+            </nav>
 
         </div>
-
-    </div>
-
-
-    <div class="research-item">
-
-        <div class="research-number">
-            02
-        </div>
-
-        <div>
-
-            <h3>
-                Scientific Machine Learning
-            </h3>
-
-            <p>
-                I explore machine-learning techniques for analyzing
-                scientific datasets and accelerating computational
-                research.
-            </p>
-
-            <ul>
-
-                <li>
-                    Scientific machine learning
-                </li>
-
-                <li>
-                    Computational modeling
-                </li>
-
-                <li>
-                    Large-scale data analysis
-                </li>
-
-                <li>
-                    Scientific visualization
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
+    </header>
 
 
-    <div class="research-item">
+    <!-- Main content -->
 
-        <div class="research-number">
-            03
-        </div>
+    <main>
 
-        <div>
+        <h1 class="page-title">Research</h1>
 
-            <h3>
-                Human-AI Collaboration
-            </h3>
+        <div class="gold-line"></div>
 
-            <p>
-                Intelligent systems should complement human reasoning.
-                This research examines how people can effectively
-                collaborate with computational systems.
-            </p>
-
-            <ul>
-
-                <li>
-                    Decision-support systems
-                </li>
-
-                <li>
-                    Human-AI collaboration
-                </li>
-
-                <li>
-                    Explainable interfaces
-                </li>
-
-                <li>
-                    AI-assisted research
-                </li>
-
-            </ul>
-
-        </div>
-
-    </div>
-
-
-</section>
-
-
-<section class="section section-gray">
-
-    <div class="section-heading center">
-
-        <p class="eyebrow">
-            METHODS
+        <p class="intro">
+            My research focuses on <strong>[your broad research area]</strong>,
+            with particular interests in [research topic 1], [research topic 2],
+            and [research topic 3]. My work aims to [briefly describe the
+            broader goal or impact of your research].
         </p>
 
-        <h2>
-            Technical interests
-        </h2>
 
-    </div>
+        <!-- Research Areas -->
 
+        <h2>Research Areas</h2>
 
-    <div class="tags">
+        <div class="research-grid">
 
-        <span class="tag">Python</span>
-        <span class="tag">Machine Learning</span>
-        <span class="tag">PyTorch</span>
-        <span class="tag">TensorFlow</span>
-        <span class="tag">Statistics</span>
-        <span class="tag">Data Science</span>
-        <span class="tag">NLP</span>
-        <span class="tag">Scientific Computing</span>
-        <span class="tag">Data Visualization</span>
-        <span class="tag">Git</span>
-        <span class="tag">Linux</span>
-        <span class="tag">Open Source</span>
+            <div class="research-card">
+                <h3>Research Area One</h3>
+                <p>
+                    Briefly describe your first research area and the key
+                    questions you investigate.
+                </p>
+            </div>
 
-    </div>
+            <div class="research-card">
+                <h3>Research Area Two</h3>
+                <p>
+                    Briefly describe your second research area and its
+                    significance.
+                </p>
+            </div>
 
-</section>
+            <div class="research-card">
+                <h3>Research Area Three</h3>
+                <p>
+                    Briefly describe your third research area, methodology,
+                    or application.
+                </p>
+            </div>
 
-
-</main>
-
-
-<footer>
-
-    <div class="footer-container">
-
-        <div>
-            <h3>Alex Morgan</h3>
-            <p>Personal research website.</p>
-        </div>
-
-        <div class="footer-links">
-
-            <a href="about.html">About</a>
-            <a href="research.html">Research</a>
-            <a href="publications.html">Publications</a>
-            <a href="projects.html">Projects</a>
-            <a href="cv.html">CV</a>
-            <a href="contact.html">Contact</a>
+            <div class="research-card">
+                <h3>Research Area Four</h3>
+                <p>
+                    Add another research theme, interdisciplinary interest,
+                    or emerging area of work.
+                </p>
+            </div>
 
         </div>
 
-    </div>
 
-    <div class="copyright">
-        © 2026 Alex Morgan. All rights reserved.
-    </div>
+        <!-- Current Research -->
 
-</footer>
+        <section class="current-research">
+
+            <h2>Current Research</h2>
+
+            <p>
+                I am currently working on
+                <strong>[title or short description of your current project]</strong>.
+                This project investigates [one or two sentences describing
+                the research question, approach, or expected contribution].
+            </p>
+
+            <p>
+                The broader aim of this work is to [describe the expected
+                scientific, technical, social, or practical impact].
+            </p>
+
+        </section>
+
+    </main>
 
 
-<script src="script.js"></script>
+    <!-- Footer -->
+
+    <footer>
+        <span class="gold">©</span> 2026 Your Name ·
+        The University of Sydney
+    </footer>
 
 </body>
-
 </html>
+```
