@@ -1,43 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Your Name | University of Sydney</title>
 
-    <title>About Me | Dr. Alex Morgan</title>
+    <style>
+        :root {
+            --sydney-blue: #0B3C5D;
+            --sydney-dark-blue: #062C43;
+            --sydney-blue-light: #1D5A7A;
+            --sydney-gold: #E5A823;
+            --sydney-ochre: #C69214;
+            --text: #222222;
+            --muted: #5F6368;
+            --light-grey: #F5F6F7;
+            --border: #D9DDE1;
+            --white: #FFFFFF;
+        }
 
-    <meta
-        name="description"
-        content="Personal research website of Dr. Alex Morgan."
-    >
+        * {
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.65;
+        }
 
+        /* =========================
+           HEADER / NAVIGATION
+           ========================= */
+
+        header {
+            background: var(--sydney-blue);
+            border-bottom: 5px solid var(--sydney-gold);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 75px;
+            padding: 0 25px;
+        }
+
+        .site-name {
+            color: white;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.35rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .site-subtitle {
+            color: #DCE8EF;
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 27px 15px;
+            font-size: 0.95rem;
+            border-bottom: 4px solid transparent;
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: var(--sydney-dark-blue);
+            border-bottom-color: var(--sydney-gold);
+        }
+
+        /* =========================
+           MAIN CONTENT
+           ========================= */
+
+        main {
+            max-width: 1000px;
+            margin: 65px auto;
+            padding: 0 30px;
+        }
+
+        .about {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        /* Profile image */
+
+        .photo-container {
+            flex-shrink: 0;
+        }
+
+        .profile-photo {
+            width: 230px;
+            height: 230px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 6px solid white;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* About text */
+
+        .about-text {
+            max-width: 650px;
+        }
+
+        .about-text h1 {
+            margin: 0;
+            color: var(--sydney-blue);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 2.7rem;
+            line-height: 1.2;
+        }
+
+        .about-text h2 {
+            margin: 10px 0 25px;
+            color: var(--muted);
+            font-size: 1.1rem;
+            font-weight: normal;
+        }
+
+        .gold-line {
+            width: 60px;
+            height: 4px;
+            background: var(--sydney-gold);
+            margin: 20px 0;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            color: #444;
+            margin-bottom: 25px;
+        }
+
+        /* =========================
+           QUICK LINKS
+           ========================= */
+
+        .quick-links {
+            margin-top: 65px;
+            padding-top: 35px;
+            border-top: 1px solid var(--border);
+        }
+
+        .quick-links h2 {
+            color: var(--sydney-blue);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .quick-link {
+            display: block;
+            padding: 18px;
+            background: var(--light-grey);
+            border-left: 4px solid var(--sydney-blue);
+            color: var(--sydney-blue);
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s ease;
+        }
+
+        .quick-link:hover {
+            background: var(--sydney-blue);
+            color: white;
+            border-left-color: var(--sydney-gold);
+            transform: translateY(-2px);
+        }
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+            background: var(--sydney-dark-blue);
+            color: #DCE8EF;
+            margin-top: 90px;
+            padding: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer .gold {
+            color: var(--sydney-gold);
+        }
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 750px) {
+
+            .nav-container {
+                flex-direction: column;
+                padding: 15px 10px 0;
+            }
+
+            .site-name {
+                margin-bottom: 10px;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                padding: 12px 10px;
+                font-size: 0.9rem;
+            }
+
+            main {
+                margin-top: 45px;
+            }
+
+            .about {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .profile-photo {
+                width: 180px;
+                height: 180px;
+            }
+
+            .about-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .gold-line {
+                margin: 20px auto;
+            }
+
+            .link-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 450px) {
+            .link-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-    <div class="copyright">
+    <!-- =========================
+         HEADER
+         ========================= -->
 
-        © 2026 Simanto Saha. All rights reserved.
+    <header>
+        <div class="nav-container">
 
-    </div>
+            <a href="index.html" class="site-name">
+                Your Name
+                <span class="site-subtitle">Academic Website</span>
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="research.html">Research</a>
+                <a href="publications.html">Publications</a>
+                <a href="cv.html">CV</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+        </div>
+    </header>
 
 
-</footer>
+    <!-- =========================
+         MAIN
+         ========================= -->
+
+    <main>
+
+        <section class="about">
+
+            <div class="photo-container">
+                <img
+                    src="profile.jpg"
+                    alt="Photo of Your Name"
+                    class="profile-photo"
+                >
+            </div>
+
+            <div class="about-text">
+
+                <h1>Your Name</h1>
+
+                <h2>
+                    PhD Candidate / Researcher<br>
+                    Your School or Faculty · The University of Sydney
+                </h2>
+
+                <div class="gold-line"></div>
+
+                <p>
+                    I am a researcher at the University of Sydney interested in
+                    <strong>your research area</strong>. My work focuses on
+                    [briefly describe your research interests]. I am currently
+                    working on [brief description of your current research].
+                </p>
+
+            </div>
+
+        </section>
 
 
+        <!-- Quick navigation -->
 
-<script src="script.js"></script>
+        <section class="quick-links">
 
+            <h2>Explore</h2>
+
+            <div class="link-grid">
+
+                <a href="research.html" class="quick-link">
+                    Research →
+                </a>
+
+                <a href="publications.html" class="quick-link">
+                    Publications →
+                </a>
+
+                <a href="cv.html" class="quick-link">
+                    Curriculum Vitae →
+                </a>
+
+                <a href="contact.html" class="quick-link">
+                    Contact →
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer>
+        <span class="gold">©</span> 2026 Your Name ·
+        The University of Sydney
+    </footer>
 
 </body>
-
 </html>
