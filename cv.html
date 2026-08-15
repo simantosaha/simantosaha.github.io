@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CV | Your Name</title>
+
+    <style>
+
+        :root {
+            --sydney-blue: #0B3C5D;
+            --sydney-dark-blue: #062C43;
+            --sydney-gold: #E5A823;
+
+            --text: #222222;
+            --muted: #5F6368;
+            --light-grey: #F5F6F7;
+            --border: #D9DDE1;
+            --white: #FFFFFF;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: var(--text);
+
+            background: var(--white);
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           HEADER
+           ===================================================== */
+
+        header {
+            background: var(--sydney-blue);
+
+            border-bottom:
+                5px solid var(--sydney-gold);
+        }
+
+
+        .nav-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            min-height: 75px;
+
+            padding: 0 25px;
+        }
+
+
+        .site-name {
+
+            color: white;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 1.35rem;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+
+        .site-subtitle {
+
+            color: #DCE8EF;
+
+            font-size: 0.85rem;
+
+            margin-left: 8px;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+        }
+
+
+        .nav-links a {
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 27px 15px;
+
+            font-size: 0.95rem;
+
+            border-bottom:
+                4px solid transparent;
+
+            transition: 0.2s ease;
+        }
+
+
+        .nav-links a:hover,
+        .nav-links a.active {
+
+            background:
+                var(--sydney-dark-blue);
+
+            border-bottom-color:
+                var(--sydney-gold);
+        }
+
+
+
+        /* =====================================================
+           MAIN
+           ===================================================== */
+
+        main {
+
+            max-width: 950px;
+
+            margin: 60px auto;
+
+            padding: 0 30px;
+        }
+
+
+        .page-title {
+
+            color: var(--sydney-blue);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 2.7rem;
+
+            margin: 0;
+        }
+
+
+        .gold-line {
+
+            width: 60px;
+
+            height: 4px;
+
+            background:
+                var(--sydney-gold);
+
+            margin:
+                20px 0 40px;
+        }
+
+
+        .cv-intro {
+
+            color: #555;
+
+            font-size: 1.05rem;
+
+            margin-bottom: 25px;
+        }
+
+
+
+        /* =====================================================
+           DOWNLOAD CV
+           ===================================================== */
+
+        .download-container {
+
+            margin:
+                25px 0 55px;
+        }
+
+
+        .download-button {
+
+            display: inline-block;
+
+            background:
+                var(--sydney-blue);
+
+            color: white;
+
+            text-decoration: none;
+
+            padding:
+                11px 22px;
+
+            border:
+                2px solid var(--sydney-blue);
+
+            font-weight: bold;
+
+            font-size: 0.9rem;
+
+            transition:
+                0.2s ease;
+        }
+
+
+        .download-button:hover {
+
+            background:
+                var(--sydney-gold);
+
+            border-color:
+                var(--sydney-gold);
+
+            color:
+                var(--sydney-dark-blue);
+        }
+
+
+
+        /* =====================================================
+           CV SECTIONS
+           ===================================================== */
+
+        .cv-section {
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-title {
+
+            color:
+                var(--sydney-blue);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 1.65rem;
+
+            margin:
+                0 0 25px;
+
+            padding-bottom:
+                10px;
+
+            border-bottom:
+                2px solid var(--border);
+        }
+
+
+        .section-title::after {
+
+            content: "";
+
+            display: block;
+
+            width: 45px;
+
+            height: 3px;
+
+            background:
+                var(--sydney-gold);
+
+            position: relative;
+
+            top: 12px;
+        }
+
+
+
+        /* =====================================================
+           CV ENTRIES
+           ===================================================== */
+
+        .cv-entry {
+
+            display: grid;
+
+            grid-template-columns:
+                145px 1fr;
+
+            gap: 25px;
+
+            padding:
+                18px 5px;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .cv-entry:last-child {
+
+            border-bottom: none;
+        }
+
+
+        .cv-date {
+
+            color:
+                var(--sydney-blue);
+
+            font-weight: bold;
+
+            font-size: 0.9rem;
+
+            line-height: 1.5;
+        }
+
+
+        .cv-content h3 {
+
+            margin:
+                0 0 4px;
+
+            color:
+                #222;
+
+            font-size: 1.05rem;
+        }
+
+
+        .cv-content .institution {
+
+            color:
+                var(--muted);
+
+            font-size: 0.95rem;
+
+            margin-bottom: 7px;
+        }
+
+
+        .cv-content p {
+
+            margin:
+                5px 0;
+
+            color:
+                #444;
+
+            font-size: 0.95rem;
+        }
+
+
+
+        /* =====================================================
+           SIMPLE LIST
+           ===================================================== */
+
+        .cv-list {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+        }
+
+
+        .cv-list li {
+
+            padding:
+                10px 0;
+
+            border-bottom:
+                1px solid var(--border);
+
+            color: #444;
+        }
+
+
+        .cv-list li:last-child {
+
+            border-bottom: none;
+        }
+
+
+
+        /* =====================================================
+           SKILLS / RESEARCH AREAS
+           ===================================================== */
+
+        .tag-container {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+        }
+
+
+        .tag {
+
+            display: inline-block;
+
+            background:
+                var(--light-grey);
+
+            border-left:
+                3px solid var(--sydney-gold);
+
+            color:
+                var(--sydney-blue);
+
+            padding:
+                6px 12px;
+
+            font-size: 0.85rem;
+
+            font-weight: 600;
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        footer {
+
+            background:
+                var(--sydney-dark-blue);
+
+            color:
+                #DCE8EF;
+
+            margin-top:
+                90px;
+
+            padding:
+                30px;
+
+            text-align:
+                center;
+
+            font-size:
+                0.9rem;
+        }
+
+
+        footer .gold {
+
+            color:
+                var(--sydney-gold);
+        }
+
+
+
+        /* =====================================================
+           MOBILE
+           ===================================================== */
+
+        @media (max-width: 750px) {
+
+            .nav-container {
+
+                flex-direction:
+                    column;
+
+                padding:
+                    15px 10px 0;
+            }
+
+
+            .site-name {
+
+                margin-bottom:
+                    10px;
+            }
+
+
+            .nav-links {
+
+                width:
+                    100%;
+
+                justify-content:
+                    center;
+
+                flex-wrap:
+                    wrap;
+            }
+
+
+            .nav-links a {
+
+                padding:
+                    12px 10px;
+
+                font-size:
+                    0.9rem;
+            }
+
+
+            main {
+
+                margin-top:
+                    40px;
+
+                padding:
+                    0 20px;
+            }
+
+
+            .page-title {
+
+                font-size:
+                    2.2rem;
+            }
+
+
+            .cv-entry {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    5px;
+
+                padding:
+                    18px 5px;
+            }
+
+
+            .cv-date {
+
+                font-size:
+                    0.82rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+    <div class="nav-container">
+
+
+        <a href="index.html"
+           class="site-name">
+
+            Your Name
+
+            <span class="site-subtitle">
+                Academic Website
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="research.html">
+                Research
+            </a>
+
+            <a href="publications.html">
+                Publications
+            </a>
+
+            <a href="cv.html"
+               class="active">
+                CV
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+     ========================================================= -->
+
+<main>
+
+
+    <h1 class="page-title">
+        Curriculum Vitae
+    </h1>
+
+
+    <div class="gold-line"></div>
+
+
+    <p class="cv-intro">
+
+        A brief overview of my academic background,
+        research experience, teaching, and professional
+        activities.
+
+    </p>
+
+
+    <!-- =====================================================
+         DOWNLOAD
+         ===================================================== -->
+
+    <div class="download-container">
+
+        <a href="CV.pdf"
+           class="download-button"
+           target="_blank">
+
+            Download Full CV (PDF)
+
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         EDUCATION
+         ===================================================== -->
+
+    <section class="cv-section">
+
+        <h2 class="section-title">
+            Education
+        </h2>
+
+
+        <div class="cv-entry">
+
+            <div class="cv-date">
+                2023 – Present
+            </div>
+
+            <div class="cv-content">
+
+                <h3>
+                    PhD in Your Research Area
+                </h3>
+
+                <div class="institution">
+                    The University of Sydney
+                </div>
+
+                <p>
+                    Research focus: Your research topic or
+                    thesis title.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-entry">
+
+            <div class="cv-date">
+                2020 – 2022
+            </div>
+
+            <div class="cv-content">
+
+                <h3>
+                    Master of Your Degree
+                </h3>
+
+                <div class="institution">
+                    University Name
+                </div>
+
+                <p>
+                    Specialisation or relevant academic
+                    information.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-entry">
+
+            <div class="cv-date">
+                2016 – 2020
+            </div>
+
+            <div class="cv-content">
+
+                <h3>
+                    Bachelor of Your Degree
+                </h3>
+
+                <div class="institution">
+                    University Name
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESEARCH EXPERIENCE
+         ===================================================== -->
+
+    <section class="cv-section">
+
+        <h2 class="section-title">
+            Research Experience
+        </h2>
+
+
+        <div class="cv-entry">
+
+            <div class="cv-date">
+                2023 – Present
+            </div>
+
+            <div class="cv-content">
+
+                <h3>
+                    PhD Researcher
+                </h3>
+
+                <div class="institution">
+                    The University of Sydney
+                </div>
+
+                <p>
+                    Brief description of your research,
+                    responsibilities, methods, and major
+                    outcomes.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-entry">
+
+            <div class="cv-date">
+                2021 – 2023
+            </div>
+
+            <div class="cv-content">
+
+                <h3>
+                    Research Assistant
+                </h3>
+
+                <div class="institution">
+                    University or Research Organisation
+                </div>
+
+                <p>
+                    Brief description of the project and
+                    your contribution.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TEACHING
+         ===================================================== -->
+
+    <section class="cv-section">
+
+        <h2 class="section-title">
+            Teaching Experience
+        </h2>
+
+
+        <div class="cv-entry">
+
+            <div class="cv-date">
+                2024 – Present
+            </div>
+
+            <div class="cv-content">
+
+                <h3>
+                    Tutor / Teaching Assistant
+                </h3>
+
+                <div class="institution">
+                    The University of Sydney
+                </div>
+
+                <p>
+                    Courses, tutorials, laboratory sessions,
+                    assessment, and student support.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="cv-entry">
+
+            <div class="cv-date">
+                2022 – 2023
+            </div>
+
+            <div class="cv-content">
+
+                <h3>
+                    Teaching Assistant
+                </h3>
+
+                <div class="institution">
+                    University Name
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         AWARDS
+         ===================================================== -->
+
+    <section class="cv-section">
+
+        <h2 class="section-title">
+            Awards & Scholarships
+        </h2>
+
+
+        <ul class="cv-list">
+
+            <li>
+                <strong>2025</strong> —
+                Scholarship or Award Name,
+                The University of Sydney
+            </li>
+
+            <li>
+                <strong>2024</strong> —
+                Research Award Name
+            </li>
+
+            <li>
+                <strong>2022</strong> —
+                Academic Excellence Award
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROFESSIONAL EXPERIENCE
+         ===================================================== -->
+
+    <section class="cv-section">
+
+        <h2 class="section-title">
+            Professional Experience
+        </h2>
+
+
+        <div class="cv-entry">
+
+            <div class="cv-date">
+                2020 – 2023
+            </div>
+
+            <div class="cv-content">
+
+                <h3>
+                    Job Title
+                </h3>
+
+                <div class="institution">
+                    Organisation Name
+                </div>
+
+                <p>
+                    Brief description of your role and
+                    responsibilities.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESEARCH AREAS
+         ===================================================== -->
+
+    <section class="cv-section">
+
+        <h2 class="section-title">
+            Research Areas
+        </h2>
+
+
+        <div class="tag-container">
+
+            <span class="tag">
+                Research Area 1
+            </span>
+
+            <span class="tag">
+                Research Area 2
+            </span>
+
+            <span class="tag">
+                Research Area 3
+            </span>
+
+            <span class="tag">
+                Research Area 4
+            </span>
+
+            <span class="tag">
+                Research Area 5
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TECHNICAL SKILLS
+         ===================================================== -->
+
+    <section class="cv-section">
+
+        <h2 class="section-title">
+            Technical Skills
+        </h2>
+
+
+        <ul class="cv-list">
+
+            <li>
+                <strong>Programming:</strong>
+                Python, MATLAB, C/C++, etc.
+            </li>
+
+            <li>
+                <strong>Software:</strong>
+                Software package 1, Software package 2
+            </li>
+
+            <li>
+                <strong>Data Analysis:</strong>
+                Statistical analysis, machine learning,
+                data visualisation
+            </li>
+
+            <li>
+                <strong>Other:</strong>
+                Experimental techniques, modelling,
+                simulation, etc.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROFESSIONAL MEMBERSHIPS
+         ===================================================== -->
+
+    <section class="cv-section">
+
+        <h2 class="section-title">
+            Professional Memberships
+        </h2>
+
+
+        <ul class="cv-list">
+
+            <li>
+                Member, Professional Society Name
+            </li>
+
+            <li>
+                Member, IEEE
+            </li>
+
+            <li>
+                Member, Other Organisation
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         REFERENCES
+         ===================================================== -->
+
+    <section class="cv-section">
+
+        <h2 class="section-title">
+            References
+        </h2>
+
+
+        <p>
+            Academic and professional references are available
+            upon request.
+        </p>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <span class="gold">©</span>
+    2026 Your Name ·
+    The University of Sydney
+
+</footer>
+
+
+</body>
+
+</html>
