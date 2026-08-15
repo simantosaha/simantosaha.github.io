@@ -1,6 +1,6 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -22,17 +22,27 @@
             --white: #FFFFFF;
         }
 
+
         * {
             box-sizing: border-box;
         }
 
+
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             color: var(--text);
+
             background: var(--white);
+
             line-height: 1.7;
         }
+
 
         /* =====================================================
            HEADER
@@ -40,90 +50,140 @@
 
         header {
             background: var(--sydney-blue);
-            border-bottom: 5px solid var(--sydney-gold);
+
+            border-bottom:
+                5px solid var(--sydney-gold);
         }
 
+
         .nav-container {
+
             max-width: 1100px;
+
             margin: auto;
 
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
 
             min-height: 75px;
+
             padding: 0 25px;
         }
 
+
         .site-name {
+
             color: white;
-            font-family: Georgia, "Times New Roman", serif;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
             font-size: 1.35rem;
+
             font-weight: bold;
+
             text-decoration: none;
         }
 
+
         .site-subtitle {
+
             color: #DCE8EF;
+
             font-size: 0.85rem;
+
             margin-left: 8px;
         }
 
+
         .nav-links {
+
             display: flex;
+
             align-items: center;
         }
 
+
         .nav-links a {
+
             color: white;
+
             text-decoration: none;
 
             padding: 27px 15px;
 
             font-size: 0.95rem;
 
-            border-bottom: 4px solid transparent;
+            border-bottom:
+                4px solid transparent;
 
-            transition: 0.2s ease;
+            transition:
+                0.2s ease;
         }
+
 
         .nav-links a:hover,
         .nav-links a.active {
-            background: var(--sydney-dark-blue);
-            border-bottom-color: var(--sydney-gold);
+
+            background:
+                var(--sydney-dark-blue);
+
+            border-bottom-color:
+                var(--sydney-gold);
         }
+
 
 
         /* =====================================================
-           MAIN
+           MAIN CONTENT
            ===================================================== */
 
         main {
+
             max-width: 950px;
+
             margin: 60px auto;
+
             padding: 0 30px;
         }
 
+
         .page-title {
+
             color: var(--sydney-blue);
 
-            font-family: Georgia, "Times New Roman", serif;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
             font-size: 2.7rem;
 
             margin: 0;
         }
 
+
         .gold-line {
+
             width: 60px;
+
             height: 4px;
 
-            background: var(--sydney-gold);
+            background:
+                var(--sydney-gold);
 
-            margin: 20px 0 40px;
+            margin:
+                20px 0 40px;
         }
 
+
         .intro {
+
             color: #555;
 
             font-size: 1.05rem;
@@ -134,11 +194,13 @@
         }
 
 
+
         /* =====================================================
            LOADING / ERROR
            ===================================================== */
 
         #loading {
+
             color: var(--muted);
 
             padding: 20px 0;
@@ -146,14 +208,17 @@
             font-style: italic;
         }
 
+
         #error {
+
             display: none;
 
             padding: 20px;
 
             background: #FFF4F4;
 
-            border-left: 4px solid #B42318;
+            border-left:
+                4px solid #B42318;
 
             color: #8A1C1C;
 
@@ -161,19 +226,25 @@
         }
 
 
+
         /* =====================================================
            PUBLICATION SECTIONS
            ===================================================== */
 
         .publication-section {
+
             margin-bottom: 70px;
         }
+
 
         .publication-section h2 {
 
             color: var(--sydney-blue);
 
-            font-family: Georgia, "Times New Roman", serif;
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
 
             font-size: 1.9rem;
 
@@ -181,8 +252,10 @@
 
             padding-bottom: 12px;
 
-            border-bottom: 2px solid var(--sydney-gold);
+            border-bottom:
+                2px solid var(--sydney-gold);
         }
+
 
 
         /* =====================================================
@@ -193,31 +266,47 @@
 
             display: grid;
 
-            grid-template-columns: 50px 1fr;
+            grid-template-columns:
+                70px 1fr;
 
-            gap: 12px;
+            gap: 20px;
 
-            padding: 20px 10px;
+            padding:
+                18px 10px;
 
-            border-bottom: 1px solid var(--border);
+            border-bottom:
+                1px solid var(--border);
 
-            transition: background 0.2s ease;
+            transition:
+                background 0.2s ease;
         }
+
 
         .publication:hover {
-            background: var(--light-grey);
+
+            background:
+                var(--light-grey);
         }
 
-        .publication-number {
 
-            color: var(--sydney-blue);
+        /*
+         * Year shown as the marker.
+         */
+
+        .publication-year {
+
+            color:
+                var(--sydney-blue);
 
             font-weight: bold;
 
             font-size: 1rem;
 
             padding-top: 2px;
+
+            white-space: nowrap;
         }
+
 
         .publication-text {
 
@@ -229,33 +318,31 @@
         }
 
 
-        /* =====================================================
-           IEEE CITATION
-           ===================================================== */
-
         .citation {
+
             margin: 0;
         }
 
-        .citation-title {
+
+        .citation-journal {
+
+            font-style: italic;
+        }
+
+
+        .citation-conference {
+
+            font-style: italic;
+        }
+
+
+        .my-name {
+
+            font-weight: bold;
+
             color: #222;
         }
 
-        .citation-journal {
-            font-style: italic;
-        }
-
-        .citation-conference {
-            font-style: italic;
-        }
-
-        .citation-year {
-            white-space: nowrap;
-        }
-
-        .my-name {
-            font-weight: bold;
-        }
 
 
         /* =====================================================
@@ -267,11 +354,13 @@
             margin-top: 8px;
         }
 
+
         .publication-links a {
 
             display: inline-block;
 
-            color: var(--sydney-blue);
+            color:
+                var(--sydney-blue);
 
             text-decoration: none;
 
@@ -282,10 +371,13 @@
             margin-right: 18px;
         }
 
+
         .publication-links a:hover {
 
-            color: var(--sydney-gold);
+            color:
+                var(--sydney-gold);
         }
+
 
 
         /* =====================================================
@@ -294,12 +386,14 @@
 
         .empty-message {
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
             font-style: italic;
 
             padding: 15px 0;
         }
+
 
 
         /* =====================================================
@@ -308,7 +402,8 @@
 
         footer {
 
-            background: var(--sydney-dark-blue);
+            background:
+                var(--sydney-dark-blue);
 
             color: #DCE8EF;
 
@@ -321,10 +416,13 @@
             font-size: 0.9rem;
         }
 
+
         footer .gold {
 
-            color: var(--sydney-gold);
+            color:
+                var(--sydney-gold);
         }
+
 
 
         /* =====================================================
@@ -337,13 +435,16 @@
 
                 flex-direction: column;
 
-                padding: 15px 10px 0;
+                padding:
+                    15px 10px 0;
             }
+
 
             .site-name {
 
                 margin-bottom: 10px;
             }
+
 
             .nav-links {
 
@@ -354,36 +455,45 @@
                 flex-wrap: wrap;
             }
 
+
             .nav-links a {
 
-                padding: 12px 10px;
+                padding:
+                    12px 10px;
 
                 font-size: 0.9rem;
             }
+
 
             main {
 
                 margin-top: 40px;
             }
 
+
             .page-title {
 
                 font-size: 2.2rem;
             }
 
+
             .publication {
 
-                grid-template-columns: 35px 1fr;
+                grid-template-columns:
+                    55px 1fr;
 
-                gap: 8px;
+                gap: 10px;
 
-                padding: 18px 5px;
+                padding:
+                    18px 5px;
             }
+
 
             .publication-text {
 
                 font-size: 0.94rem;
             }
+
         }
 
     </style>
@@ -402,7 +512,9 @@
 
     <div class="nav-container">
 
-        <a href="index.html" class="site-name">
+
+        <a href="index.html"
+           class="site-name">
 
             Your Name
 
@@ -423,7 +535,8 @@
                 Research
             </a>
 
-            <a href="publications.html" class="active">
+            <a href="publications.html"
+               class="active">
                 Publications
             </a>
 
@@ -444,10 +557,11 @@
 
 
 <!-- =========================================================
-     MAIN CONTENT
+     MAIN
      ========================================================= -->
 
 <main>
+
 
     <h1 class="page-title">
         Publications
@@ -481,11 +595,14 @@
 
     <section class="publication-section">
 
+
         <h2>
             Journal Articles
         </h2>
 
+
         <div id="journal-articles"></div>
+
 
     </section>
 
@@ -497,13 +614,17 @@
 
     <section class="publication-section">
 
+
         <h2>
             Conference Papers / Abstracts
         </h2>
 
+
         <div id="conference-papers"></div>
 
+
     </section>
+
 
 </main>
 
@@ -536,25 +657,29 @@
 
 
 /*
- * IMPORTANT:
+ * Put your name here exactly as it appears
+ * in publications.bib.
  *
- * Change this to your name exactly as it appears
- * in your publications.bib file.
+ * Examples:
  *
- * Example:
+ * "Smith, John"
+ *
+ * "John Smith"
+ *
+ * If your BibTeX contains:
+ *
+ * author = {Smith, John and Jones, Jane}
+ *
+ * use:
  *
  * const YOUR_NAME = "Smith, John";
- *
- * or:
- *
- * const YOUR_NAME = "John Smith";
  */
 
 const YOUR_NAME = "Your Name";
 
 
 /*
- * Location of your BibTeX database.
+ * BibTeX file.
  */
 
 const BIB_FILE = "publications.bib";
@@ -562,7 +687,7 @@ const BIB_FILE = "publications.bib";
 
 
 /* ==========================================================
-   LOAD BIBTEX
+   LOAD PUBLICATIONS
    ========================================================== */
 
 fetch(BIB_FILE)
@@ -609,7 +734,8 @@ fetch(BIB_FILE)
             document.getElementById("error");
 
 
-        errorBox.style.display = "block";
+        errorBox.style.display =
+            "block";
 
 
         errorBox.innerHTML =
@@ -622,7 +748,7 @@ fetch(BIB_FILE)
 
             "Make sure that <strong>publications.bib</strong> " +
 
-            "is located in the same folder as " +
+            "is in the same folder as " +
 
             "<strong>publications.html</strong>.";
 
@@ -640,7 +766,7 @@ function parseBibTeX(text) {
 
 
     /*
-     * Remove comments.
+     * Remove BibTeX comments.
      */
 
     text = text.replace(
@@ -650,7 +776,7 @@ function parseBibTeX(text) {
 
 
     /*
-     * Find individual BibTeX entries.
+     * Locate entries.
      */
 
     const entryRegex =
@@ -699,22 +825,13 @@ function parseBibTeX(text) {
 
 
 /* ==========================================================
-   PARSE BIBTEX FIELDS
+   PARSE FIELDS
    ========================================================== */
 
 function parseFields(body) {
 
     const fields = {};
 
-
-    /*
-     * Match:
-     *
-     * title = {...}
-     * author = {...}
-     * year = {...}
-     * etc.
-     */
 
     const fieldRegex =
         /([a-zA-Z][a-zA-Z0-9_-]*)\s*=\s*(\{(?:[^{}]|\{[^{}]*\})*\}|"[^"]*"|[^,\n]+)\s*,?/g;
@@ -750,7 +867,7 @@ function parseFields(body) {
 
 
 /* ==========================================================
-   CLEAN BIBTEX VALUES
+   CLEAN BIBTEX
    ========================================================== */
 
 function cleanBibValue(value) {
@@ -841,10 +958,17 @@ function cleanBibValue(value) {
 
 
 /* ==========================================================
-   SORT PUBLICATIONS
+   DISPLAY PUBLICATIONS
    ========================================================== */
 
-function sortPublications(publications) {
+function displayPublications(
+    publications
+) {
+
+
+    /*
+     * Sort newest → oldest.
+     */
 
     publications.sort(
         (a, b) => {
@@ -857,11 +981,9 @@ function sortPublications(publications) {
                 parseInt(b.year) || 0;
 
 
-            /*
-             * Newest first.
-             */
-
-            if (yearA !== yearB) {
+            if (
+                yearA !== yearB
+            ) {
 
                 return yearB - yearA;
 
@@ -869,9 +991,8 @@ function sortPublications(publications) {
 
 
             /*
-             * If two publications have the
-             * same year, sort alphabetically
-             * by title.
+             * Same year:
+             * alphabetically by title.
              */
 
             return (
@@ -882,23 +1003,6 @@ function sortPublications(publications) {
             );
 
         }
-    );
-
-}
-
-
-
-/* ==========================================================
-   DISPLAY PUBLICATIONS
-   ========================================================== */
-
-function displayPublications(
-    publications
-) {
-
-
-    sortPublications(
-        publications
     );
 
 
@@ -914,7 +1018,7 @@ function displayPublications(
 
 
     /*
-     * Conference publications.
+     * Conference papers.
      */
 
     const conferencePapers =
@@ -923,7 +1027,8 @@ function displayPublications(
                 [
                     "inproceedings",
                     "conference",
-                    "incollection"
+                    "incollection",
+                    "misc"
                 ].includes(
                     publication.type
                 )
@@ -931,24 +1036,7 @@ function displayPublications(
 
 
     /*
-     * Miscellaneous entries can optionally
-     * be treated as conference abstracts.
-     */
-
-    const miscellaneous =
-        publications.filter(
-            publication =>
-                publication.type === "misc"
-        );
-
-
-    conferencePapers.push(
-        ...miscellaneous
-    );
-
-
-    /*
-     * Render.
+     * Render both sections.
      */
 
     renderList(
@@ -969,7 +1057,7 @@ function displayPublications(
 
 
 /* ==========================================================
-   RENDER LIST
+   RENDER PUBLICATION LIST
    ========================================================== */
 
 function renderList(
@@ -1005,7 +1093,7 @@ function renderList(
 
 
     publications.forEach(
-        (publication, index) => {
+        publication => {
 
 
             const item =
@@ -1019,25 +1107,29 @@ function renderList(
 
 
             /*
-             * Number.
+             * ------------------------------------------
+             * YEAR MARKER
+             * ------------------------------------------
              */
 
-            const number =
+            const year =
                 document.createElement(
                     "div"
                 );
 
 
-            number.className =
-                "publication-number";
+            year.className =
+                "publication-year";
 
 
-            number.textContent =
-                "[" + (index + 1) + "]";
+            year.textContent =
+                publication.year || "";
 
 
             /*
-             * Citation.
+             * ------------------------------------------
+             * CITATION
+             * ------------------------------------------
              */
 
             const text =
@@ -1058,7 +1150,9 @@ function renderList(
 
 
             /*
-             * Links.
+             * ------------------------------------------
+             * LINKS
+             * ------------------------------------------
              */
 
             const links =
@@ -1077,7 +1171,7 @@ function renderList(
 
 
             item.appendChild(
-                number
+                year
             );
 
 
@@ -1098,7 +1192,7 @@ function renderList(
 
 
 /* ==========================================================
-   IEEE FORMATTER
+   IEEE CITATION FORMAT
    ========================================================== */
 
 function formatIEEE(
@@ -1111,12 +1205,14 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------------------
+     * ------------------------------------------
      * AUTHORS
-     * ------------------------------------------------------
+     * ------------------------------------------
      */
 
-    if (publication.author) {
+    if (
+        publication.author
+    ) {
 
         citation +=
             formatAuthors(
@@ -1130,12 +1226,14 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------------------
+     * ------------------------------------------
      * TITLE
-     * ------------------------------------------------------
+     * ------------------------------------------
      */
 
-    if (publication.title) {
+    if (
+        publication.title
+    ) {
 
         citation +=
 
@@ -1153,9 +1251,9 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------------------
+     * ------------------------------------------
      * JOURNAL ARTICLE
-     * ------------------------------------------------------
+     * ------------------------------------------
      */
 
     if (
@@ -1163,7 +1261,9 @@ function formatIEEE(
     ) {
 
 
-        if (publication.journal) {
+        if (
+            publication.journal
+        ) {
 
             citation +=
 
@@ -1182,7 +1282,9 @@ function formatIEEE(
          * Volume.
          */
 
-        if (publication.volume) {
+        if (
+            publication.volume
+        ) {
 
             citation +=
 
@@ -1199,7 +1301,9 @@ function formatIEEE(
          * Issue.
          */
 
-        if (publication.number) {
+        if (
+            publication.number
+        ) {
 
             citation +=
 
@@ -1216,7 +1320,9 @@ function formatIEEE(
          * Pages.
          */
 
-        if (publication.pages) {
+        if (
+            publication.pages
+        ) {
 
             citation +=
 
@@ -1233,7 +1339,9 @@ function formatIEEE(
          * Month.
          */
 
-        if (publication.month) {
+        if (
+            publication.month
+        ) {
 
             citation +=
 
@@ -1245,36 +1353,21 @@ function formatIEEE(
 
         }
 
-
-        /*
-         * Year.
-         */
-
-        if (publication.year) {
-
-            citation +=
-
-                ", " +
-
-                escapeHTML(
-                    publication.year
-                );
-
-        }
-
     }
 
 
     /*
-     * ------------------------------------------------------
+     * ------------------------------------------
      * CONFERENCE PAPER
-     * ------------------------------------------------------
+     * ------------------------------------------
      */
 
     else {
 
 
-        if (publication.booktitle) {
+        if (
+            publication.booktitle
+        ) {
 
             citation +=
 
@@ -1292,10 +1385,12 @@ function formatIEEE(
 
 
         /*
-         * Address / location.
+         * Location.
          */
 
-        if (publication.address) {
+        if (
+            publication.address
+        ) {
 
             citation +=
 
@@ -1312,7 +1407,9 @@ function formatIEEE(
          * Pages.
          */
 
-        if (publication.pages) {
+        if (
+            publication.pages
+        ) {
 
             citation +=
 
@@ -1320,23 +1417,6 @@ function formatIEEE(
 
                 escapeHTML(
                     publication.pages
-                );
-
-        }
-
-
-        /*
-         * Year.
-         */
-
-        if (publication.year) {
-
-            citation +=
-
-                ", " +
-
-                escapeHTML(
-                    publication.year
                 );
 
         }
@@ -1352,12 +1432,12 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------------------
-     * DOI
-     * ------------------------------------------------------
+     * DOI is included in the citation.
      */
 
-    if (publication.doi) {
+    if (
+        publication.doi
+    ) {
 
         let doi =
             publication.doi;
@@ -1380,9 +1460,7 @@ function formatIEEE(
 
             '" target="_blank" ' +
 
-            'rel="noopener noreferrer" ' +
-
-            'style="color:inherit;">' +
+            'rel="noopener noreferrer">' +
 
             escapeHTML(doi) +
 
@@ -1420,36 +1498,41 @@ function formatAuthors(
         authors.map(
             author => {
 
-                const name =
+
+                const formattedName =
                     formatAuthorName(
                         author
                     );
 
 
                 /*
-                 * Bold your own name.
+                 * Determine whether this is
+                 * the website owner's name.
                  */
 
                 if (
-                    YOUR_NAME &&
-                    name
-                        .toLowerCase()
-                        .includes(
-                            YOUR_NAME.toLowerCase()
-                        )
+                    isYourName(
+                        author
+                    )
                 ) {
 
                     return (
+
                         '<span class="my-name">' +
-                        escapeHTML(name) +
+
+                        escapeHTML(
+                            formattedName
+                        ) +
+
                         "</span>"
+
                     );
 
                 }
 
 
                 return escapeHTML(
-                    name
+                    formattedName
                 );
 
             }
@@ -1457,7 +1540,7 @@ function formatAuthors(
 
 
     /*
-     * IEEE generally uses:
+     * IEEE author list:
      *
      * A. Author, B. Author, and C. Author
      */
@@ -1485,6 +1568,7 @@ function formatAuthors(
 
 
     return (
+
         formatted
             .slice(0, -1)
             .join(", ") +
@@ -1494,6 +1578,7 @@ function formatAuthors(
         formatted[
             formatted.length - 1
         ]
+
     );
 
 }
@@ -1501,7 +1586,55 @@ function formatAuthors(
 
 
 /* ==========================================================
-   FORMAT INDIVIDUAL AUTHOR
+   DETERMINE YOUR NAME
+   ========================================================== */
+
+function isYourName(
+    author
+) {
+
+
+    if (
+        !YOUR_NAME ||
+        YOUR_NAME === "Your Name"
+    ) {
+
+        return false;
+
+    }
+
+
+    const cleanAuthor =
+        author
+            .toLowerCase()
+            .replace(
+                /[{}]/g,
+                ""
+            )
+            .trim();
+
+
+    const cleanYourName =
+        YOUR_NAME
+            .toLowerCase()
+            .replace(
+                /[{}]/g,
+                ""
+            )
+            .trim();
+
+
+    return (
+        cleanAuthor ===
+        cleanYourName
+    );
+
+}
+
+
+
+/* ==========================================================
+   FORMAT AUTHOR NAME
    ========================================================== */
 
 function formatAuthorName(
@@ -1510,7 +1643,7 @@ function formatAuthorName(
 
 
     /*
-     * BibTeX format:
+     * BibTeX:
      *
      * Smith, John
      *
@@ -1541,16 +1674,20 @@ function formatAuthorName(
 
 
         return (
+
             initials(firstName) +
+
             " " +
+
             lastName
+
         );
 
     }
 
 
     /*
-     * Handle:
+     * BibTeX:
      *
      * John Smith
      */
@@ -1580,9 +1717,13 @@ function formatAuthorName(
 
 
     return (
+
         initials(firstName) +
+
         " " +
+
         lastName
+
     );
 
 }
@@ -1590,7 +1731,7 @@ function formatAuthorName(
 
 
 /* ==========================================================
-   GENERATE INITIALS
+   AUTHOR INITIALS
    ========================================================== */
 
 function initials(
@@ -1599,21 +1740,55 @@ function initials(
 
 
     return name
+
         .split(/\s+/)
+
         .filter(
-            part => part.length > 0
-        )
-        .map(
             part =>
-                part
-                    .replace(
+                part.length > 0
+        )
+
+        .map(
+            part => {
+
+                /*
+                 * Remove punctuation.
+                 */
+
+                const cleaned =
+                    part.replace(
                         /[^A-Za-zÀ-ÿ]/g,
                         ""
-                    )
-                    .charAt(0)
-                    .toUpperCase() +
-                "."
+                    );
+
+
+                if (
+                    cleaned.length === 0
+                ) {
+
+                    return "";
+
+                }
+
+
+                return (
+
+                    cleaned
+                        .charAt(0)
+                        .toUpperCase() +
+
+                    "."
+
+                );
+
+            }
         )
+
+        .filter(
+            initial =>
+                initial.length > 0
+        )
+
         .join(" ");
 
 }
@@ -1621,7 +1796,7 @@ function initials(
 
 
 /* ==========================================================
-   FORMAT TITLE
+   TITLE CLEANUP
    ========================================================== */
 
 function formatTitle(
@@ -1629,10 +1804,12 @@ function formatTitle(
 ) {
 
     return title
+
         .replace(
             /\s+/g,
             " "
         )
+
         .trim();
 
 }
@@ -1640,7 +1817,7 @@ function formatTitle(
 
 
 /* ==========================================================
-   CREATE LINKS
+   PUBLICATION LINKS
    ========================================================== */
 
 function createPublicationLinks(
@@ -1659,6 +1836,7 @@ function createPublicationLinks(
         publication.doi
     ) {
 
+
         let doi =
             publication.doi;
 
@@ -1671,11 +1849,12 @@ function createPublicationLinks(
 
 
         links.push(
+
             createLink(
                 "DOI",
-                "https://doi.org/" +
-                doi
+                "https://doi.org/" + doi
             )
+
         );
 
     }
@@ -1690,10 +1869,12 @@ function createPublicationLinks(
     ) {
 
         links.push(
+
             createLink(
                 "PDF",
                 publication.pdf
             )
+
         );
 
     }
@@ -1708,10 +1889,12 @@ function createPublicationLinks(
     ) {
 
         links.push(
+
             createLink(
                 "Link",
                 publication.url
             )
+
         );
 
     }
@@ -1745,7 +1928,6 @@ function createPublicationLinks(
 
 
     return container;
-
 }
 
 
@@ -1783,7 +1965,6 @@ function createLink(
 
 
     return link;
-
 }
 
 
@@ -1808,12 +1989,12 @@ function escapeHTML(
 
 
     return div.innerHTML;
-
 }
+
 
 </script>
 
 
 </body>
+
 </html>
-```
