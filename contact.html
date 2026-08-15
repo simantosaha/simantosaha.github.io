@@ -123,8 +123,7 @@
             border-bottom:
                 4px solid transparent;
 
-            transition:
-                0.2s ease;
+            transition: 0.2s ease;
         }
 
 
@@ -192,25 +191,237 @@
 
             max-width: 800px;
 
-            margin-bottom: 45px;
+            margin-bottom: 40px;
         }
 
 
 
         /* =====================================================
-           CONTACT LAYOUT
+           CONTACT FORM
+           ===================================================== */
+
+        .contact-form-container {
+
+            background:
+                var(--light-grey);
+
+            border:
+                1px solid var(--border);
+
+            border-top:
+                5px solid var(--sydney-blue);
+
+            padding:
+                35px;
+
+            margin-bottom:
+                55px;
+        }
+
+
+        .form-title {
+
+            color:
+                var(--sydney-blue);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                1.65rem;
+
+            margin:
+                0 0 8px;
+        }
+
+
+        .form-description {
+
+            color:
+                var(--muted);
+
+            margin:
+                0 0 30px;
+
+            font-size:
+                0.95rem;
+        }
+
+
+        .form-group {
+
+            margin-bottom:
+                22px;
+        }
+
+
+        .form-group label {
+
+            display:
+                block;
+
+            color:
+                var(--sydney-blue);
+
+            font-size:
+                0.85rem;
+
+            font-weight:
+                bold;
+
+            margin-bottom:
+                7px;
+        }
+
+
+        .required {
+
+            color:
+                #A51C30;
+        }
+
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+
+            width: 100%;
+
+            padding:
+                12px 14px;
+
+            border:
+                1px solid var(--border);
+
+            background:
+                var(--white);
+
+            color:
+                var(--text);
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size:
+                0.95rem;
+
+            border-radius:
+                0;
+
+            transition:
+                border-color 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+
+            outline:
+                none;
+
+            border-color:
+                var(--sydney-blue);
+
+            box-shadow:
+                0 0 0 2px rgba(11, 60, 93, 0.12);
+        }
+
+
+        .form-group textarea {
+
+            min-height:
+                170px;
+
+            resize:
+                vertical;
+        }
+
+
+        .form-group select {
+
+            cursor:
+                pointer;
+        }
+
+
+        .form-help {
+
+            color:
+                var(--muted);
+
+            font-size:
+                0.78rem;
+
+            margin-top:
+                5px;
+        }
+
+
+        .submit-button {
+
+            background:
+                var(--sydney-blue);
+
+            color:
+                white;
+
+            border:
+                2px solid var(--sydney-blue);
+
+            padding:
+                12px 28px;
+
+            font-size:
+                0.9rem;
+
+            font-weight:
+                bold;
+
+            cursor:
+                pointer;
+
+            transition:
+                0.2s ease;
+        }
+
+
+        .submit-button:hover {
+
+            background:
+                var(--sydney-gold);
+
+            border-color:
+                var(--sydney-gold);
+
+            color:
+                var(--sydney-dark-blue);
+        }
+
+
+
+        /* =====================================================
+           CONTACT INFORMATION
            ===================================================== */
 
         .contact-grid {
 
-            display: grid;
+            display:
+                grid;
 
             grid-template-columns:
                 1fr 1fr;
 
-            gap: 25px;
+            gap:
+                25px;
 
-            margin-bottom: 50px;
+            margin-bottom:
+                50px;
         }
 
 
@@ -271,31 +482,6 @@
         }
 
 
-        .contact-card a {
-
-            color:
-                var(--sydney-blue);
-
-            text-decoration:
-                none;
-
-            font-weight:
-                600;
-        }
-
-
-        .contact-card a:hover {
-
-            color:
-                var(--sydney-gold);
-        }
-
-
-
-        /* =====================================================
-           CONTACT DETAILS
-           ===================================================== */
-
         .contact-details {
 
             list-style:
@@ -312,17 +498,10 @@
         .contact-details li {
 
             padding:
-                10px 0;
+                8px 0;
 
-            border-bottom:
-                1px solid var(--border);
-        }
-
-
-        .contact-details li:last-child {
-
-            border-bottom:
-                none;
+            color:
+                #444;
         }
 
 
@@ -335,7 +514,7 @@
                 var(--muted);
 
             font-size:
-                0.78rem;
+                0.75rem;
 
             text-transform:
                 uppercase;
@@ -345,9 +524,6 @@
 
             font-weight:
                 bold;
-
-            margin-bottom:
-                2px;
         }
 
 
@@ -449,55 +625,6 @@
 
 
         /* =====================================================
-           MESSAGE
-           ===================================================== */
-
-        .message-box {
-
-            margin-top:
-                45px;
-
-            padding:
-                25px 30px;
-
-            background:
-                var(--light-grey);
-
-            border-left:
-                5px solid var(--sydney-gold);
-        }
-
-
-        .message-box h2 {
-
-            margin:
-                0 0 8px;
-
-            color:
-                var(--sydney-blue);
-
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            font-size:
-                1.3rem;
-        }
-
-
-        .message-box p {
-
-            margin:
-                0;
-
-            color:
-                #444;
-        }
-
-
-
-        /* =====================================================
            FOOTER
            ===================================================== */
 
@@ -594,6 +721,13 @@
             }
 
 
+            .contact-form-container {
+
+                padding:
+                    25px 20px;
+            }
+
+
             .contact-grid {
 
                 grid-template-columns:
@@ -670,7 +804,7 @@
 
 
 <!-- =========================================================
-     MAIN CONTENT
+     MAIN
      ========================================================= -->
 
 <main>
@@ -695,41 +829,195 @@
 
 
     <!-- =====================================================
-         CONTACT INFORMATION
+         CONTACT FORM
+         ===================================================== -->
+
+    <div class="contact-form-container">
+
+
+        <h2 class="form-title">
+            Send Me a Message
+        </h2>
+
+
+        <p class="form-description">
+
+            Please use the form below to get in touch.
+            Your message will be forwarded to me directly.
+
+        </p>
+
+
+        <!--
+        ======================================================
+        FORMSPREE
+
+        Replace YOUR_FORM_ID with the form ID provided by
+        Formspree.
+
+        Example:
+
+        https://formspree.io/f/abcdwxyz
+
+        ======================================================
+        -->
+
+        <form
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST"
+        >
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label for="name">
+
+                    Name
+                    <span class="required">*</span>
+
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+
+                    Email
+                    <span class="required">*</span>
+
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="your.email@example.com"
+                    required
+                >
+
+                <div class="form-help">
+
+                    Please provide an email address so I can
+                    respond to your message.
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SUBJECT -->
+
+            <div class="form-group">
+
+                <label for="subject">
+
+                    Subject
+                    <span class="required">*</span>
+
+                </label>
+
+                <select
+                    id="subject"
+                    name="subject"
+                    required
+                >
+
+                    <option value="">
+                        Please select
+                    </option>
+
+                    <option value="Research Collaboration">
+                        Research Collaboration
+                    </option>
+
+                    <option value="Research Enquiry">
+                        Research Enquiry
+                    </option>
+
+                    <option value="Publication">
+                        Publication
+                    </option>
+
+                    <option value="Student Enquiry">
+                        Student Enquiry
+                    </option>
+
+                    <option value="Professional Opportunity">
+                        Professional Opportunity
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-group">
+
+                <label for="message">
+
+                    Message
+                    <span class="required">*</span>
+
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Please enter your message..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="submit-button"
+            >
+
+                Send Message
+
+            </button>
+
+
+        </form>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         AFFILIATION
          ===================================================== -->
 
     <div class="contact-grid">
 
-
-        <!-- EMAIL -->
-
-        <div class="contact-card">
-
-            <h2>
-                Email
-            </h2>
-
-            <ul class="contact-details">
-
-                <li>
-
-                    <span class="contact-label">
-                        University Email
-                    </span>
-
-                    <a href="mailto:your.name@sydney.edu.au">
-                        your.name@sydney.edu.au
-                    </a>
-
-                </li>
-
-            </ul>
-
-        </div>
-
-
-
-        <!-- AFFILIATION -->
 
         <div class="contact-card">
 
@@ -766,8 +1054,6 @@
 
 
 
-        <!-- OFFICE -->
-
         <div class="contact-card">
 
             <h2>
@@ -803,8 +1089,6 @@
 
 
 
-        <!-- MAILING ADDRESS -->
-
         <div class="contact-card">
 
             <h2>
@@ -812,6 +1096,7 @@
             </h2>
 
             <p>
+
                 The University of Sydney
                 <br>
                 School / Faculty Name
@@ -819,9 +1104,11 @@
                 Camperdown NSW 2006
                 <br>
                 Australia
+
             </p>
 
         </div>
+
 
     </div>
 
@@ -843,7 +1130,9 @@
                 border-bottom: 2px solid var(--border);
             "
         >
+
             Academic & Professional Profiles
+
         </h2>
 
 
@@ -935,29 +1224,6 @@
         </div>
 
     </section>
-
-
-
-    <!-- =====================================================
-         RESEARCH ENQUIRIES
-         ===================================================== -->
-
-    <div class="message-box">
-
-        <h2>
-            Research Enquiries
-        </h2>
-
-        <p>
-
-            If you are interested in discussing research
-            collaboration or a potential project, please
-            contact me by email with a brief description
-            of your enquiry.
-
-        </p>
-
-    </div>
 
 
 </main>
