@@ -122,7 +122,8 @@
             border-bottom:
                 4px solid transparent;
 
-            transition: 0.2s ease;
+            transition:
+                0.2s ease;
         }
 
 
@@ -241,12 +242,12 @@
             display: grid;
 
             grid-template-columns:
-                105px 1fr;
+                115px 1fr;
 
-            gap: 22px;
+            gap: 25px;
 
             padding:
-                20px 10px;
+                22px 10px;
 
             border-bottom:
                 1px solid var(--border);
@@ -265,7 +266,7 @@
 
 
         /* =====================================================
-           YEAR + TYPE MARKER
+           YEAR + TYPE
            ===================================================== */
 
         .publication-marker {
@@ -285,7 +286,7 @@
             color:
                 var(--sydney-blue);
 
-            font-size: 1rem;
+            font-size: 1.05rem;
 
             font-weight: bold;
 
@@ -300,26 +301,17 @@
             color:
                 var(--muted);
 
-            font-size: 0.72rem;
+            font-size: 0.68rem;
 
             font-weight: bold;
 
             text-transform: uppercase;
 
-            letter-spacing: 0.04em;
+            letter-spacing: 0.05em;
 
-            line-height: 1.3;
+            line-height: 1.4;
 
-            margin-top: 4px;
-        }
-
-
-        .publication-type::before {
-
-            content: "• ";
-
-            color:
-                var(--sydney-gold);
+            margin-top: 5px;
         }
 
 
@@ -335,12 +327,6 @@
             font-size: 0.98rem;
 
             line-height: 1.7;
-        }
-
-
-        .citation {
-
-            margin: 0;
         }
 
 
@@ -503,9 +489,9 @@
             .publication {
 
                 grid-template-columns:
-                    75px 1fr;
+                    85px 1fr;
 
-                gap: 12px;
+                gap: 15px;
 
                 padding:
                     18px 5px;
@@ -520,7 +506,7 @@
 
             .publication-type {
 
-                font-size: 0.65rem;
+                font-size: 0.62rem;
             }
 
         }
@@ -660,21 +646,13 @@
  * Example:
  *
  * const YOUR_NAME = "Smith, John";
- *
- * If your BibTeX says:
- *
- * author = {Smith, John and Jones, Jane}
- *
- * then use:
- *
- * const YOUR_NAME = "Smith, John";
  */
 
 const YOUR_NAME = "Your Name";
 
 
 /*
- * Location of the BibTeX database.
+ * BibTeX database.
  */
 
 const BIB_FILE = "publications.bib";
@@ -682,7 +660,7 @@ const BIB_FILE = "publications.bib";
 
 
 /* ==========================================================
-   LOAD BIBTEX
+   LOAD PUBLICATIONS
    ========================================================== */
 
 fetch(BIB_FILE)
@@ -934,7 +912,7 @@ function cleanBibValue(value) {
 
 
     /*
-     * BibTeX uses -- for an en dash.
+     * Convert BibTeX en-dash notation.
      */
 
     value =
@@ -957,7 +935,7 @@ function cleanBibValue(value) {
 
 
 /* ==========================================================
-   DISPLAY ALL PUBLICATIONS
+   DISPLAY PUBLICATIONS
    ========================================================== */
 
 function displayPublications(
@@ -981,8 +959,7 @@ function displayPublications(
 
 
             /*
-             * Primary sort:
-             * newest year first.
+             * Newest first.
              */
 
             if (
@@ -995,8 +972,8 @@ function displayPublications(
 
 
             /*
-             * Secondary sort:
-             * alphabetical by title.
+             * Within the same year,
+             * sort alphabetically by title.
              */
 
             return (
@@ -1057,7 +1034,7 @@ function renderPublications(
 
 
             /*
-             * Create entry.
+             * Create publication item.
              */
 
             const item =
@@ -1170,7 +1147,7 @@ function renderPublications(
 
 
             /*
-             * Add everything to the entry.
+             * Add marker and citation.
              */
 
             item.appendChild(
@@ -1195,7 +1172,7 @@ function renderPublications(
 
 
 /* ==========================================================
-   PUBLICATION TYPE
+   DETERMINE PUBLICATION TYPE
    ========================================================== */
 
 function getPublicationType(
@@ -1230,11 +1207,6 @@ function getPublicationType(
 
         case "misc":
 
-            /*
-             * If it has a booktitle, treat it
-             * as a conference publication.
-             */
-
             if (
                 publication.booktitle
             ) {
@@ -1257,7 +1229,7 @@ function getPublicationType(
 
 
 /* ==========================================================
-   IEEE CITATION
+   FORMAT IEEE CITATION
    ========================================================== */
 
 function formatIEEE(
@@ -1342,10 +1314,6 @@ function formatIEEE(
         }
 
 
-        /*
-         * Volume.
-         */
-
         if (
             publication.volume
         ) {
@@ -1360,10 +1328,6 @@ function formatIEEE(
 
         }
 
-
-        /*
-         * Issue.
-         */
 
         if (
             publication.number
@@ -1380,10 +1344,6 @@ function formatIEEE(
         }
 
 
-        /*
-         * Pages.
-         */
-
         if (
             publication.pages
         ) {
@@ -1398,10 +1358,6 @@ function formatIEEE(
 
         }
 
-
-        /*
-         * Month.
-         */
 
         if (
             publication.month
@@ -1422,7 +1378,7 @@ function formatIEEE(
 
     /*
      * ------------------------------------------
-     * CONFERENCE PAPER / ABSTRACT
+     * CONFERENCE PAPER
      * ------------------------------------------
      */
 
@@ -1448,10 +1404,6 @@ function formatIEEE(
         }
 
 
-        /*
-         * Conference location.
-         */
-
         if (
             publication.address
         ) {
@@ -1466,10 +1418,6 @@ function formatIEEE(
 
         }
 
-
-        /*
-         * Pages.
-         */
 
         if (
             publication.pages
@@ -1612,16 +1560,7 @@ function formatAuthors(
 
 
     /*
-     * IEEE author formatting:
-     *
-     * One author:
-     * J. Smith
-     *
-     * Two authors:
-     * J. Smith and A. Jones
-     *
-     * Three or more:
-     * J. Smith, A. Jones, and B. Brown
+     * IEEE author formatting.
      */
 
     if (
@@ -1669,7 +1608,7 @@ function formatAuthors(
 
 
 /* ==========================================================
-   CHECK WHETHER AUTHOR IS YOU
+   CHECK YOUR NAME
    ========================================================== */
 
 function isYourName(
@@ -1726,7 +1665,7 @@ function formatAuthorName(
 
 
     /*
-     * BibTeX format:
+     * BibTeX:
      *
      * Smith, John
      *
@@ -1769,8 +1708,6 @@ function formatAuthorName(
 
 
     /*
-     * Handle:
-     *
      * John Smith
      */
 
@@ -1812,7 +1749,7 @@ function formatAuthorName(
 
 
 /* ==========================================================
-   AUTHOR INITIALS
+   INITIALS
    ========================================================== */
 
 function initials(
@@ -1874,7 +1811,7 @@ function initials(
 
 
 /* ==========================================================
-   TITLE
+   TITLE FORMATTING
    ========================================================== */
 
 function formatTitle(
@@ -1907,7 +1844,7 @@ function createPublicationLinks(
 
 
     /*
-     * DOI.
+     * DOI
      */
 
     if (
@@ -1939,7 +1876,7 @@ function createPublicationLinks(
 
 
     /*
-     * PDF.
+     * PDF
      */
 
     if (
@@ -1959,7 +1896,7 @@ function createPublicationLinks(
 
 
     /*
-     * General URL.
+     * General URL
      */
 
     if (
