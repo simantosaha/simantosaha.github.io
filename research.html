@@ -31,7 +31,9 @@
             line-height: 1.7;
         }
 
-        /* Header */
+        /* =========================
+           HEADER
+           ========================= */
 
         header {
             background: var(--sydney-blue);
@@ -82,10 +84,12 @@
             border-bottom-color: var(--sydney-gold);
         }
 
-        /* Main */
+        /* =========================
+           MAIN
+           ========================= */
 
         main {
-            max-width: 950px;
+            max-width: 1000px;
             margin: 60px auto;
             padding: 0 30px;
         }
@@ -107,65 +111,101 @@
         .intro {
             font-size: 1.08rem;
             color: #444;
-            max-width: 800px;
-            margin-bottom: 55px;
+            max-width: 850px;
+            margin-bottom: 65px;
         }
 
-        /* Research areas */
+        /* =========================
+           RESEARCH TOPICS
+           ========================= */
 
-        h2 {
+        .research-topic {
+            display: flex;
+            align-items: center;
+            gap: 45px;
+            margin-bottom: 65px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .research-topic:last-child {
+            border-bottom: none;
+        }
+
+        /* Alternate image position */
+
+        .research-topic.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .research-image {
+            width: 42%;
+            flex-shrink: 0;
+        }
+
+        .research-image img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 3px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .research-content {
+            flex: 1;
+        }
+
+        .research-content h2 {
             color: var(--sydney-blue);
             font-family: Georgia, "Times New Roman", serif;
             font-size: 1.8rem;
-            margin-top: 50px;
-            margin-bottom: 25px;
+            margin: 0 0 15px;
         }
 
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+        .research-content h2::after {
+            content: "";
+            display: block;
+            width: 45px;
+            height: 3px;
+            background: var(--sydney-gold);
+            margin-top: 12px;
         }
 
-        .research-card {
-            padding: 25px;
-            background: var(--light-grey);
-            border-left: 4px solid var(--sydney-blue);
-            transition: 0.2s ease;
+        .research-content p {
+            color: #4B4B4B;
+            margin-bottom: 15px;
         }
 
-        .research-card:hover {
-            border-left-color: var(--sydney-gold);
-            transform: translateY(-2px);
-        }
-
-        .research-card h3 {
-            margin-top: 0;
-            margin-bottom: 12px;
+        .research-link {
             color: var(--sydney-blue);
-            font-size: 1.2rem;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .research-card p {
-            color: #555;
-            margin-bottom: 0;
+        .research-link:hover {
+            color: var(--sydney-gold);
         }
 
-        /* Current research */
+        /* =========================
+           CURRENT RESEARCH
+           ========================= */
 
         .current-research {
-            margin-top: 50px;
+            margin-top: 20px;
             padding: 30px;
-            border: 1px solid var(--border);
-            border-top: 4px solid var(--sydney-gold);
-            background: white;
+            background: var(--light-grey);
+            border-left: 5px solid var(--sydney-gold);
         }
 
         .current-research h2 {
+            color: var(--sydney-blue);
+            font-family: Georgia, "Times New Roman", serif;
             margin-top: 0;
         }
 
-        /* Footer */
+        /* =========================
+           FOOTER
+           ========================= */
 
         footer {
             background: var(--sydney-dark-blue);
@@ -180,7 +220,9 @@
             color: var(--sydney-gold);
         }
 
-        /* Mobile */
+        /* =========================
+           MOBILE
+           ========================= */
 
         @media (max-width: 750px) {
 
@@ -212,8 +254,19 @@
                 font-size: 2.2rem;
             }
 
-            .research-grid {
-                grid-template-columns: 1fr;
+            .research-topic,
+            .research-topic.reverse {
+                flex-direction: column;
+                gap: 25px;
+                align-items: stretch;
+            }
+
+            .research-image {
+                width: 100%;
+            }
+
+            .research-image img {
+                height: 220px;
             }
         }
     </style>
@@ -221,7 +274,9 @@
 
 <body>
 
-    <!-- Header -->
+    <!-- =========================
+         HEADER
+         ========================= -->
 
     <header>
         <div class="nav-container">
@@ -243,7 +298,9 @@
     </header>
 
 
-    <!-- Main content -->
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
 
     <main>
 
@@ -259,48 +316,151 @@
         </p>
 
 
-        <!-- Research Areas -->
+        <!-- =========================
+             RESEARCH TOPIC 1
+             ========================= -->
 
-        <h2>Research Areas</h2>
+        <section class="research-topic">
 
-        <div class="research-grid">
-
-            <div class="research-card">
-                <h3>Research Area One</h3>
-                <p>
-                    Briefly describe your first research area and the key
-                    questions you investigate.
-                </p>
+            <div class="research-image">
+                <img
+                    src="images/research1.jpg"
+                    alt="Research Topic 1"
+                >
             </div>
 
-            <div class="research-card">
-                <h3>Research Area Two</h3>
+            <div class="research-content">
+
+                <h2>Research Topic One</h2>
+
                 <p>
-                    Briefly describe your second research area and its
-                    significance.
+                    Describe your first research area here. Explain the main
+                    question you are investigating, the methods you use, and
+                    why this research is important.
                 </p>
+
+                <p>
+                    You can briefly mention your current projects,
+                    collaborations, datasets, experiments, or applications.
+                </p>
+
+                <a href="#" class="research-link">
+                    Learn more →
+                </a>
+
             </div>
 
-            <div class="research-card">
-                <h3>Research Area Three</h3>
-                <p>
-                    Briefly describe your third research area, methodology,
-                    or application.
-                </p>
+        </section>
+
+
+        <!-- =========================
+             RESEARCH TOPIC 2
+             ========================= -->
+
+        <section class="research-topic reverse">
+
+            <div class="research-image">
+                <img
+                    src="images/research2.jpg"
+                    alt="Research Topic 2"
+                >
             </div>
 
-            <div class="research-card">
-                <h3>Research Area Four</h3>
+            <div class="research-content">
+
+                <h2>Research Topic Two</h2>
+
                 <p>
-                    Add another research theme, interdisciplinary interest,
-                    or emerging area of work.
+                    Describe your second research area here. This section can
+                    focus on a different research question, methodology, or
+                    application.
                 </p>
+
+                <p>
+                    Keep the description concise and highlight what makes
+                    this area of research interesting or significant.
+                </p>
+
+                <a href="#" class="research-link">
+                    Learn more →
+                </a>
+
             </div>
 
-        </div>
+        </section>
 
 
-        <!-- Current Research -->
+        <!-- =========================
+             RESEARCH TOPIC 3
+             ========================= -->
+
+        <section class="research-topic">
+
+            <div class="research-image">
+                <img
+                    src="images/research3.jpg"
+                    alt="Research Topic 3"
+                >
+            </div>
+
+            <div class="research-content">
+
+                <h2>Research Topic Three</h2>
+
+                <p>
+                    Describe your third research area here. You can discuss
+                    your approach, key research questions, or practical
+                    applications.
+                </p>
+
+                <p>
+                    This could also be used for an interdisciplinary research
+                    theme or an emerging area of your work.
+                </p>
+
+                <a href="#" class="research-link">
+                    Learn more →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESEARCH TOPIC 4
+             ========================= -->
+
+        <section class="research-topic reverse">
+
+            <div class="research-image">
+                <img
+                    src="images/research4.jpg"
+                    alt="Research Topic 4"
+                >
+            </div>
+
+            <div class="research-content">
+
+                <h2>Research Topic Four</h2>
+
+                <p>
+                    Add another research theme, project, or area of expertise
+                    here if needed.
+                </p>
+
+                <a href="#" class="research-link">
+                    Learn more →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CURRENT RESEARCH
+             ========================= -->
 
         <section class="current-research">
 
@@ -309,13 +469,8 @@
             <p>
                 I am currently working on
                 <strong>[title or short description of your current project]</strong>.
-                This project investigates [one or two sentences describing
-                the research question, approach, or expected contribution].
-            </p>
-
-            <p>
-                The broader aim of this work is to [describe the expected
-                scientific, technical, social, or practical impact].
+                This project investigates [brief description of the research
+                question and approach].
             </p>
 
         </section>
@@ -323,7 +478,9 @@
     </main>
 
 
-    <!-- Footer -->
+    <!-- =========================
+         FOOTER
+         ========================= -->
 
     <footer>
         <span class="gold">©</span> 2026 Your Name ·
