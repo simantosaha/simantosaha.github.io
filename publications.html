@@ -122,8 +122,7 @@
             border-bottom:
                 4px solid transparent;
 
-            transition:
-                0.2s ease;
+            transition: 0.2s ease;
         }
 
 
@@ -190,7 +189,7 @@
 
             max-width: 850px;
 
-            margin-bottom: 55px;
+            margin-bottom: 50px;
         }
 
 
@@ -228,51 +227,26 @@
 
 
         /* =====================================================
-           PUBLICATION SECTIONS
+           PUBLICATION LIST
            ===================================================== */
 
-        .publication-section {
+        #publications {
 
-            margin-bottom: 70px;
+            width: 100%;
         }
 
-
-        .publication-section h2 {
-
-            color: var(--sydney-blue);
-
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
-
-            font-size: 1.9rem;
-
-            margin-bottom: 30px;
-
-            padding-bottom: 12px;
-
-            border-bottom:
-                2px solid var(--sydney-gold);
-        }
-
-
-
-        /* =====================================================
-           PUBLICATION ENTRY
-           ===================================================== */
 
         .publication {
 
             display: grid;
 
             grid-template-columns:
-                70px 1fr;
+                105px 1fr;
 
-            gap: 20px;
+            gap: 22px;
 
             padding:
-                18px 10px;
+                20px 10px;
 
             border-bottom:
                 1px solid var(--border);
@@ -289,24 +263,70 @@
         }
 
 
-        /*
-         * Year shown as the marker.
-         */
+
+        /* =====================================================
+           YEAR + TYPE MARKER
+           ===================================================== */
+
+        .publication-marker {
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: flex-start;
+
+            padding-top: 2px;
+        }
+
 
         .publication-year {
 
             color:
                 var(--sydney-blue);
 
-            font-weight: bold;
-
             font-size: 1rem;
 
-            padding-top: 2px;
+            font-weight: bold;
+
+            line-height: 1.3;
 
             white-space: nowrap;
         }
 
+
+        .publication-type {
+
+            color:
+                var(--muted);
+
+            font-size: 0.72rem;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.04em;
+
+            line-height: 1.3;
+
+            margin-top: 4px;
+        }
+
+
+        .publication-type::before {
+
+            content: "• ";
+
+            color:
+                var(--sydney-gold);
+        }
+
+
+
+        /* =====================================================
+           CITATION
+           ===================================================== */
 
         .publication-text {
 
@@ -314,7 +334,7 @@
 
             font-size: 0.98rem;
 
-            line-height: 1.65;
+            line-height: 1.7;
         }
 
 
@@ -381,7 +401,7 @@
 
 
         /* =====================================================
-           EMPTY SECTION
+           EMPTY STATE
            ===================================================== */
 
         .empty-message {
@@ -468,6 +488,9 @@
             main {
 
                 margin-top: 40px;
+
+                padding:
+                    0 20px;
             }
 
 
@@ -480,9 +503,9 @@
             .publication {
 
                 grid-template-columns:
-                    55px 1fr;
+                    75px 1fr;
 
-                gap: 10px;
+                gap: 12px;
 
                 padding:
                     18px 5px;
@@ -491,7 +514,13 @@
 
             .publication-text {
 
-                font-size: 0.94rem;
+                font-size: 0.93rem;
+            }
+
+
+            .publication-type {
+
+                font-size: 0.65rem;
             }
 
         }
@@ -573,8 +602,8 @@
 
     <p class="intro">
 
-        My publications include peer-reviewed journal articles
-        and conference papers and abstracts. Publications are
+        My publications include peer-reviewed journal articles,
+        conference papers, and conference abstracts. They are
         listed in reverse chronological order.
 
     </p>
@@ -588,42 +617,11 @@
     </div>
 
 
-
     <!-- =====================================================
-         JOURNAL ARTICLES
+         ALL PUBLICATIONS
          ===================================================== -->
 
-    <section class="publication-section">
-
-
-        <h2>
-            Journal Articles
-        </h2>
-
-
-        <div id="journal-articles"></div>
-
-
-    </section>
-
-
-
-    <!-- =====================================================
-         CONFERENCE PAPERS / ABSTRACTS
-         ===================================================== -->
-
-    <section class="publication-section">
-
-
-        <h2>
-            Conference Papers / Abstracts
-        </h2>
-
-
-        <div id="conference-papers"></div>
-
-
-    </section>
+    <div id="publications"></div>
 
 
 </main>
@@ -657,20 +655,17 @@
 
 
 /*
- * Put your name here exactly as it appears
- * in publications.bib.
+ * Enter your name exactly as it appears in publications.bib.
  *
- * Examples:
+ * Example:
  *
- * "Smith, John"
+ * const YOUR_NAME = "Smith, John";
  *
- * "John Smith"
- *
- * If your BibTeX contains:
+ * If your BibTeX says:
  *
  * author = {Smith, John and Jones, Jane}
  *
- * use:
+ * then use:
  *
  * const YOUR_NAME = "Smith, John";
  */
@@ -679,7 +674,7 @@ const YOUR_NAME = "Your Name";
 
 
 /*
- * BibTeX file.
+ * Location of the BibTeX database.
  */
 
 const BIB_FILE = "publications.bib";
@@ -687,7 +682,7 @@ const BIB_FILE = "publications.bib";
 
 
 /* ==========================================================
-   LOAD PUBLICATIONS
+   LOAD BIBTEX
    ========================================================== */
 
 fetch(BIB_FILE)
@@ -776,7 +771,7 @@ function parseBibTeX(text) {
 
 
     /*
-     * Locate entries.
+     * Find BibTeX entries.
      */
 
     const entryRegex =
@@ -825,7 +820,7 @@ function parseBibTeX(text) {
 
 
 /* ==========================================================
-   PARSE FIELDS
+   PARSE BIBTEX FIELDS
    ========================================================== */
 
 function parseFields(body) {
@@ -867,7 +862,7 @@ function parseFields(body) {
 
 
 /* ==========================================================
-   CLEAN BIBTEX
+   CLEAN BIBTEX VALUES
    ========================================================== */
 
 function cleanBibValue(value) {
@@ -938,6 +933,10 @@ function cleanBibValue(value) {
         );
 
 
+    /*
+     * BibTeX uses -- for an en dash.
+     */
+
     value =
         value.replace(
             /--/g,
@@ -958,7 +957,7 @@ function cleanBibValue(value) {
 
 
 /* ==========================================================
-   DISPLAY PUBLICATIONS
+   DISPLAY ALL PUBLICATIONS
    ========================================================== */
 
 function displayPublications(
@@ -981,6 +980,11 @@ function displayPublications(
                 parseInt(b.year) || 0;
 
 
+            /*
+             * Primary sort:
+             * newest year first.
+             */
+
             if (
                 yearA !== yearB
             ) {
@@ -991,8 +995,8 @@ function displayPublications(
 
 
             /*
-             * Same year:
-             * alphabetically by title.
+             * Secondary sort:
+             * alphabetical by title.
              */
 
             return (
@@ -1006,50 +1010,8 @@ function displayPublications(
     );
 
 
-    /*
-     * Journal articles.
-     */
-
-    const journalArticles =
-        publications.filter(
-            publication =>
-                publication.type === "article"
-        );
-
-
-    /*
-     * Conference papers.
-     */
-
-    const conferencePapers =
-        publications.filter(
-            publication =>
-                [
-                    "inproceedings",
-                    "conference",
-                    "incollection",
-                    "misc"
-                ].includes(
-                    publication.type
-                )
-        );
-
-
-    /*
-     * Render both sections.
-     */
-
-    renderList(
-        journalArticles,
-        "journal-articles",
-        "journal"
-    );
-
-
-    renderList(
-        conferencePapers,
-        "conference-papers",
-        "conference"
+    renderPublications(
+        publications
     );
 
 }
@@ -1057,19 +1019,17 @@ function displayPublications(
 
 
 /* ==========================================================
-   RENDER PUBLICATION LIST
+   RENDER PUBLICATIONS
    ========================================================== */
 
-function renderList(
-    publications,
-    containerID,
-    publicationType
+function renderPublications(
+    publications
 ) {
 
 
     const container =
         document.getElementById(
-            containerID
+            "publications"
         );
 
 
@@ -1096,9 +1056,13 @@ function renderList(
         publication => {
 
 
+            /*
+             * Create entry.
+             */
+
             const item =
                 document.createElement(
-                    "div"
+                    "article"
                 );
 
 
@@ -1108,9 +1072,19 @@ function renderList(
 
             /*
              * ------------------------------------------
-             * YEAR MARKER
+             * YEAR + TYPE
              * ------------------------------------------
              */
+
+            const marker =
+                document.createElement(
+                    "div"
+                );
+
+
+            marker.className =
+                "publication-marker";
+
 
             const year =
                 document.createElement(
@@ -1124,6 +1098,32 @@ function renderList(
 
             year.textContent =
                 publication.year || "";
+
+
+            const type =
+                document.createElement(
+                    "div"
+                );
+
+
+            type.className =
+                "publication-type";
+
+
+            type.textContent =
+                getPublicationType(
+                    publication
+                );
+
+
+            marker.appendChild(
+                year
+            );
+
+
+            marker.appendChild(
+                type
+            );
 
 
             /*
@@ -1144,8 +1144,7 @@ function renderList(
 
             text.innerHTML =
                 formatIEEE(
-                    publication,
-                    publicationType
+                    publication
                 );
 
 
@@ -1170,8 +1169,12 @@ function renderList(
             }
 
 
+            /*
+             * Add everything to the entry.
+             */
+
             item.appendChild(
-                year
+                marker
             );
 
 
@@ -1192,12 +1195,73 @@ function renderList(
 
 
 /* ==========================================================
-   IEEE CITATION FORMAT
+   PUBLICATION TYPE
+   ========================================================== */
+
+function getPublicationType(
+    publication
+) {
+
+
+    switch (
+        publication.type
+    ) {
+
+
+        case "article":
+
+            return "Journal Article";
+
+
+        case "inproceedings":
+
+            return "Conference Paper";
+
+
+        case "conference":
+
+            return "Conference Paper";
+
+
+        case "incollection":
+
+            return "Conference Paper";
+
+
+        case "misc":
+
+            /*
+             * If it has a booktitle, treat it
+             * as a conference publication.
+             */
+
+            if (
+                publication.booktitle
+            ) {
+
+                return "Conference Abstract";
+
+            }
+
+            return "Publication";
+
+
+        default:
+
+            return "Publication";
+
+    }
+
+}
+
+
+
+/* ==========================================================
+   IEEE CITATION
    ========================================================== */
 
 function formatIEEE(
-    publication,
-    publicationType
+    publication
 ) {
 
 
@@ -1257,7 +1321,7 @@ function formatIEEE(
      */
 
     if (
-        publicationType === "journal"
+        publication.type === "article"
     ) {
 
 
@@ -1358,7 +1422,7 @@ function formatIEEE(
 
     /*
      * ------------------------------------------
-     * CONFERENCE PAPER
+     * CONFERENCE PAPER / ABSTRACT
      * ------------------------------------------
      */
 
@@ -1385,7 +1449,7 @@ function formatIEEE(
 
 
         /*
-         * Location.
+         * Conference location.
          */
 
         if (
@@ -1425,19 +1489,24 @@ function formatIEEE(
 
 
     /*
-     * Final period.
+     * ------------------------------------------
+     * FINAL PERIOD
+     * ------------------------------------------
      */
 
     citation += ".";
 
 
     /*
-     * DOI is included in the citation.
+     * ------------------------------------------
+     * DOI
+     * ------------------------------------------
      */
 
     if (
         publication.doi
     ) {
+
 
         let doi =
             publication.doi;
@@ -1456,13 +1525,17 @@ function formatIEEE(
 
             '<a href="https://doi.org/' +
 
-            encodeURIComponent(doi) +
+            encodeURIComponent(
+                doi
+            ) +
 
             '" target="_blank" ' +
 
             'rel="noopener noreferrer">' +
 
-            escapeHTML(doi) +
+            escapeHTML(
+                doi
+            ) +
 
             "</a>.";
 
@@ -1506,8 +1579,7 @@ function formatAuthors(
 
 
                 /*
-                 * Determine whether this is
-                 * the website owner's name.
+                 * Bold your name.
                  */
 
                 if (
@@ -1540,9 +1612,16 @@ function formatAuthors(
 
 
     /*
-     * IEEE author list:
+     * IEEE author formatting:
      *
-     * A. Author, B. Author, and C. Author
+     * One author:
+     * J. Smith
+     *
+     * Two authors:
+     * J. Smith and A. Jones
+     *
+     * Three or more:
+     * J. Smith, A. Jones, and B. Brown
      */
 
     if (
@@ -1559,9 +1638,13 @@ function formatAuthors(
     ) {
 
         return (
+
             formatted[0] +
+
             " and " +
+
             formatted[1]
+
         );
 
     }
@@ -1586,7 +1669,7 @@ function formatAuthors(
 
 
 /* ==========================================================
-   DETERMINE YOUR NAME
+   CHECK WHETHER AUTHOR IS YOU
    ========================================================== */
 
 function isYourName(
@@ -1643,7 +1726,7 @@ function formatAuthorName(
 
 
     /*
-     * BibTeX:
+     * BibTeX format:
      *
      * Smith, John
      *
@@ -1651,7 +1734,6 @@ function formatAuthorName(
      *
      * J. Smith
      */
-
 
     if (
         author.includes(",")
@@ -1687,11 +1769,10 @@ function formatAuthorName(
 
 
     /*
-     * BibTeX:
+     * Handle:
      *
      * John Smith
      */
-
 
     const parts =
         author
@@ -1751,9 +1832,6 @@ function initials(
         .map(
             part => {
 
-                /*
-                 * Remove punctuation.
-                 */
 
                 const cleaned =
                     part.replace(
@@ -1796,7 +1874,7 @@ function initials(
 
 
 /* ==========================================================
-   TITLE CLEANUP
+   TITLE
    ========================================================== */
 
 function formatTitle(
@@ -1817,7 +1895,7 @@ function formatTitle(
 
 
 /* ==========================================================
-   PUBLICATION LINKS
+   CREATE PUBLICATION LINKS
    ========================================================== */
 
 function createPublicationLinks(
