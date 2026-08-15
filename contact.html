@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Your Name</title>
+
+    <style>
+
+        :root {
+            --sydney-blue: #0B3C5D;
+            --sydney-dark-blue: #062C43;
+            --sydney-gold: #E5A823;
+
+            --text: #222222;
+            --muted: #5F6368;
+            --light-grey: #F5F6F7;
+            --border: #D9DDE1;
+            --white: #FFFFFF;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            color: var(--text);
+
+            background: var(--white);
+
+            line-height: 1.7;
+        }
+
+
+
+        /* =====================================================
+           HEADER
+           ===================================================== */
+
+        header {
+            background: var(--sydney-blue);
+
+            border-bottom:
+                5px solid var(--sydney-gold);
+        }
+
+
+        .nav-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            min-height: 75px;
+
+            padding: 0 25px;
+        }
+
+
+        .site-name {
+
+            color: white;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 1.35rem;
+
+            font-weight: bold;
+
+            text-decoration: none;
+        }
+
+
+        .site-subtitle {
+
+            color: #DCE8EF;
+
+            font-size: 0.85rem;
+
+            margin-left: 8px;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+        }
+
+
+        .nav-links a {
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 27px 15px;
+
+            font-size: 0.95rem;
+
+            border-bottom:
+                4px solid transparent;
+
+            transition:
+                0.2s ease;
+        }
+
+
+        .nav-links a:hover,
+        .nav-links a.active {
+
+            background:
+                var(--sydney-dark-blue);
+
+            border-bottom-color:
+                var(--sydney-gold);
+        }
+
+
+
+        /* =====================================================
+           MAIN
+           ===================================================== */
+
+        main {
+
+            max-width: 950px;
+
+            margin: 60px auto;
+
+            padding: 0 30px;
+        }
+
+
+        .page-title {
+
+            color:
+                var(--sydney-blue);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 2.7rem;
+
+            margin: 0;
+        }
+
+
+        .gold-line {
+
+            width: 60px;
+
+            height: 4px;
+
+            background:
+                var(--sydney-gold);
+
+            margin:
+                20px 0 40px;
+        }
+
+
+        .intro {
+
+            color: #555;
+
+            font-size: 1.05rem;
+
+            max-width: 800px;
+
+            margin-bottom: 45px;
+        }
+
+
+
+        /* =====================================================
+           CONTACT LAYOUT
+           ===================================================== */
+
+        .contact-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 25px;
+
+            margin-bottom: 50px;
+        }
+
+
+        .contact-card {
+
+            border:
+                1px solid var(--border);
+
+            border-top:
+                4px solid var(--sydney-blue);
+
+            padding:
+                25px;
+
+            background:
+                var(--white);
+
+            transition:
+                0.2s ease;
+        }
+
+
+        .contact-card:hover {
+
+            background:
+                var(--light-grey);
+
+            border-top-color:
+                var(--sydney-gold);
+        }
+
+
+        .contact-card h2 {
+
+            color:
+                var(--sydney-blue);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                1.25rem;
+
+            margin:
+                0 0 12px;
+        }
+
+
+        .contact-card p {
+
+            margin:
+                5px 0;
+
+            color:
+                #444;
+        }
+
+
+        .contact-card a {
+
+            color:
+                var(--sydney-blue);
+
+            text-decoration:
+                none;
+
+            font-weight:
+                600;
+        }
+
+
+        .contact-card a:hover {
+
+            color:
+                var(--sydney-gold);
+        }
+
+
+
+        /* =====================================================
+           CONTACT DETAILS
+           ===================================================== */
+
+        .contact-details {
+
+            list-style:
+                none;
+
+            padding:
+                0;
+
+            margin:
+                0;
+        }
+
+
+        .contact-details li {
+
+            padding:
+                10px 0;
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        .contact-details li:last-child {
+
+            border-bottom:
+                none;
+        }
+
+
+        .contact-label {
+
+            display:
+                block;
+
+            color:
+                var(--muted);
+
+            font-size:
+                0.78rem;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                0.05em;
+
+            font-weight:
+                bold;
+
+            margin-bottom:
+                2px;
+        }
+
+
+
+        /* =====================================================
+           ONLINE PROFILES
+           ===================================================== */
+
+        .profiles {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap:
+                15px;
+        }
+
+
+        .profile-link {
+
+            display:
+                block;
+
+            padding:
+                15px 18px;
+
+            border:
+                1px solid var(--border);
+
+            color:
+                var(--sydney-blue);
+
+            text-decoration:
+                none;
+
+            font-weight:
+                bold;
+
+            background:
+                var(--white);
+
+            transition:
+                0.2s ease;
+        }
+
+
+        .profile-link:hover {
+
+            background:
+                var(--sydney-blue);
+
+            color:
+                white;
+
+            border-color:
+                var(--sydney-blue);
+        }
+
+
+        .profile-name {
+
+            display:
+                block;
+
+            font-size:
+                0.95rem;
+        }
+
+
+        .profile-description {
+
+            display:
+                block;
+
+            font-size:
+                0.78rem;
+
+            font-weight:
+                normal;
+
+            color:
+                var(--muted);
+
+            margin-top:
+                3px;
+        }
+
+
+        .profile-link:hover
+        .profile-description {
+
+            color:
+                #DCE8EF;
+        }
+
+
+
+        /* =====================================================
+           MESSAGE
+           ===================================================== */
+
+        .message-box {
+
+            margin-top:
+                45px;
+
+            padding:
+                25px 30px;
+
+            background:
+                var(--light-grey);
+
+            border-left:
+                5px solid var(--sydney-gold);
+        }
+
+
+        .message-box h2 {
+
+            margin:
+                0 0 8px;
+
+            color:
+                var(--sydney-blue);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size:
+                1.3rem;
+        }
+
+
+        .message-box p {
+
+            margin:
+                0;
+
+            color:
+                #444;
+        }
+
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        footer {
+
+            background:
+                var(--sydney-dark-blue);
+
+            color:
+                #DCE8EF;
+
+            margin-top:
+                90px;
+
+            padding:
+                30px;
+
+            text-align:
+                center;
+
+            font-size:
+                0.9rem;
+        }
+
+
+        footer .gold {
+
+            color:
+                var(--sydney-gold);
+        }
+
+
+
+        /* =====================================================
+           MOBILE
+           ===================================================== */
+
+        @media (max-width: 750px) {
+
+            .nav-container {
+
+                flex-direction:
+                    column;
+
+                padding:
+                    15px 10px 0;
+            }
+
+
+            .site-name {
+
+                margin-bottom:
+                    10px;
+            }
+
+
+            .nav-links {
+
+                width:
+                    100%;
+
+                justify-content:
+                    center;
+
+                flex-wrap:
+                    wrap;
+            }
+
+
+            .nav-links a {
+
+                padding:
+                    12px 10px;
+
+                font-size:
+                    0.9rem;
+            }
+
+
+            main {
+
+                margin-top:
+                    40px;
+
+                padding:
+                    0 20px;
+            }
+
+
+            .page-title {
+
+                font-size:
+                    2.2rem;
+            }
+
+
+            .contact-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .profiles {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+
+    <div class="nav-container">
+
+
+        <a href="index.html"
+           class="site-name">
+
+            Your Name
+
+            <span class="site-subtitle">
+                Academic Website
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="research.html">
+                Research
+            </a>
+
+            <a href="publications.html">
+                Publications
+            </a>
+
+            <a href="cv.html">
+                CV
+            </a>
+
+            <a href="contact.html"
+               class="active">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+     ========================================================= -->
+
+<main>
+
+
+    <h1 class="page-title">
+        Contact
+    </h1>
+
+
+    <div class="gold-line"></div>
+
+
+    <p class="intro">
+
+        I welcome enquiries regarding research
+        collaborations, academic projects, publications,
+        and other professional opportunities.
+
+    </p>
+
+
+
+    <!-- =====================================================
+         CONTACT INFORMATION
+         ===================================================== -->
+
+    <div class="contact-grid">
+
+
+        <!-- EMAIL -->
+
+        <div class="contact-card">
+
+            <h2>
+                Email
+            </h2>
+
+            <ul class="contact-details">
+
+                <li>
+
+                    <span class="contact-label">
+                        University Email
+                    </span>
+
+                    <a href="mailto:your.name@sydney.edu.au">
+                        your.name@sydney.edu.au
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- AFFILIATION -->
+
+        <div class="contact-card">
+
+            <h2>
+                Affiliation
+            </h2>
+
+            <ul class="contact-details">
+
+                <li>
+
+                    <span class="contact-label">
+                        Institution
+                    </span>
+
+                    The University of Sydney
+
+                </li>
+
+
+                <li>
+
+                    <span class="contact-label">
+                        School / Faculty
+                    </span>
+
+                    School / Faculty Name
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- OFFICE -->
+
+        <div class="contact-card">
+
+            <h2>
+                Office
+            </h2>
+
+            <ul class="contact-details">
+
+                <li>
+
+                    <span class="contact-label">
+                        Location
+                    </span>
+
+                    Building / Room Number
+
+                </li>
+
+
+                <li>
+
+                    <span class="contact-label">
+                        Campus
+                    </span>
+
+                    Camperdown / Darlington Campus
+
+                </li>
+
+            </ul>
+
+        </div>
+
+
+
+        <!-- MAILING ADDRESS -->
+
+        <div class="contact-card">
+
+            <h2>
+                Postal Address
+            </h2>
+
+            <p>
+                The University of Sydney
+                <br>
+                School / Faculty Name
+                <br>
+                Camperdown NSW 2006
+                <br>
+                Australia
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ONLINE PROFILES
+         ===================================================== -->
+
+    <section>
+
+        <h2
+            style="
+                color: var(--sydney-blue);
+                font-family: Georgia, 'Times New Roman', serif;
+                font-size: 1.65rem;
+                margin-bottom: 25px;
+                padding-bottom: 10px;
+                border-bottom: 2px solid var(--border);
+            "
+        >
+            Academic & Professional Profiles
+        </h2>
+
+
+        <div class="profiles">
+
+
+            <!-- GOOGLE SCHOLAR -->
+
+            <a
+                href="https://scholar.google.com/"
+                class="profile-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span class="profile-name">
+                    Google Scholar
+                </span>
+
+                <span class="profile-description">
+                    Publications and citation profile
+                </span>
+
+            </a>
+
+
+
+            <!-- ORCID -->
+
+            <a
+                href="https://orcid.org/"
+                class="profile-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span class="profile-name">
+                    ORCID
+                </span>
+
+                <span class="profile-description">
+                    Researcher identifier
+                </span>
+
+            </a>
+
+
+
+            <!-- LINKEDIN -->
+
+            <a
+                href="https://www.linkedin.com/"
+                class="profile-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span class="profile-name">
+                    LinkedIn
+                </span>
+
+                <span class="profile-description">
+                    Professional profile
+                </span>
+
+            </a>
+
+
+
+            <!-- GITHUB -->
+
+            <a
+                href="https://github.com/"
+                class="profile-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+
+                <span class="profile-name">
+                    GitHub
+                </span>
+
+                <span class="profile-description">
+                    Code and research projects
+                </span>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESEARCH ENQUIRIES
+         ===================================================== -->
+
+    <div class="message-box">
+
+        <h2>
+            Research Enquiries
+        </h2>
+
+        <p>
+
+            If you are interested in discussing research
+            collaboration or a potential project, please
+            contact me by email with a brief description
+            of your enquiry.
+
+        </p>
+
+    </div>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <span class="gold">©</span>
+    2026 Your Name ·
+    The University of Sydney
+
+</footer>
+
+
+</body>
+
+</html>
