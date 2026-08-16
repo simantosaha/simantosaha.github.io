@@ -4,27 +4,60 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Publications | Dr. Simanto Saha</title>
 
+
     <style>
 
+        /* =====================================================
+           COLOURS
+           ===================================================== */
+
         :root {
+
             --sydney-blue: #0B3C5D;
+
             --sydney-dark-blue: #062C43;
+
             --sydney-gold: #E5A823;
 
             --text: #222222;
+
             --muted: #5F6368;
+
             --light-grey: #F5F6F7;
+
             --border: #D9DDE1;
+
             --white: #FFFFFF;
+
+            --link: #0B3C5D;
+
         }
 
 
+
+        /* =====================================================
+           GLOBAL
+           ===================================================== */
+
         * {
+
             box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
         }
 
 
@@ -42,7 +75,9 @@
             background: var(--white);
 
             line-height: 1.7;
+
         }
+
 
 
         /* =====================================================
@@ -56,6 +91,7 @@
 
             border-bottom:
                 5px solid var(--sydney-gold);
+
         }
 
 
@@ -74,6 +110,7 @@
             min-height: 75px;
 
             padding: 0 25px;
+
         }
 
 
@@ -93,6 +130,7 @@
             text-decoration: none;
 
             white-space: nowrap;
+
         }
 
 
@@ -100,11 +138,17 @@
 
             color: #DCE8EF;
 
-            font-size: 0.85rem;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            font-size: 0.82rem;
+
+            font-weight: normal;
 
             margin-left: 8px;
 
-            font-weight: normal;
         }
 
 
@@ -113,6 +157,7 @@
             display: flex;
 
             align-items: center;
+
         }
 
 
@@ -122,7 +167,8 @@
 
             text-decoration: none;
 
-            padding: 27px 15px;
+            padding:
+                27px 15px;
 
             font-size: 0.95rem;
 
@@ -130,11 +176,14 @@
                 4px solid transparent;
 
             transition:
-                0.2s ease;
+                background 0.2s ease,
+                border-color 0.2s ease;
+
         }
 
 
         .nav-links a:hover,
+
         .nav-links a.active {
 
             background:
@@ -142,21 +191,25 @@
 
             border-bottom-color:
                 var(--sydney-gold);
+
         }
 
 
 
         /* =====================================================
-           MAIN CONTENT
+           MAIN
            ===================================================== */
 
         main {
 
-            max-width: 950px;
+            max-width: 1000px;
 
-            margin: 60px auto;
+            margin:
+                60px auto;
 
-            padding: 0 30px;
+            padding:
+                0 30px;
+
         }
 
 
@@ -173,24 +226,27 @@
             font-size:
                 2.7rem;
 
+            line-height:
+                1.2;
+
             margin:
                 0;
+
         }
 
 
         .gold-line {
 
-            width:
-                60px;
+            width: 60px;
 
-            height:
-                4px;
+            height: 4px;
 
             background:
                 var(--sydney-gold);
 
             margin:
                 20px 0 40px;
+
         }
 
 
@@ -205,14 +261,15 @@
             max-width:
                 850px;
 
-            margin-bottom:
-                50px;
+            margin:
+                0 0 45px;
+
         }
 
 
 
         /* =====================================================
-           LOADING / ERROR
+           LOADING
            ===================================================== */
 
         #loading {
@@ -225,8 +282,14 @@
 
             font-style:
                 italic;
+
         }
 
+
+
+        /* =====================================================
+           ERROR
+           ===================================================== */
 
         #error {
 
@@ -247,18 +310,20 @@
 
             margin-bottom:
                 40px;
+
         }
 
 
 
         /* =====================================================
-           PUBLICATION LIST
+           PUBLICATIONS
            ===================================================== */
 
         #publications {
 
             width:
                 100%;
+
         }
 
 
@@ -281,6 +346,7 @@
 
             transition:
                 background 0.2s ease;
+
         }
 
 
@@ -288,6 +354,7 @@
 
             background:
                 var(--light-grey);
+
         }
 
 
@@ -309,6 +376,7 @@
 
             padding-top:
                 2px;
+
         }
 
 
@@ -328,6 +396,7 @@
 
             white-space:
                 nowrap;
+
         }
 
 
@@ -346,13 +415,14 @@
                 uppercase;
 
             letter-spacing:
-                0.04em;
+                0.05em;
 
             line-height:
                 1.4;
 
             margin-top:
                 5px;
+
         }
 
 
@@ -370,21 +440,18 @@
                 0.98rem;
 
             line-height:
-                1.7;
+                1.75;
+
         }
 
 
-        .citation-journal {
-
-            font-style:
-                italic;
-        }
-
+        .citation-journal,
 
         .citation-conference {
 
             font-style:
                 italic;
+
         }
 
 
@@ -395,7 +462,9 @@
 
             color:
                 #111;
+
         }
+
 
 
         /* =====================================================
@@ -406,12 +475,38 @@
 
             white-space:
                 nowrap;
+
+        }
+
+
+        .doi a {
+
+            color:
+                var(--link);
+
+            text-decoration:
+                none;
+
+            font-weight:
+                500;
+
+        }
+
+
+        .doi a:hover {
+
+            color:
+                var(--sydney-gold);
+
+            text-decoration:
+                underline;
+
         }
 
 
 
         /* =====================================================
-           EMPTY STATE
+           EMPTY MESSAGE
            ===================================================== */
 
         .empty-message {
@@ -424,6 +519,7 @@
 
             padding:
                 15px 0;
+
         }
 
 
@@ -451,6 +547,7 @@
 
             font-size:
                 0.9rem;
+
         }
 
 
@@ -458,6 +555,7 @@
 
             color:
                 var(--sydney-gold);
+
         }
 
 
@@ -466,7 +564,7 @@
            MOBILE
            ===================================================== */
 
-        @media (max-width: 750px) {
+        @media (max-width: 800px) {
 
             .nav-container {
 
@@ -475,19 +573,21 @@
 
                 padding:
                     15px 10px 0;
+
             }
 
 
             .site-name {
-
-                margin-bottom:
-                    10px;
 
                 white-space:
                     normal;
 
                 text-align:
                     center;
+
+                margin-bottom:
+                    10px;
+
             }
 
 
@@ -497,7 +597,8 @@
                     block;
 
                 margin:
-                    4px 0 0;
+                    5px 0 0;
+
             }
 
 
@@ -511,6 +612,7 @@
 
                 flex-wrap:
                     wrap;
+
             }
 
 
@@ -521,6 +623,7 @@
 
                 font-size:
                     0.9rem;
+
             }
 
 
@@ -531,6 +634,7 @@
 
                 padding:
                     0 20px;
+
             }
 
 
@@ -538,19 +642,21 @@
 
                 font-size:
                     2.2rem;
+
             }
 
 
             .publication {
 
                 grid-template-columns:
-                    85px 1fr;
+                    90px 1fr;
 
                 gap:
                     15px;
 
                 padding:
-                    18px 5px;
+                    20px 5px;
+
             }
 
 
@@ -558,6 +664,7 @@
 
                 font-size:
                     0.93rem;
+
             }
 
 
@@ -565,13 +672,44 @@
 
                 font-size:
                     0.60rem;
+
+            }
+
+        }
+
+
+        @media (max-width: 520px) {
+
+            .publication {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    8px;
+
             }
 
 
-            .doi {
+            .publication-marker {
 
-                white-space:
-                    normal;
+                flex-direction:
+                    row;
+
+                align-items:
+                    baseline;
+
+                gap:
+                    10px;
+
+            }
+
+
+            .publication-type {
+
+                margin-top:
+                    0;
+
             }
 
         }
@@ -581,7 +719,9 @@
 </head>
 
 
+
 <body>
+
 
 
 <!-- =========================================================
@@ -592,13 +732,18 @@
 
     <div class="nav-container">
 
-        <a href="index.html"
-           class="site-name">
+
+        <a
+            href="index.html"
+            class="site-name"
+        >
 
             Dr. Simanto Saha
 
             <span class="site-subtitle">
+
                 Asymptote towards technological freedom!
+
             </span>
 
         </a>
@@ -614,8 +759,10 @@
                 Research
             </a>
 
-            <a href="publications.html"
-               class="active">
+            <a
+                href="publications.html"
+                class="active"
+            >
                 Publications
             </a>
 
@@ -641,6 +788,7 @@
 
 <main>
 
+
     <h1 class="page-title">
         Publications
     </h1>
@@ -652,8 +800,9 @@
     <p class="intro">
 
         My publications include peer-reviewed journal articles,
-        conference papers, and conference abstracts. They are
-        listed in reverse chronological order.
+        conference papers, and conference abstracts. All authors
+        are displayed, and publications are listed in reverse
+        chronological order.
 
     </p>
 
@@ -667,6 +816,7 @@
 
 
     <div id="publications"></div>
+
 
 </main>
 
@@ -696,17 +846,16 @@
 /*
  * Your name exactly as it appears in publications.bib.
  *
- * Your name will be displayed in bold.
+ * This is used to bold your name.
  */
 
 const YOUR_NAME = "Saha, Simanto";
 
 
 /*
- * BibTeX database.
+ * BibTeX file.
  *
- * Keep publications.bib in the same directory
- * as this HTML file.
+ * It must be in the same directory as this HTML file.
  */
 
 const BIB_FILE = "publications.bib";
@@ -714,7 +863,7 @@ const BIB_FILE = "publications.bib";
 
 
 /* ==========================================================
-   LOAD PUBLICATIONS
+   LOAD BIBTEX
    ========================================================== */
 
 fetch(BIB_FILE)
@@ -769,9 +918,7 @@ fetch(BIB_FILE)
 
             "<strong>Unable to load publications.</strong><br><br>" +
 
-            escapeHTML(
-                error.message
-            ) +
+            escapeHTML(error.message) +
 
             "<br><br>" +
 
@@ -786,128 +933,126 @@ fetch(BIB_FILE)
 
 
 /* ==========================================================
-   BIBTEX PARSER
+   PARSE BIBTEX ENTRIES
    ========================================================== */
 
 function parseBibTeX(text) {
 
     const publications = [];
 
+
+    /*
+     * Remove BibTeX comments.
+     */
+
+    text = text.replace(
+        /^[ \t]*%.*$/gm,
+        ""
+    );
+
+
+    /*
+     * Locate every @article, @inproceedings, etc.
+     *
+     * This parser uses balanced braces rather than
+     * a simple regular expression, making it safer
+     * for titles containing braces.
+     */
+
     let position = 0;
 
 
-    while (
-        position < text.length
-    ) {
+    while (position < text.length) {
 
-        const atPosition =
-            text.indexOf(
-                "@",
-                position
-            );
+        const atIndex =
+            text.indexOf("@", position);
 
 
-        if (
-            atPosition === -1
-        ) {
-
+        if (atIndex === -1) {
             break;
+        }
+
+
+        const typeMatch =
+            text.slice(atIndex)
+                .match(
+                    /^@([a-zA-Z]+)\s*\{/ 
+                );
+
+
+        if (!typeMatch) {
+
+            position =
+                atIndex + 1;
+
+            continue;
 
         }
 
 
-        const openBrace =
-            text.indexOf(
-                "{",
-                atPosition
-            );
+        const type =
+            typeMatch[1].toLowerCase();
 
 
-        if (
-            openBrace === -1
+        const openingBrace =
+            atIndex +
+            typeMatch[0].length -
+            1;
+
+
+        let depth = 0;
+
+        let closingBrace = -1;
+
+
+        for (
+            let i = openingBrace;
+            i < text.length;
+            i++
         ) {
 
-            break;
-
-        }
-
-
-        const entryType =
-            text.substring(
-                atPosition + 1,
-                openBrace
-            )
-            .trim()
-            .toLowerCase();
-
-
-        /*
-         * Find the matching closing brace.
-         */
-
-        let depth = 1;
-
-        let current =
-            openBrace + 1;
-
-
-        while (
-            current < text.length &&
-            depth > 0
-        ) {
-
-            if (
-                text[current] === "{"
-            ) {
+            if (text[i] === "{") {
 
                 depth++;
 
             }
-
-            else if (
-                text[current] === "}"
-            ) {
+            else if (text[i] === "}") {
 
                 depth--;
 
+                if (depth === 0) {
+
+                    closingBrace = i;
+
+                    break;
+
+                }
+
             }
 
-
-            current++;
-
         }
 
 
-        if (
-            depth !== 0
-        ) {
-
+        if (closingBrace === -1) {
             break;
-
         }
 
 
-        const entryContent =
-            text.substring(
-                openBrace + 1,
-                current - 1
+        const entry =
+            text.slice(
+                openingBrace + 1,
+                closingBrace
             );
 
 
-        /*
-         * Find citation key.
-         */
-
-        const comma =
-            entryContent.indexOf(",");
+        const commaIndex =
+            entry.indexOf(",");
 
 
-        if (
-            comma === -1
-        ) {
+        if (commaIndex === -1) {
 
             position =
-                current;
+                closingBrace + 1;
 
             continue;
 
@@ -915,34 +1060,25 @@ function parseBibTeX(text) {
 
 
         const key =
-            entryContent
-                .substring(
-                    0,
-                    comma
-                )
+            entry
+                .slice(0, commaIndex)
                 .trim();
 
 
-        const fieldsText =
-            entryContent
-                .substring(
-                    comma + 1
-                );
+        const body =
+            entry
+                .slice(commaIndex + 1);
 
 
         const fields =
-            parseFields(
-                fieldsText
-            );
+            parseFields(body);
 
 
         publications.push({
 
-            type:
-                entryType,
+            type: type,
 
-            key:
-                key,
+            key: key,
 
             ...fields
 
@@ -950,7 +1086,7 @@ function parseBibTeX(text) {
 
 
         position =
-            current;
+            closingBrace + 1;
 
     }
 
@@ -965,7 +1101,7 @@ function parseBibTeX(text) {
    PARSE BIBTEX FIELDS
    ========================================================== */
 
-function parseFields(text) {
+function parseFields(body) {
 
     const fields = {};
 
@@ -973,22 +1109,23 @@ function parseFields(text) {
 
 
     while (
-        position < text.length
+        position < body.length
     ) {
 
 
         /*
-         * Skip spaces and commas.
+         * Skip whitespace and commas.
          */
 
         while (
-            position < text.length &&
+
+            position < body.length &&
+
             (
-                /\s/.test(
-                    text[position]
-                ) ||
-                text[position] === ","
+                /\s/.test(body[position]) ||
+                body[position] === ","
             )
+
         ) {
 
             position++;
@@ -996,54 +1133,59 @@ function parseFields(text) {
         }
 
 
-        const nameStart =
-            position;
+        if (
+            position >= body.length
+        ) {
+
+            break;
+
+        }
 
 
         /*
          * Read field name.
          */
 
+        const fieldStart =
+            position;
+
+
         while (
-            position < text.length &&
-            /[A-Za-z0-9_-]/.test(
-                text[position]
+
+            position < body.length &&
+
+            /[a-zA-Z0-9_-]/.test(
+                body[position]
             )
+
         ) {
 
             position++;
-
-        }
-
-
-        if (
-            position === nameStart
-        ) {
-
-            position++;
-
-            continue;
 
         }
 
 
         const fieldName =
-            text.substring(
-                nameStart,
-                position
-            )
-            .toLowerCase();
+            body
+                .slice(
+                    fieldStart,
+                    position
+                )
+                .toLowerCase();
 
 
         /*
-         * Find equals sign.
+         * Skip whitespace.
          */
 
         while (
-            position < text.length &&
+
+            position < body.length &&
+
             /\s/.test(
-                text[position]
+                body[position]
             )
+
         ) {
 
             position++;
@@ -1051,9 +1193,15 @@ function parseFields(text) {
         }
 
 
+        /*
+         * Expect "=".
+         */
+
         if (
-            text[position] !== "="
+            body[position] !== "="
         ) {
+
+            position++;
 
             continue;
 
@@ -1063,11 +1211,18 @@ function parseFields(text) {
         position++;
 
 
+        /*
+         * Skip whitespace.
+         */
+
         while (
-            position < text.length &&
+
+            position < body.length &&
+
             /\s/.test(
-                text[position]
+                body[position]
             )
+
         ) {
 
             position++;
@@ -1075,63 +1230,49 @@ function parseFields(text) {
         }
 
 
+        /*
+         * Read value.
+         */
+
         let value = "";
 
 
-        /*
-         * Braced value.
-         */
-
         if (
-            text[position] === "{"
+            body[position] === "{"
         ) {
 
-            let depth = 1;
+            let depth = 0;
 
-            position++;
+            const valueStart =
+                position;
 
 
             while (
-                position < text.length &&
-                depth > 0
+                position < body.length
             ) {
 
-                const character =
-                    text[position];
-
-
                 if (
-                    character === "{"
+                    body[position] === "{"
                 ) {
 
                     depth++;
 
-                    value +=
-                        character;
-
                 }
-
                 else if (
-                    character === "}"
+                    body[position] === "}"
                 ) {
 
                     depth--;
 
                     if (
-                        depth > 0
+                        depth === 0
                     ) {
 
-                        value +=
-                            character;
+                        position++;
+
+                        break;
 
                     }
-
-                }
-
-                else {
-
-                    value +=
-                        character;
 
                 }
 
@@ -1140,43 +1281,54 @@ function parseFields(text) {
 
             }
 
+
+            value =
+                body.slice(
+                    valueStart,
+                    position
+                );
+
         }
 
-
-        /*
-         * Quoted value.
-         */
-
         else if (
-            text[position] === '"'
+            body[position] === '"'
         ) {
 
             position++;
 
+            const valueStart =
+                position;
+
 
             while (
-                position < text.length
+                position < body.length
             ) {
 
-                const character =
-                    text[position];
-
-
                 if (
-                    character === '"' &&
-                    text[position - 1] !== "\\"
+                    body[position] === '"' &&
+                    body[position - 1] !== "\\"
                 ) {
-
-                    position++;
 
                     break;
 
                 }
 
 
-                value +=
-                    character;
+                position++;
 
+            }
+
+
+            value =
+                body.slice(
+                    valueStart,
+                    position
+                );
+
+
+            if (
+                body[position] === '"'
+            ) {
 
                 position++;
 
@@ -1184,20 +1336,18 @@ function parseFields(text) {
 
         }
 
-
-        /*
-         * Unquoted value.
-         */
-
         else {
 
-            const start =
+            const valueStart =
                 position;
 
 
             while (
-                position < text.length &&
-                text[position] !== ","
+
+                position < body.length &&
+
+                body[position] !== ","
+
             ) {
 
                 position++;
@@ -1206,8 +1356,8 @@ function parseFields(text) {
 
 
             value =
-                text.substring(
-                    start,
+                body.slice(
+                    valueStart,
                     position
                 );
 
@@ -1215,9 +1365,7 @@ function parseFields(text) {
 
 
         fields[fieldName] =
-            cleanBibValue(
-                value
-            );
+            cleanBibValue(value);
 
     }
 
@@ -1229,7 +1377,7 @@ function parseFields(text) {
 
 
 /* ==========================================================
-   CLEAN BIBTEX VALUES
+   CLEAN BIBTEX VALUE
    ========================================================== */
 
 function cleanBibValue(value) {
@@ -1239,7 +1387,50 @@ function cleanBibValue(value) {
 
 
     /*
-     * LaTeX special characters.
+     * Remove outer braces.
+     */
+
+    if (
+
+        value.startsWith("{") &&
+
+        value.endsWith("}")
+
+    ) {
+
+        value =
+            value.slice(
+                1,
+                -1
+            );
+
+    }
+
+
+    /*
+     * Remove quotation marks.
+     */
+
+    if (
+
+        value.startsWith('"') &&
+
+        value.endsWith('"')
+
+    ) {
+
+        value =
+            value.slice(
+                1,
+                -1
+            );
+
+    }
+
+
+    /*
+     * Preserve important LaTeX constructs
+     * while converting common formatting.
      */
 
     value =
@@ -1265,25 +1456,10 @@ function cleanBibValue(value) {
 
     value =
         value.replace(
-            /\\#/g,
-            "#"
-        );
-
-
-    /*
-     * BibTeX dash notation.
-     */
-
-    value =
-        value.replace(
             /--/g,
             "–"
         );
 
-
-    /*
-     * Non-breaking spaces.
-     */
 
     value =
         value.replace(
@@ -1293,7 +1469,7 @@ function cleanBibValue(value) {
 
 
     /*
-     * Remove formatting braces.
+     * Remove remaining braces.
      */
 
     value =
@@ -1303,19 +1479,7 @@ function cleanBibValue(value) {
         );
 
 
-    /*
-     * Normalize whitespace.
-     */
-
-    value =
-        value.replace(
-            /\s+/g,
-            " "
-        )
-        .trim();
-
-
-    return value;
+    return value.trim();
 
 }
 
@@ -1331,26 +1495,18 @@ function displayPublications(
 
 
     /*
-     * Sort:
-     *
-     * newest → oldest
-     *
-     * then alphabetically by title.
+     * Newest → oldest.
      */
 
     publications.sort(
         (a, b) => {
 
             const yearA =
-                parseInt(
-                    a.year
-                ) || 0;
+                parseInt(a.year) || 0;
 
 
             const yearB =
-                parseInt(
-                    b.year
-                ) || 0;
+                parseInt(b.year) || 0;
 
 
             if (
@@ -1363,6 +1519,11 @@ function displayPublications(
 
             }
 
+
+            /*
+             * Same year:
+             * alphabetical by title.
+             */
 
             return (
                 (a.title || "")
@@ -1433,7 +1594,9 @@ function renderPublications(
 
 
             /*
+             * ------------------------------------------
              * YEAR
+             * ------------------------------------------
              */
 
             const marker =
@@ -1461,7 +1624,9 @@ function renderPublications(
 
 
             /*
+             * ------------------------------------------
              * TYPE
+             * ------------------------------------------
              */
 
             const type =
@@ -1491,7 +1656,9 @@ function renderPublications(
 
 
             /*
+             * ------------------------------------------
              * CITATION
+             * ------------------------------------------
              */
 
             const text =
@@ -1509,6 +1676,10 @@ function renderPublications(
                     publication
                 );
 
+
+            /*
+             * Add publication.
+             */
 
             item.appendChild(
                 marker
@@ -1595,14 +1766,13 @@ function formatIEEE(
     publication
 ) {
 
-
     let citation = "";
 
 
     /*
-     * ------------------------------------------------------
+     * ------------------------------------------
      * AUTHORS
-     * ------------------------------------------------------
+     * ------------------------------------------
      */
 
     if (
@@ -1620,9 +1790,9 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------------------
+     * ------------------------------------------
      * TITLE
-     * ------------------------------------------------------
+     * ------------------------------------------
      */
 
     if (
@@ -1645,9 +1815,9 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------------------
-     * JOURNAL ARTICLE
-     * ------------------------------------------------------
+     * ------------------------------------------
+     * JOURNAL
+     * ------------------------------------------
      */
 
     if (
@@ -1720,9 +1890,9 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------------------
-     * CONFERENCE PAPER
-     * ------------------------------------------------------
+     * ------------------------------------------
+     * CONFERENCE
+     * ------------------------------------------
      */
 
     else {
@@ -1780,30 +1950,30 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------------------
-     * PERIOD
-     * ------------------------------------------------------
+     * ------------------------------------------
+     * YEAR
+     * ------------------------------------------
+     *
+     * The year is already displayed in the
+     * left marker, so it is intentionally not
+     * repeated in the citation.
      */
+
 
     citation += ".";
 
 
     /*
-     * ------------------------------------------------------
+     * ------------------------------------------
      * DOI
+     * ------------------------------------------
      *
-     * Plain text only.
-     *
-     * No hyperlink.
-     *
-     * No [DOI] button.
-     * ------------------------------------------------------
+     * DOI is displayed exactly once.
      */
 
     if (
         publication.doi
     ) {
-
 
         const doi =
             cleanDOI(
@@ -1813,15 +1983,25 @@ function formatIEEE(
 
         citation +=
 
-            ' <span class="doi">' +
+            ' <span class="doi">doi: ' +
 
-            "doi: " +
+            '<a href="' +
+
+            'https://doi.org/' +
+
+            encodeURIComponent(
+                doi
+            ) +
+
+            '" target="_blank" ' +
+
+            'rel="noopener noreferrer">' +
 
             escapeHTML(
                 doi
             ) +
 
-            ".</span>";
+            "</a></span>.";
 
     }
 
@@ -1833,7 +2013,7 @@ function formatIEEE(
 
 
 /* ==========================================================
-   FORMAT AUTHORS
+   FORMAT ALL AUTHORS
    ========================================================== */
 
 function formatAuthors(
@@ -1841,104 +2021,116 @@ function formatAuthors(
 ) {
 
 
-    const authors =
-        authorString
-
-            .split(
-                /\s+and\s+/i
-            )
-
-            .map(
-                author =>
-                    author.trim()
-            )
-
-            .filter(
-                author =>
-                    author.length > 0
-            );
-
-
     /*
-     * IEEE-style shortening for
-     * more than six authors.
+     * IMPORTANT:
+     *
+     * There is deliberately NO et al.
+     * in this function.
+     *
+     * Every author in publications.bib
+     * is displayed.
      */
 
-    if (
-        authors.length > 6
-    ) {
-
-        const first =
-            authors[0];
-
-
-        return (
-
-            formatAuthorHTML(
-                first,
-                formatSingleAuthor(
-                    first
-                )
-            ) +
-
-            ", et al."
-
+    const authors =
+        splitAuthors(
+            authorString
         );
 
-    }
 
-
-    const formatted =
+    const formattedAuthors =
         authors.map(
             author => {
 
-                return formatAuthorHTML(
-                    author,
-                    formatSingleAuthor(
+
+                const formattedName =
+                    formatAuthorName(
+                        author
+                    );
+
+
+                /*
+                 * Bold Simanto Saha.
+                 */
+
+                if (
+                    isYourName(
                         author
                     )
+                ) {
+
+                    return (
+
+                        '<span class="my-name">' +
+
+                        escapeHTML(
+                            formattedName
+                        ) +
+
+                        "</span>"
+
+                    );
+
+                }
+
+
+                return escapeHTML(
+                    formattedName
                 );
 
             }
         );
 
 
+    /*
+     * One author.
+     */
+
     if (
-        formatted.length === 1
+        formattedAuthors.length === 1
     ) {
 
-        return formatted[0];
+        return formattedAuthors[0];
 
     }
 
 
+    /*
+     * Two authors.
+     */
+
     if (
-        formatted.length === 2
+        formattedAuthors.length === 2
     ) {
 
         return (
 
-            formatted[0] +
+            formattedAuthors[0] +
 
             " and " +
 
-            formatted[1]
+            formattedAuthors[1]
 
         );
 
     }
 
 
+    /*
+     * Three or more authors.
+     *
+     * ALL authors are retained.
+     */
+
     return (
 
-        formatted
+        formattedAuthors
             .slice(0, -1)
             .join(", ") +
 
         ", and " +
 
-        formatted[
-            formatted.length - 1
+        formattedAuthors[
+            formattedAuthors.length - 1
         ]
 
     );
@@ -1948,26 +2140,128 @@ function formatAuthors(
 
 
 /* ==========================================================
-   FORMAT SINGLE AUTHOR
+   SPLIT AUTHORS
    ========================================================== */
 
-function formatSingleAuthor(
+function splitAuthors(
+    authorString
+) {
+
+
+    /*
+     * BibTeX separates authors with:
+     *
+     *     and
+     *
+     * Example:
+     *
+     * Saha, Simanto and Baumert, Mathias
+     */
+
+    return authorString
+
+        .split(
+            /\s+and\s+/i
+        )
+
+        .map(
+            author =>
+                author.trim()
+        )
+
+        .filter(
+            author =>
+                author.length > 0
+        );
+
+}
+
+
+
+/* ==========================================================
+   CHECK YOUR NAME
+   ========================================================== */
+
+function isYourName(
+    author
+) {
+
+
+    const cleanAuthor =
+        normalizeAuthor(
+            author
+        );
+
+
+    const cleanYourName =
+        normalizeAuthor(
+            YOUR_NAME
+        );
+
+
+    return (
+        cleanAuthor ===
+        cleanYourName
+    );
+
+}
+
+
+
+/* ==========================================================
+   NORMALIZE AUTHOR
+   ========================================================== */
+
+function normalizeAuthor(
+    name
+) {
+
+    return name
+
+        .toLowerCase()
+
+        .replace(
+            /[{}]/g,
+            ""
+        )
+
+        .replace(
+            /\s+/g,
+            " "
+        )
+
+        .trim();
+
+}
+
+
+
+/* ==========================================================
+   FORMAT AUTHOR NAME
+   ========================================================== */
+
+function formatAuthorName(
     author
 ) {
 
 
     author =
-        author.trim();
+        author
+            .replace(
+                /[{}]/g,
+                ""
+            )
+            .trim();
 
 
     /*
-     * Format:
+     * BibTeX format:
      *
-     * Saha, Simanto
+     * Last Name, First Name
      *
-     * as:
+     * becomes:
      *
-     * S. Saha
+     * F. N. Last Name
      */
 
     if (
@@ -1975,23 +2269,23 @@ function formatSingleAuthor(
     ) {
 
 
-        const comma =
+        const commaIndex =
             author.indexOf(",");
 
 
         const lastName =
             author
-                .substring(
+                .slice(
                     0,
-                    comma
+                    commaIndex
                 )
                 .trim();
 
 
         const firstName =
             author
-                .substring(
-                    comma + 1
+                .slice(
+                    commaIndex + 1
                 )
                 .trim();
 
@@ -2012,14 +2306,16 @@ function formatSingleAuthor(
 
 
     /*
-     * Format:
+     * Alternative format:
      *
-     * Simanto Saha
+     * First Name Last Name
      */
 
     const parts =
         author
-            .split(/\s+/)
+            .split(
+                /\s+/
+            )
             .filter(
                 part =>
                     part.length > 0
@@ -2060,100 +2356,7 @@ function formatSingleAuthor(
 
 
 /* ==========================================================
-   FORMAT AUTHOR HTML
-   ========================================================== */
-
-function formatAuthorHTML(
-    originalAuthor,
-    formattedName
-) {
-
-
-    if (
-        isYourName(
-            originalAuthor
-        )
-    ) {
-
-        return (
-
-            '<span class="my-name">' +
-
-            escapeHTML(
-                formattedName
-            ) +
-
-            "</span>"
-
-        );
-
-    }
-
-
-    return escapeHTML(
-        formattedName
-    );
-
-}
-
-
-
-/* ==========================================================
-   CHECK YOUR NAME
-   ========================================================== */
-
-function isYourName(
-    author
-) {
-
-
-    return (
-
-        normalizeAuthorName(
-            author
-        ) ===
-
-        normalizeAuthorName(
-            YOUR_NAME
-        )
-
-    );
-
-}
-
-
-
-/* ==========================================================
-   NORMALIZE AUTHOR NAME
-   ========================================================== */
-
-function normalizeAuthorName(
-    name
-) {
-
-
-    return name
-
-        .toLowerCase()
-
-        .replace(
-            /[{}]/g,
-            ""
-        )
-
-        .replace(
-            /\s+/g,
-            " "
-        )
-
-        .trim();
-
-}
-
-
-
-/* ==========================================================
-   INITIALS
+   AUTHOR INITIALS
    ========================================================== */
 
 function initials(
@@ -2161,14 +2364,26 @@ function initials(
 ) {
 
 
+    /*
+     * Handle names such as:
+     *
+     * Khawza Iftekhar Uddin
+     *
+     * -> K. I. U.
+     *
+     * Also handles existing initials.
+     */
+
     return name
 
         .replace(
-            /\./g,
-            ""
+            /[-]+/g,
+            " "
         )
 
-        .split(/\s+/)
+        .split(
+            /\s+/
+        )
 
         .filter(
             part =>
@@ -2178,9 +2393,15 @@ function initials(
         .map(
             part => {
 
+
+                /*
+                 * Remove punctuation while
+                 * preserving accented characters.
+                 */
+
                 const cleaned =
                     part.replace(
-                        /[^A-Za-zÀ-ÿ]/g,
+                        /[^A-Za-zÀ-ÖØ-öø-ÿ]/g,
                         ""
                     );
 
@@ -2208,8 +2429,8 @@ function initials(
         )
 
         .filter(
-            initial =>
-                initial.length > 0
+            value =>
+                value.length > 0
         )
 
         .join(" ");
@@ -2241,7 +2462,7 @@ function formatTitle(
 
 
 /* ==========================================================
-   DOI CLEANUP
+   CLEAN DOI
    ========================================================== */
 
 function cleanDOI(
@@ -2264,9 +2485,11 @@ function cleanDOI(
         )
 
         .replace(
-            /[.,;]+$/,
+            /\.$/,
             ""
-        );
+        )
+
+        .trim();
 
 }
 
@@ -2295,7 +2518,9 @@ function escapeHTML(
 
 }
 
+
 </script>
+
 
 
 </body>
