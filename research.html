@@ -1,17 +1,20 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Research | Your Name</title>
+    <title>Research | Dr. Simanto Saha</title>
 
     <style>
+
         :root {
             --sydney-blue: #0B3C5D;
             --sydney-dark-blue: #062C43;
             --sydney-gold: #E5A823;
+
             --text: #222222;
             --muted: #5F6368;
             --light-grey: #F5F6F7;
@@ -19,471 +22,938 @@
             --white: #FFFFFF;
         }
 
+
         * {
             box-sizing: border-box;
         }
 
+
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             color: var(--text);
+
             background: var(--white);
+
             line-height: 1.7;
         }
 
-        /* =========================
+
+        /* =====================================================
            HEADER
-           ========================= */
+           ===================================================== */
 
         header {
             background: var(--sydney-blue);
-            border-bottom: 5px solid var(--sydney-gold);
+
+            border-bottom:
+                5px solid var(--sydney-gold);
         }
 
+
         .nav-container {
+
             max-width: 1100px;
+
             margin: auto;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             min-height: 75px;
+
             padding: 0 25px;
         }
 
+
         .site-name {
+
             color: white;
-            font-family: Georgia, "Times New Roman", serif;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
             font-size: 1.35rem;
+
             font-weight: bold;
+
             text-decoration: none;
         }
 
+
         .site-subtitle {
+
             color: #DCE8EF;
+
             font-size: 0.85rem;
+
             margin-left: 8px;
         }
 
+
         .nav-links {
+
             display: flex;
+
             align-items: center;
         }
 
+
         .nav-links a {
+
             color: white;
+
             text-decoration: none;
+
             padding: 27px 15px;
+
             font-size: 0.95rem;
-            border-bottom: 4px solid transparent;
-            transition: 0.2s ease;
+
+            border-bottom:
+                4px solid transparent;
+
+            transition:
+                0.2s ease;
         }
+
 
         .nav-links a:hover,
         .nav-links a.active {
-            background: var(--sydney-dark-blue);
-            border-bottom-color: var(--sydney-gold);
+
+            background:
+                var(--sydney-dark-blue);
+
+            border-bottom-color:
+                var(--sydney-gold);
         }
 
-        /* =========================
-           MAIN
-           ========================= */
+
+
+        /* =====================================================
+           MAIN CONTENT
+           ===================================================== */
 
         main {
+
             max-width: 1000px;
+
             margin: 60px auto;
+
             padding: 0 30px;
         }
 
+
         .page-title {
+
             color: var(--sydney-blue);
-            font-family: Georgia, "Times New Roman", serif;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
             font-size: 2.7rem;
+
             margin: 0;
         }
 
+
         .gold-line {
+
             width: 60px;
+
             height: 4px;
-            background: var(--sydney-gold);
-            margin: 20px 0 35px;
+
+            background:
+                var(--sydney-gold);
+
+            margin:
+                20px 0 35px;
         }
+
+
+        /*
+         * INTRODUCTION
+         *
+         * Deliberately larger than the normal body text.
+         */
 
         .intro {
-            font-size: 1.08rem;
-            color: #444;
-            max-width: 850px;
+
+            font-size: 1.5rem;
+
+            color: #444444;
+
+            max-width: 950px;
+
+            margin-top: 0;
+
             margin-bottom: 65px;
+
+            line-height: 1.75;
+
+            text-align: justify;
         }
 
-        /* =========================
+
+
+        /* =====================================================
            RESEARCH TOPICS
-           ========================= */
+           ===================================================== */
 
         .research-topic {
+
             display: flex;
+
             align-items: center;
+
             gap: 45px;
+
             margin-bottom: 65px;
+
             padding-bottom: 50px;
-            border-bottom: 1px solid var(--border);
+
+            border-bottom:
+                1px solid var(--border);
         }
+
 
         .research-topic:last-child {
-            border-bottom: none;
+
+            border-bottom:
+                none;
         }
 
-        /* Alternate image position */
+
+        /*
+         * Alternate image position.
+         */
 
         .research-topic.reverse {
-            flex-direction: row-reverse;
+
+            flex-direction:
+                row-reverse;
         }
 
+
+        /* =====================================================
+           RESEARCH IMAGE
+           ===================================================== */
+
         .research-image {
+
             width: 42%;
+
             flex-shrink: 0;
         }
 
+
         .research-image img {
+
             width: 100%;
+
             height: 240px;
+
             object-fit: cover;
+
             border-radius: 3px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+
+            box-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.12);
         }
 
+
+        /*
+         * Image hover effect.
+         */
+
+        .research-image img {
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .research-image img:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 7px 20px
+                rgba(0, 0, 0, 0.18);
+        }
+
+
+
+        /* =====================================================
+           RESEARCH CONTENT
+           ===================================================== */
+
         .research-content {
+
             flex: 1;
         }
 
+
         .research-content h2 {
-            color: var(--sydney-blue);
-            font-family: Georgia, "Times New Roman", serif;
+
+            color:
+                var(--sydney-blue);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
             font-size: 1.8rem;
-            margin: 0 0 15px;
+
+            margin:
+                0 0 15px;
         }
 
+
         .research-content h2::after {
+
             content: "";
+
             display: block;
+
             width: 45px;
+
             height: 3px;
-            background: var(--sydney-gold);
+
+            background:
+                var(--sydney-gold);
+
             margin-top: 12px;
         }
 
+
         .research-content p {
+
             color: #4B4B4B;
+
             margin-bottom: 15px;
         }
 
+
+
+        /* =====================================================
+           RESEARCH LINKS
+           ===================================================== */
+
         .research-link {
-            color: var(--sydney-blue);
+
+            color:
+                var(--sydney-blue);
+
             text-decoration: none;
+
             font-weight: bold;
+
+            transition:
+                color 0.2s ease;
         }
+
 
         .research-link:hover {
-            color: var(--sydney-gold);
+
+            color:
+                var(--sydney-gold);
         }
 
-        /* =========================
+
+
+        /* =====================================================
            CURRENT RESEARCH
-           ========================= */
+           ===================================================== */
 
         .current-research {
+
             margin-top: 20px;
+
             padding: 30px;
-            background: var(--light-grey);
-            border-left: 5px solid var(--sydney-gold);
+
+            background:
+                var(--light-grey);
+
+            border-left:
+                5px solid var(--sydney-gold);
         }
 
+
         .current-research h2 {
-            color: var(--sydney-blue);
-            font-family: Georgia, "Times New Roman", serif;
+
+            color:
+                var(--sydney-blue);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
             margin-top: 0;
         }
 
-        /* =========================
+
+        .current-research p {
+
+            margin-bottom: 0;
+        }
+
+
+
+        /* =====================================================
            FOOTER
-           ========================= */
+           ===================================================== */
 
         footer {
-            background: var(--sydney-dark-blue);
+
+            background:
+                var(--sydney-dark-blue);
+
             color: #DCE8EF;
+
             margin-top: 90px;
+
             padding: 30px;
+
             text-align: center;
+
             font-size: 0.9rem;
         }
 
+
         footer .gold {
-            color: var(--sydney-gold);
+
+            color:
+                var(--sydney-gold);
         }
 
-        /* =========================
+
+
+        /* =====================================================
            MOBILE
-           ========================= */
+           ===================================================== */
 
         @media (max-width: 750px) {
 
             .nav-container {
-                flex-direction: column;
-                padding: 15px 10px 0;
+
+                flex-direction:
+                    column;
+
+                padding:
+                    15px 10px 0;
             }
+
 
             .site-name {
-                margin-bottom: 10px;
+
+                margin-bottom:
+                    10px;
+
+                text-align:
+                    center;
             }
+
+
+            .site-subtitle {
+
+                display:
+                    block;
+
+                margin:
+                    4px 0 0;
+
+                text-align:
+                    center;
+            }
+
 
             .nav-links {
+
                 width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
+
+                justify-content:
+                    center;
+
+                flex-wrap:
+                    wrap;
             }
+
 
             .nav-links a {
-                padding: 12px 10px;
-                font-size: 0.9rem;
+
+                padding:
+                    12px 10px;
+
+                font-size:
+                    0.9rem;
             }
+
 
             main {
-                margin-top: 40px;
+
+                margin-top:
+                    40px;
+
+                padding:
+                    0 20px;
             }
 
+
             .page-title {
-                font-size: 2.2rem;
+
+                font-size:
+                    2.2rem;
             }
+
+
+            /*
+             * Keep the requested 1.5rem
+             * introduction size on mobile,
+             * while slightly reducing it only
+             * if necessary for readability.
+             */
+
+            .intro {
+
+                font-size:
+                    1.25rem;
+
+                line-height:
+                    1.7;
+
+                text-align:
+                    left;
+            }
+
 
             .research-topic,
             .research-topic.reverse {
-                flex-direction: column;
-                gap: 25px;
-                align-items: stretch;
+
+                flex-direction:
+                    column;
+
+                gap:
+                    25px;
+
+                align-items:
+                    stretch;
             }
+
 
             .research-image {
-                width: 100%;
+
+                width:
+                    100%;
             }
 
+
             .research-image img {
-                height: 220px;
+
+                height:
+                    220px;
             }
+
+
+            .research-content h2 {
+
+                font-size:
+                    1.6rem;
+            }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- =========================
-         HEADER
-         ========================= -->
 
-    <header>
-        <div class="nav-container">
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 
-            <a href="index.html" class="site-name">
-                Your Name
-                <span class="site-subtitle">Academic Website</span>
+<header>
+
+    <div class="nav-container">
+
+
+        <a href="index.html"
+           class="site-name">
+
+            Dr. Simanto Saha
+
+            <span class="site-subtitle">
+                Asymptote towards technological freedom!
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
             </a>
 
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="research.html" class="active">Research</a>
-                <a href="publications.html">Publications</a>
-                <a href="cv.html">CV</a>
-                <a href="contact.html">Contact</a>
-            </nav>
+            <a href="research.html"
+               class="active">
+                Research
+            </a>
+
+            <a href="publications.html">
+                Publications
+            </a>
+
+            <a href="cv.html">
+                CV
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+     ========================================================= -->
+
+<main>
+
+
+    <h1 class="page-title">
+        Research
+    </h1>
+
+
+    <div class="gold-line"></div>
+
+
+    <!-- =====================================================
+         INTRODUCTION
+         ===================================================== -->
+
+    <p class="intro">
+
+        My research focuses on applying advanced signal processing
+        and AI techniques to develop solutions for biomedical
+        applications, including brain-computer interfaces and the
+        diagnosis and prognosis of various clinical conditions.
+        One of the key translational challenges in this area is the
+        variability of biomedical signals due to physiological,
+        hardware, and environmental factors. The variability hinders
+        the generalisability of an algorithm over time and across
+        users. My research investigates the sources of variability,
+        explores potential markers that describe variability, and
+        develops reproducible pattern recognition solutions.
+
+    </p>
+
+
+
+    <!-- =====================================================
+         RESEARCH TOPIC 1
+         ===================================================== -->
+
+    <section class="research-topic">
+
+
+        <div class="research-image">
+
+            <img
+                src="images/research1.jpg"
+                alt="Brain-computer interface research"
+            >
 
         </div>
-    </header>
 
 
-    <!-- =========================
-         MAIN CONTENT
-         ========================= -->
+        <div class="research-content">
 
-    <main>
+            <h2>
+                Brain-Computer Interfaces
+            </h2>
 
-        <h1 class="page-title">Research</h1>
-
-        <div class="gold-line"></div>
-
-        <p class="justify-text">
-            My research focuses on applying advanced signal processing and AI techniques to develop solutions for biomedical applications, including brain-computer interfaces and the diagnosis and prognosis of various clinical conditions. One of the key translational challenges in this area is the variability of biomedical signals due to physiological, hardware, and environmental factors. The variability hinders the generalisability of an algorithm over time and across users. My research investigates the sources of variability, explores potential markers that describe variability, and develops reproducible pattern recognition solutions.
-        </p>
-
-
-        <!-- =========================
-             RESEARCH TOPIC 1
-             ========================= -->
-
-        <section class="research-topic">
-
-            <div class="research-image">
-                <img
-                    src="images/research1.jpg"
-                    alt="Research Topic 1"
-                >
-            </div>
-
-            <div class="research-content">
-
-                <h2>Research Topic One</h2>
-
-                <p>
-                    Describe your first research area here. Explain the main
-                    question you are investigating, the methods you use, and
-                    why this research is important.
-                </p>
-
-                <p>
-                    You can briefly mention your current projects,
-                    collaborations, datasets, experiments, or applications.
-                </p>
-
-                <a href="#" class="research-link">
-                    Learn more →
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             RESEARCH TOPIC 2
-             ========================= -->
-
-        <section class="research-topic reverse">
-
-            <div class="research-image">
-                <img
-                    src="images/research2.jpg"
-                    alt="Research Topic 2"
-                >
-            </div>
-
-            <div class="research-content">
-
-                <h2>Research Topic Two</h2>
-
-                <p>
-                    Describe your second research area here. This section can
-                    focus on a different research question, methodology, or
-                    application.
-                </p>
-
-                <p>
-                    Keep the description concise and highlight what makes
-                    this area of research interesting or significant.
-                </p>
-
-                <a href="#" class="research-link">
-                    Learn more →
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             RESEARCH TOPIC 3
-             ========================= -->
-
-        <section class="research-topic">
-
-            <div class="research-image">
-                <img
-                    src="images/research3.jpg"
-                    alt="Research Topic 3"
-                >
-            </div>
-
-            <div class="research-content">
-
-                <h2>Research Topic Three</h2>
-
-                <p>
-                    Describe your third research area here. You can discuss
-                    your approach, key research questions, or practical
-                    applications.
-                </p>
-
-                <p>
-                    This could also be used for an interdisciplinary research
-                    theme or an emerging area of your work.
-                </p>
-
-                <a href="#" class="research-link">
-                    Learn more →
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             RESEARCH TOPIC 4
-             ========================= -->
-
-        <section class="research-topic reverse">
-
-            <div class="research-image">
-                <img
-                    src="images/research4.jpg"
-                    alt="Research Topic 4"
-                >
-            </div>
-
-            <div class="research-content">
-
-                <h2>Research Topic Four</h2>
-
-                <p>
-                    Add another research theme, project, or area of expertise
-                    here if needed.
-                </p>
-
-                <a href="#" class="research-link">
-                    Learn more →
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================
-             CURRENT RESEARCH
-             ========================= -->
-
-        <section class="current-research">
-
-            <h2>Current Research</h2>
 
             <p>
-                I am currently working on
-                <strong>[title or short description of your current project]</strong>.
-                This project investigates [brief description of the research
-                question and approach].
+
+                My research investigates brain-computer interfaces
+                (BCIs), with a particular focus on understanding and
+                addressing variability in EEG-based sensorimotor
+                BCIs. I explore signal processing, feature
+                extraction, cortical source localisation, and
+                machine-learning approaches to improve the
+                robustness and generalisability of BCI systems.
+
             </p>
 
-        </section>
 
-    </main>
+            <p>
+
+                A major focus is understanding inter-subject and
+                intra-subject variability and developing methods
+                that can support more reliable BCI performance
+                across users and over time.
+
+            </p>
 
 
-    <!-- =========================
-         FOOTER
-         ========================= -->
+            <a href="publications.html"
+               class="research-link">
 
-    <footer>
-        <span class="gold">©</span> 2026 Your Name ·
-        The University of Sydney
-    </footer>
+                Related publications →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESEARCH TOPIC 2
+         ===================================================== -->
+
+    <section class="research-topic reverse">
+
+
+        <div class="research-image">
+
+            <img
+                src="images/research2.jpg"
+                alt="Biomedical signal processing research"
+            >
+
+        </div>
+
+
+        <div class="research-content">
+
+            <h2>
+                Biomedical Signal Processing
+            </h2>
+
+
+            <p>
+
+                I develop signal-processing and computational
+                methods for analysing complex biomedical signals.
+                The research includes EEG, ECG, electrograms,
+                photoplethysmography, and other physiological
+                recordings.
+
+            </p>
+
+
+            <p>
+
+                Particular emphasis is placed on identifying
+                meaningful signal characteristics in the presence
+                of noise, artefacts, physiological variability,
+                and measurement-related uncertainty.
+
+            </p>
+
+
+            <a href="publications.html"
+               class="research-link">
+
+                Related publications →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESEARCH TOPIC 3
+         ===================================================== -->
+
+    <section class="research-topic">
+
+
+        <div class="research-image">
+
+            <img
+                src="images/research3.jpg"
+                alt="Artificial intelligence for healthcare"
+            >
+
+        </div>
+
+
+        <div class="research-content">
+
+            <h2>
+                AI and Machine Learning for Healthcare
+            </h2>
+
+
+            <p>
+
+                My research applies machine learning and artificial
+                intelligence to biomedical and clinical data to
+                develop reproducible pattern-recognition and
+                prediction systems.
+
+            </p>
+
+
+            <p>
+
+                I am particularly interested in sequence learning,
+                deep learning, data-driven modelling, and methods
+                that can account for variability and uncertainty
+                in physiological data.
+
+            </p>
+
+
+            <a href="publications.html"
+               class="research-link">
+
+                Related publications →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESEARCH TOPIC 4
+         ===================================================== -->
+
+    <section class="research-topic reverse">
+
+
+        <div class="research-image">
+
+            <img
+                src="images/research4.jpg"
+                alt="Clinical and translational research"
+            >
+
+        </div>
+
+
+        <div class="research-content">
+
+            <h2>
+                Clinical and Translational Research
+            </h2>
+
+
+            <p>
+
+                My research aims to translate computational and
+                signal-processing methods into clinically relevant
+                applications. This includes developing approaches
+                for diagnosis, prognosis, patient monitoring, and
+                personalised healthcare.
+
+            </p>
+
+
+            <p>
+
+                The broader goal is to bridge the gap between
+                methodological developments and practical
+                biomedical applications while maintaining
+                reproducibility and clinical relevance.
+
+            </p>
+
+
+            <a href="publications.html"
+               class="research-link">
+
+                Related publications →
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CURRENT RESEARCH
+         ===================================================== -->
+
+    <section class="current-research">
+
+
+        <h2>
+            Current Research
+        </h2>
+
+
+        <p>
+
+            My current research explores the use of advanced
+            artificial intelligence, signal processing, and
+            data-driven methods for developing robust and
+            personalised biomedical technologies. A particular
+            emphasis is placed on understanding variability in
+            physiological signals and translating this knowledge
+            into reliable solutions for healthcare and
+            assistive technologies.
+
+        </p>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+    <span class="gold">©</span>
+    2026 Dr. Simanto Saha ·
+    The University of Sydney
+
+</footer>
+
 
 </body>
+
 </html>
-```
