@@ -4,31 +4,60 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Publications | Your Name</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Publications | Dr. Simanto Saha</title>
+
 
     <style>
 
+        /* =====================================================
+           COLOUR THEME
+           ===================================================== */
+
         :root {
+
             --sydney-blue: #0B3C5D;
+
             --sydney-dark-blue: #062C43;
+
             --sydney-gold: #E5A823;
 
             --text: #222222;
+
             --muted: #5F6368;
+
             --light-grey: #F5F6F7;
+
             --border: #D9DDE1;
+
             --white: #FFFFFF;
+
         }
 
 
+        /* =====================================================
+           GLOBAL
+           ===================================================== */
+
         * {
+
             box-sizing: border-box;
+
+        }
+
+
+        html {
+
+            scroll-behavior: smooth;
+
         }
 
 
         body {
+
             margin: 0;
 
             font-family:
@@ -41,6 +70,7 @@
             background: var(--white);
 
             line-height: 1.7;
+
         }
 
 
@@ -49,81 +79,123 @@
            ===================================================== */
 
         header {
-            background: var(--sydney-blue);
+
+            background:
+                var(--sydney-blue);
 
             border-bottom:
                 5px solid var(--sydney-gold);
+
         }
 
 
         .nav-container {
 
-            max-width: 1100px;
+            max-width:
+                1100px;
 
-            margin: auto;
+            margin:
+                auto;
 
-            display: flex;
+            min-height:
+                75px;
 
-            align-items: center;
+            padding:
+                0 25px;
 
-            justify-content: space-between;
+            display:
+                flex;
 
-            min-height: 75px;
+            align-items:
+                center;
 
-            padding: 0 25px;
+            justify-content:
+                space-between;
+
         }
 
 
         .site-name {
 
-            color: white;
+            color:
+                white;
 
             font-family:
                 Georgia,
                 "Times New Roman",
                 serif;
 
-            font-size: 1.35rem;
+            font-size:
+                1.35rem;
 
-            font-weight: bold;
+            font-weight:
+                bold;
 
-            text-decoration: none;
+            text-decoration:
+                none;
+
+            white-space:
+                nowrap;
+
         }
 
 
         .site-subtitle {
 
-            color: #DCE8EF;
+            color:
+                #DCE8EF;
 
-            font-size: 0.85rem;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
-            margin-left: 8px;
+            font-size:
+                0.82rem;
+
+            font-weight:
+                normal;
+
+            margin-left:
+                8px;
+
         }
 
 
         .nav-links {
 
-            display: flex;
+            display:
+                flex;
 
-            align-items: center;
+            align-items:
+                center;
+
+            flex-wrap:
+                wrap;
+
         }
 
 
         .nav-links a {
 
-            color: white;
+            color:
+                white;
 
-            text-decoration: none;
+            text-decoration:
+                none;
 
-            padding: 27px 15px;
+            padding:
+                27px 15px;
 
-            font-size: 0.95rem;
+            font-size:
+                0.95rem;
 
             border-bottom:
                 4px solid transparent;
 
             transition:
                 0.2s ease;
+
         }
 
 
@@ -135,125 +207,161 @@
 
             border-bottom-color:
                 var(--sydney-gold);
+
         }
 
 
-
         /* =====================================================
-           MAIN CONTENT
+           MAIN
            ===================================================== */
 
         main {
 
-            max-width: 950px;
+            max-width:
+                950px;
 
-            margin: 60px auto;
+            margin:
+                60px auto 90px;
 
-            padding: 0 30px;
+            padding:
+                0 30px;
+
         }
 
 
         .page-title {
 
-            color: var(--sydney-blue);
+            color:
+                var(--sydney-blue);
 
             font-family:
                 Georgia,
                 "Times New Roman",
                 serif;
 
-            font-size: 2.7rem;
+            font-size:
+                2.7rem;
 
-            margin: 0;
+            line-height:
+                1.2;
+
+            margin:
+                0;
+
         }
 
 
         .gold-line {
 
-            width: 60px;
+            width:
+                60px;
 
-            height: 4px;
+            height:
+                4px;
 
             background:
                 var(--sydney-gold);
 
             margin:
                 20px 0 40px;
+
         }
 
 
         .intro {
 
-            color: #555;
+            color:
+                #555555;
 
-            font-size: 1.05rem;
+            font-size:
+                1.05rem;
 
-            max-width: 850px;
+            max-width:
+                850px;
 
-            margin-bottom: 50px;
+            margin:
+                0 0 45px;
+
         }
 
 
-
         /* =====================================================
-           LOADING / ERROR
+           LOADING
            ===================================================== */
 
         #loading {
 
-            color: var(--muted);
+            color:
+                var(--muted);
 
-            padding: 20px 0;
+            padding:
+                20px 0;
 
-            font-style: italic;
+            font-style:
+                italic;
+
         }
 
 
+        /* =====================================================
+           ERROR
+           ===================================================== */
+
         #error {
 
-            display: none;
+            display:
+                none;
 
-            padding: 20px;
+            padding:
+                20px;
 
-            background: #FFF4F4;
+            background:
+                #FFF4F4;
 
             border-left:
                 4px solid #B42318;
 
-            color: #8A1C1C;
+            color:
+                #8A1C1C;
 
-            margin-bottom: 40px;
+            margin-bottom:
+                35px;
+
         }
 
 
-
         /* =====================================================
-           PUBLICATION LIST
+           PUBLICATIONS
            ===================================================== */
 
         #publications {
 
-            width: 100%;
+            width:
+                100%;
+
         }
 
 
         .publication {
 
-            display: grid;
+            display:
+                grid;
 
             grid-template-columns:
-                115px 1fr;
+                120px 1fr;
 
-            gap: 25px;
+            gap:
+                25px;
 
             padding:
-                22px 10px;
+                23px 10px 27px;
 
             border-bottom:
                 1px solid var(--border);
 
             transition:
                 background 0.2s ease;
+
         }
 
 
@@ -261,23 +369,28 @@
 
             background:
                 var(--light-grey);
+
         }
 
 
-
         /* =====================================================
-           YEAR + TYPE
+           PUBLICATION MARKER
            ===================================================== */
 
         .publication-marker {
 
-            display: flex;
+            display:
+                flex;
 
-            flex-direction: column;
+            flex-direction:
+                column;
 
-            align-items: flex-start;
+            align-items:
+                flex-start;
 
-            padding-top: 2px;
+            padding-top:
+                2px;
+
         }
 
 
@@ -286,13 +399,18 @@
             color:
                 var(--sydney-blue);
 
-            font-size: 1.05rem;
+            font-size:
+                1.05rem;
 
-            font-weight: bold;
+            font-weight:
+                bold;
 
-            line-height: 1.3;
+            line-height:
+                1.3;
 
-            white-space: nowrap;
+            white-space:
+                nowrap;
+
         }
 
 
@@ -301,19 +419,25 @@
             color:
                 var(--muted);
 
-            font-size: 0.68rem;
+            font-size:
+                0.67rem;
 
-            font-weight: bold;
+            font-weight:
+                bold;
 
-            text-transform: uppercase;
+            text-transform:
+                uppercase;
 
-            letter-spacing: 0.05em;
+            letter-spacing:
+                0.045em;
 
-            line-height: 1.4;
+            line-height:
+                1.4;
 
-            margin-top: 5px;
+            margin-top:
+                5px;
+
         }
-
 
 
         /* =====================================================
@@ -322,33 +446,36 @@
 
         .publication-text {
 
-            color: #333;
+            color:
+                #333333;
 
-            font-size: 0.98rem;
+            font-size:
+                0.98rem;
 
-            line-height: 1.7;
+            line-height:
+                1.7;
+
         }
 
 
-        .citation-journal {
-
-            font-style: italic;
-        }
-
-
+        .citation-journal,
         .citation-conference {
 
-            font-style: italic;
+            font-style:
+                italic;
+
         }
 
 
         .my-name {
 
-            font-weight: bold;
+            font-weight:
+                bold;
 
-            color: #222;
+            color:
+                #111111;
+
         }
-
 
 
         /* =====================================================
@@ -357,24 +484,38 @@
 
         .publication-links {
 
-            margin-top: 8px;
+            margin-top:
+                10px;
+
         }
 
 
         .publication-links a {
 
-            display: inline-block;
+            display:
+                inline-block;
 
             color:
                 var(--sydney-blue);
 
-            text-decoration: none;
+            text-decoration:
+                none;
 
-            font-size: 0.85rem;
+            font-size:
+                0.82rem;
 
-            font-weight: bold;
+            font-weight:
+                bold;
 
-            margin-right: 18px;
+            margin-right:
+                18px;
+
+            border-bottom:
+                1px solid transparent;
+
+            transition:
+                0.2s ease;
+
         }
 
 
@@ -382,8 +523,11 @@
 
             color:
                 var(--sydney-gold);
-        }
 
+            border-bottom-color:
+                var(--sydney-gold);
+
+        }
 
 
         /* =====================================================
@@ -395,11 +539,13 @@
             color:
                 var(--muted);
 
-            font-style: italic;
+            font-style:
+                italic;
 
-            padding: 15px 0;
+            padding:
+                15px 0;
+
         }
-
 
 
         /* =====================================================
@@ -411,15 +557,18 @@
             background:
                 var(--sydney-dark-blue);
 
-            color: #DCE8EF;
+            color:
+                #DCE8EF;
 
-            margin-top: 90px;
+            padding:
+                30px;
 
-            padding: 30px;
+            text-align:
+                center;
 
-            text-align: center;
+            font-size:
+                0.9rem;
 
-            font-size: 0.9rem;
         }
 
 
@@ -427,8 +576,8 @@
 
             color:
                 var(--sydney-gold);
-        }
 
+        }
 
 
         /* =====================================================
@@ -439,26 +588,48 @@
 
             .nav-container {
 
-                flex-direction: column;
+                flex-direction:
+                    column;
 
                 padding:
                     15px 10px 0;
+
             }
 
 
             .site-name {
 
-                margin-bottom: 10px;
+                white-space:
+                    normal;
+
+                text-align:
+                    center;
+
+                margin-bottom:
+                    10px;
+
+            }
+
+
+            .site-subtitle {
+
+                display:
+                    block;
+
+                margin:
+                    4px 0 0;
+
             }
 
 
             .nav-links {
 
-                width: 100%;
+                width:
+                    100%;
 
-                justify-content: center;
+                justify-content:
+                    center;
 
-                flex-wrap: wrap;
             }
 
 
@@ -467,22 +638,28 @@
                 padding:
                     12px 10px;
 
-                font-size: 0.9rem;
+                font-size:
+                    0.9rem;
+
             }
 
 
             main {
 
-                margin-top: 40px;
+                margin-top:
+                    40px;
 
                 padding:
                     0 20px;
+
             }
 
 
             .page-title {
 
-                font-size: 2.2rem;
+                font-size:
+                    2.2rem;
+
             }
 
 
@@ -491,25 +668,32 @@
                 grid-template-columns:
                     85px 1fr;
 
-                gap: 15px;
+                gap:
+                    15px;
 
                 padding:
-                    18px 5px;
+                    18px 5px 22px;
+
             }
 
 
             .publication-text {
 
-                font-size: 0.93rem;
+                font-size:
+                    0.93rem;
+
             }
 
 
             .publication-type {
 
-                font-size: 0.62rem;
+                font-size:
+                    0.61rem;
+
             }
 
         }
+
 
     </style>
 
@@ -603,10 +787,6 @@
     </div>
 
 
-    <!-- =====================================================
-         ALL PUBLICATIONS
-         ===================================================== -->
-
     <div id="publications"></div>
 
 
@@ -640,18 +820,18 @@
 
 
 /*
- * Enter your name exactly as it appears in publications.bib.
+ * Your name exactly as written in publications.bib.
  *
- * Example:
- *
- * const YOUR_NAME = "Smith, John";
+ * This is used to automatically bold your name.
  */
 
 const YOUR_NAME = "Saha, Simanto";
 
 
 /*
- * BibTeX database.
+ * BibTeX file.
+ *
+ * It must be in the same directory as this HTML file.
  */
 
 const BIB_FILE = "publications.bib";
@@ -659,7 +839,7 @@ const BIB_FILE = "publications.bib";
 
 
 /* ==========================================================
-   LOAD PUBLICATIONS
+   LOAD BIBTEX
    ========================================================== */
 
 fetch(BIB_FILE)
@@ -669,7 +849,7 @@ fetch(BIB_FILE)
         if (!response.ok) {
 
             throw new Error(
-                "Could not find publications.bib"
+                "Could not find publications.bib."
             );
 
         }
@@ -712,9 +892,11 @@ fetch(BIB_FILE)
 
         errorBox.innerHTML =
 
-            "<strong>Unable to load publications.</strong><br><br>" +
+            "<strong>Unable to load publications.</strong>" +
 
-            error.message +
+            "<br><br>" +
+
+            escapeHTML(error.message) +
 
             "<br><br>" +
 
@@ -729,7 +911,7 @@ fetch(BIB_FILE)
 
 
 /* ==========================================================
-   PARSE BIBTEX
+   PARSE BIBTEX ENTRIES
    ========================================================== */
 
 function parseBibTeX(text) {
@@ -738,7 +920,7 @@ function parseBibTeX(text) {
 
 
     /*
-     * Remove BibTeX comments.
+     * Remove comments.
      */
 
     text = text.replace(
@@ -748,18 +930,18 @@ function parseBibTeX(text) {
 
 
     /*
-     * Find BibTeX entries.
+     * Find each @article, @inproceedings, etc.
      */
 
-    const entryRegex =
-        /@([a-zA-Z]+)\s*\{\s*([^,]+),([\s\S]*?)\n\s*\}/g;
+    const entryStart =
+        /@([a-zA-Z]+)\s*\{\s*([^,]+),/g;
 
 
     let match;
 
 
     while (
-        (match = entryRegex.exec(text)) !== null
+        (match = entryStart.exec(text)) !== null
     ) {
 
         const type =
@@ -770,8 +952,74 @@ function parseBibTeX(text) {
             match[2].trim();
 
 
+        const bodyStart =
+            entryStart.lastIndex;
+
+
+        /*
+         * Find the matching closing brace.
+         */
+
+        let depth = 1;
+
+        let position =
+            bodyStart;
+
+
+        let inQuotes = false;
+
+
+        while (
+            position < text.length &&
+            depth > 0
+        ) {
+
+            const character =
+                text[position];
+
+
+            if (
+                character === '"' &&
+                text[position - 1] !== "\\"
+            ) {
+
+                inQuotes =
+                    !inQuotes;
+
+            }
+
+
+            if (!inQuotes) {
+
+                if (
+                    character === "{"
+                ) {
+
+                    depth++;
+
+                }
+
+                else if (
+                    character === "}"
+                ) {
+
+                    depth--;
+
+                }
+
+            }
+
+
+            position++;
+
+        }
+
+
         const body =
-            match[3];
+            text.substring(
+                bodyStart,
+                position - 1
+            );
 
 
         const fields =
@@ -780,24 +1028,31 @@ function parseBibTeX(text) {
 
         publications.push({
 
-            type: type,
+            type:
+                type,
 
-            key: key,
+            key:
+                key,
 
             ...fields
 
         });
 
+
+        entryStart.lastIndex =
+            position;
+
     }
 
 
     return publications;
+
 }
 
 
 
 /* ==========================================================
-   PARSE BIBTEX FIELDS
+   PARSE FIELDS
    ========================================================== */
 
 function parseFields(body) {
@@ -805,89 +1060,218 @@ function parseFields(body) {
     const fields = {};
 
 
-    const fieldRegex =
-        /([a-zA-Z][a-zA-Z0-9_-]*)\s*=\s*(\{(?:[^{}]|\{[^{}]*\})*\}|"[^"]*"|[^,\n]+)\s*,?/g;
-
-
-    let match;
+    let i = 0;
 
 
     while (
-        (match = fieldRegex.exec(body)) !== null
+        i < body.length
     ) {
 
+        /*
+         * Find field name.
+         */
+
+        const fieldMatch =
+            body.substring(i).match(
+                /([a-zA-Z][a-zA-Z0-9_-]*)\s*=\s*/
+            );
+
+
+        if (!fieldMatch) {
+            break;
+        }
+
+
         const fieldName =
-            match[1].toLowerCase();
+            fieldMatch[1].toLowerCase();
 
 
-        let value =
-            match[2].trim();
+        i +=
+            fieldMatch[0].length;
 
 
-        value =
-            cleanBibValue(value);
+        /*
+         * Skip whitespace.
+         */
+
+        while (
+            i < body.length &&
+            /\s/.test(body[i])
+        ) {
+
+            i++;
+
+        }
+
+
+        let value = "";
+
+
+        /*
+         * Braced value.
+         */
+
+        if (
+            body[i] === "{"
+        ) {
+
+            let depth = 1;
+
+            i++;
+
+            const start = i;
+
+
+            while (
+                i < body.length &&
+                depth > 0
+            ) {
+
+                if (
+                    body[i] === "{"
+                ) {
+
+                    depth++;
+
+                }
+
+                else if (
+                    body[i] === "}"
+                ) {
+
+                    depth--;
+
+                }
+
+
+                i++;
+
+            }
+
+
+            value =
+                body.substring(
+                    start,
+                    i - 1
+                );
+
+        }
+
+
+        /*
+         * Quoted value.
+         */
+
+        else if (
+            body[i] === '"'
+        ) {
+
+            i++;
+
+            const start = i;
+
+
+            while (
+                i < body.length
+            ) {
+
+                if (
+                    body[i] === '"' &&
+                    body[i - 1] !== "\\"
+                ) {
+
+                    break;
+
+                }
+
+
+                i++;
+
+            }
+
+
+            value =
+                body.substring(
+                    start,
+                    i
+                );
+
+
+            i++;
+
+        }
+
+
+        /*
+         * Plain value.
+         */
+
+        else {
+
+            const start = i;
+
+
+            while (
+                i < body.length &&
+                body[i] !== ","
+            ) {
+
+                i++;
+
+            }
+
+
+            value =
+                body.substring(
+                    start,
+                    i
+                );
+
+        }
 
 
         fields[fieldName] =
-            value;
+            cleanBibValue(value);
+
+
+        /*
+         * Move past comma.
+         */
+
+        while (
+            i < body.length &&
+            (
+                body[i] === "," ||
+                /\s/.test(body[i])
+            )
+        ) {
+
+            i++;
+
+        }
+
     }
 
 
     return fields;
+
 }
 
 
 
 /* ==========================================================
-   CLEAN BIBTEX VALUES
+   CLEAN BIBTEX VALUE
    ========================================================== */
 
 function cleanBibValue(value) {
 
-    /*
-     * Remove outer braces.
-     */
-
-    if (
-        value.startsWith("{") &&
-        value.endsWith("}")
-    ) {
-
-        value =
-            value.substring(
-                1,
-                value.length - 1
-            );
-    }
-
-
-    /*
-     * Remove quotation marks.
-     */
-
-    if (
-        value.startsWith('"') &&
-        value.endsWith('"')
-    ) {
-
-        value =
-            value.substring(
-                1,
-                value.length - 1
-            );
-    }
-
-
-    /*
-     * Basic LaTeX cleanup.
-     */
-
     value =
-        value.replace(
-            /[{}]/g,
-            ""
-        );
+        value.trim();
 
+
+    /*
+     * LaTeX/BibTeX formatting.
+     */
 
     value =
         value.replace(
@@ -910,8 +1294,15 @@ function cleanBibValue(value) {
         );
 
 
+    value =
+        value.replace(
+            /\\#/g,
+            "#"
+        );
+
+
     /*
-     * Convert BibTeX en-dash notation.
+     * Convert -- to en dash.
      */
 
     value =
@@ -921,6 +1312,10 @@ function cleanBibValue(value) {
         );
 
 
+    /*
+     * Convert ~ to normal spaces.
+     */
+
     value =
         value.replace(
             /~/g,
@@ -928,13 +1323,39 @@ function cleanBibValue(value) {
         );
 
 
+    /*
+     * Basic LaTeX accent handling.
+     */
+
+    value =
+        value.replace(
+            /\{\\'([aeiouAEIOU])\}/g,
+            "$1"
+        );
+
+
+    value =
+        value.replace(
+            /\{\\`([aeiouAEIOU])\}/g,
+            "$1"
+        );
+
+
+    value =
+        value.replace(
+            /\{\\~([nN])\}/g,
+            "$1"
+        );
+
+
     return value.trim();
+
 }
 
 
 
 /* ==========================================================
-   DISPLAY PUBLICATIONS
+   DISPLAY
    ========================================================== */
 
 function displayPublications(
@@ -943,7 +1364,7 @@ function displayPublications(
 
 
     /*
-     * Sort newest → oldest.
+     * Sort by year, newest first.
      */
 
     publications.sort(
@@ -957,10 +1378,6 @@ function displayPublications(
                 parseInt(b.year) || 0;
 
 
-            /*
-             * Newest first.
-             */
-
             if (
                 yearA !== yearB
             ) {
@@ -971,8 +1388,8 @@ function displayPublications(
 
 
             /*
-             * Within the same year,
-             * sort alphabetically by title.
+             * Same year:
+             * alphabetical by first author's surname/title.
              */
 
             return (
@@ -995,7 +1412,7 @@ function displayPublications(
 
 
 /* ==========================================================
-   RENDER PUBLICATIONS
+   RENDER
    ========================================================== */
 
 function renderPublications(
@@ -1025,16 +1442,13 @@ function renderPublications(
             '</div>';
 
         return;
+
     }
 
 
     publications.forEach(
         publication => {
 
-
-            /*
-             * Create publication item.
-             */
 
             const item =
                 document.createElement(
@@ -1046,11 +1460,9 @@ function renderPublications(
                 "publication";
 
 
-            /*
-             * ------------------------------------------
-             * YEAR + TYPE
-             * ------------------------------------------
-             */
+            /* -----------------------------------------------
+               MARKER
+               ----------------------------------------------- */
 
             const marker =
                 document.createElement(
@@ -1102,11 +1514,9 @@ function renderPublications(
             );
 
 
-            /*
-             * ------------------------------------------
-             * CITATION
-             * ------------------------------------------
-             */
+            /* -----------------------------------------------
+               CITATION
+               ----------------------------------------------- */
 
             const text =
                 document.createElement(
@@ -1124,11 +1534,9 @@ function renderPublications(
                 );
 
 
-            /*
-             * ------------------------------------------
-             * LINKS
-             * ------------------------------------------
-             */
+            /* -----------------------------------------------
+               LINKS
+               ----------------------------------------------- */
 
             const links =
                 createPublicationLinks(
@@ -1144,10 +1552,6 @@ function renderPublications(
 
             }
 
-
-            /*
-             * Add marker and citation.
-             */
 
             item.appendChild(
                 marker
@@ -1171,18 +1575,16 @@ function renderPublications(
 
 
 /* ==========================================================
-   DETERMINE PUBLICATION TYPE
+   PUBLICATION TYPE
    ========================================================== */
 
 function getPublicationType(
     publication
 ) {
 
-
     switch (
         publication.type
     ) {
-
 
         case "article":
 
@@ -1202,6 +1604,26 @@ function getPublicationType(
         case "incollection":
 
             return "Conference Paper";
+
+
+        case "inbook":
+
+            return "Book Chapter";
+
+
+        case "book":
+
+            return "Book";
+
+
+        case "phdthesis":
+
+            return "PhD Thesis";
+
+
+        case "mastersthesis":
+
+            return "Master's Thesis";
 
 
         case "misc":
@@ -1228,22 +1650,19 @@ function getPublicationType(
 
 
 /* ==========================================================
-   FORMAT IEEE CITATION
+   IEEE CITATION
    ========================================================== */
 
 function formatIEEE(
     publication
 ) {
 
-
     let citation = "";
 
 
-    /*
-     * ------------------------------------------
-     * AUTHORS
-     * ------------------------------------------
-     */
+    /* ------------------------------------------------------
+       AUTHORS
+       ------------------------------------------------------ */
 
     if (
         publication.author
@@ -1260,11 +1679,9 @@ function formatIEEE(
     }
 
 
-    /*
-     * ------------------------------------------
-     * TITLE
-     * ------------------------------------------
-     */
+    /* ------------------------------------------------------
+       TITLE
+       ------------------------------------------------------ */
 
     if (
         publication.title
@@ -1272,7 +1689,7 @@ function formatIEEE(
 
         citation +=
 
-            '“' +
+            "“" +
 
             escapeHTML(
                 formatTitle(
@@ -1280,16 +1697,14 @@ function formatIEEE(
                 )
             ) +
 
-            ',” ';
+            ",” ";
 
     }
 
 
-    /*
-     * ------------------------------------------
-     * JOURNAL ARTICLE
-     * ------------------------------------------
-     */
+    /* ------------------------------------------------------
+       JOURNAL ARTICLE
+       ------------------------------------------------------ */
 
     if (
         publication.type === "article"
@@ -1357,29 +1772,12 @@ function formatIEEE(
 
         }
 
-
-        if (
-            publication.month
-        ) {
-
-            citation +=
-
-                ", " +
-
-                escapeHTML(
-                    publication.month
-                );
-
-        }
-
     }
 
 
-    /*
-     * ------------------------------------------
-     * CONFERENCE PAPER
-     * ------------------------------------------
-     */
+    /* ------------------------------------------------------
+       CONFERENCE
+       ------------------------------------------------------ */
 
     else {
 
@@ -1404,15 +1802,15 @@ function formatIEEE(
 
 
         if (
-            publication.address
+            publication.volume
         ) {
 
             citation +=
 
-                ", " +
+                ", vol. " +
 
                 escapeHTML(
-                    publication.address
+                    publication.volume
                 );
 
         }
@@ -1435,67 +1833,36 @@ function formatIEEE(
     }
 
 
-    /*
-     * ------------------------------------------
-     * FINAL PERIOD
-     * ------------------------------------------
-     */
-
-    citation += ".";
-
-
-    /*
-     * ------------------------------------------
-     * DOI
-     * ------------------------------------------
-     */
+    /* ------------------------------------------------------
+       YEAR
+       ------------------------------------------------------ */
 
     if (
-        publication.doi
+        publication.year
     ) {
-
-
-        let doi =
-            publication.doi;
-
-
-        doi =
-            doi.replace(
-                /^https?:\/\/doi\.org\//i,
-                ""
-            );
-
 
         citation +=
 
-            ' doi: ' +
-
-            '<a href="https://doi.org/' +
-
-            encodeURIComponent(
-                doi
-            ) +
-
-            '" target="_blank" ' +
-
-            'rel="noopener noreferrer">' +
+            ", " +
 
             escapeHTML(
-                doi
-            ) +
-
-            "</a>.";
+                publication.year
+            );
 
     }
 
 
+    citation += ".";
+
+
     return citation;
+
 }
 
 
 
 /* ==========================================================
-   FORMAT AUTHORS
+   AUTHORS
    ========================================================== */
 
 function formatAuthors(
@@ -1511,6 +1878,10 @@ function formatAuthors(
             .map(
                 author =>
                     author.trim()
+            )
+            .filter(
+                author =>
+                    author.length > 0
             );
 
 
@@ -1526,7 +1897,7 @@ function formatAuthors(
 
 
                 /*
-                 * Bold your name.
+                 * Bold Simanto Saha.
                  */
 
                 if (
@@ -1557,10 +1928,6 @@ function formatAuthors(
             }
         );
 
-
-    /*
-     * IEEE author formatting.
-     */
 
     if (
         formatted.length === 1
@@ -1616,8 +1983,7 @@ function isYourName(
 
 
     if (
-        !YOUR_NAME ||
-        YOUR_NAME === "Saha, Simanto"
+        !YOUR_NAME
     ) {
 
         return false;
@@ -1655,7 +2021,7 @@ function isYourName(
 
 
 /* ==========================================================
-   FORMAT AUTHOR NAME
+   AUTHOR NAME → IEEE STYLE
    ========================================================== */
 
 function formatAuthorName(
@@ -1664,13 +2030,13 @@ function formatAuthorName(
 
 
     /*
-     * BibTeX:
+     * BibTeX format:
      *
-     * Smith, John
+     * Saha, Simanto
      *
      * becomes:
      *
-     * J. Smith
+     * S. Saha
      */
 
     if (
@@ -1695,7 +2061,9 @@ function formatAuthorName(
 
         return (
 
-            initials(firstName) +
+            initials(
+                firstName
+            ) +
 
             " " +
 
@@ -1707,7 +2075,9 @@ function formatAuthorName(
 
 
     /*
-     * John Smith
+     * Format:
+     *
+     * Simanto Saha
      */
 
     const parts =
@@ -1735,7 +2105,9 @@ function formatAuthorName(
 
     return (
 
-        initials(firstName) +
+        initials(
+            firstName
+        ) +
 
         " " +
 
@@ -1810,7 +2182,7 @@ function initials(
 
 
 /* ==========================================================
-   TITLE FORMATTING
+   TITLE
    ========================================================== */
 
 function formatTitle(
@@ -1831,7 +2203,7 @@ function formatTitle(
 
 
 /* ==========================================================
-   CREATE PUBLICATION LINKS
+   LINKS
    ========================================================== */
 
 function createPublicationLinks(
@@ -1842,9 +2214,9 @@ function createPublicationLinks(
     const links = [];
 
 
-    /*
-     * DOI
-     */
+    /* ------------------------------------------------------
+       DOI
+       ------------------------------------------------------ */
 
     if (
         publication.doi
@@ -1852,7 +2224,7 @@ function createPublicationLinks(
 
 
         let doi =
-            publication.doi;
+            publication.doi.trim();
 
 
         doi =
@@ -1874,9 +2246,9 @@ function createPublicationLinks(
     }
 
 
-    /*
-     * PDF
-     */
+    /* ------------------------------------------------------
+       PDF
+       ------------------------------------------------------ */
 
     if (
         publication.pdf
@@ -1894,9 +2266,9 @@ function createPublicationLinks(
     }
 
 
-    /*
-     * General URL
-     */
+    /* ------------------------------------------------------
+       URL
+       ------------------------------------------------------ */
 
     if (
         publication.url
@@ -1934,14 +2306,18 @@ function createPublicationLinks(
 
 
     links.forEach(
-        link =>
+        link => {
+
             container.appendChild(
                 link
-            )
+            );
+
+        }
     );
 
 
     return container;
+
 }
 
 
@@ -1979,6 +2355,7 @@ function createLink(
 
 
     return link;
+
 }
 
 
@@ -2003,6 +2380,7 @@ function escapeHTML(
 
 
     return div.innerHTML;
+
 }
 
 
