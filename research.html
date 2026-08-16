@@ -182,11 +182,10 @@
         }
 
 
-        /*
-         * INTRODUCTION
-         *
-         * Deliberately larger than the normal body text.
-         */
+
+        /* =====================================================
+           INTRODUCTION
+           ===================================================== */
 
         .intro {
 
@@ -198,11 +197,82 @@
 
             margin-top: 0;
 
-            margin-bottom: 65px;
+            margin-bottom: 45px;
 
             line-height: 1.75;
 
             text-align: justify;
+        }
+
+
+
+        /* =====================================================
+           RESEARCH FIGURE
+           ===================================================== */
+
+        .research-figure {
+
+            width: 100%;
+
+            margin:
+                40px 0 65px;
+
+            text-align: center;
+        }
+
+
+        .research-figure img {
+
+            display: block;
+
+            width: 100%;
+
+            max-width: 950px;
+
+            height: auto;
+
+            margin:
+                0 auto;
+
+            object-fit: contain;
+
+            border-radius: 4px;
+
+            box-shadow:
+                0 4px 15px
+                rgba(0, 0, 0, 0.12);
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .research-figure img:hover {
+
+            transform:
+                translateY(-3px);
+
+            box-shadow:
+                0 7px 20px
+                rgba(0, 0, 0, 0.18);
+        }
+
+
+        .research-figure figcaption {
+
+            max-width: 950px;
+
+            margin:
+                15px auto 0;
+
+            color: #4B4B4B;
+
+            font-size: 1.5rem;
+
+            line-height: 1.5;
+
+            text-align: center;
         }
 
 
@@ -246,6 +316,7 @@
         }
 
 
+
         /* =====================================================
            RESEARCH IMAGE
            ===================================================== */
@@ -271,14 +342,6 @@
             box-shadow:
                 0 4px 15px
                 rgba(0, 0, 0, 0.12);
-        }
-
-
-        /*
-         * Image hover effect.
-         */
-
-        .research-image img {
 
             transition:
                 transform 0.25s ease,
@@ -523,17 +586,12 @@
             }
 
 
-            /*
-             * Keep the requested 1.5rem
-             * introduction size on mobile,
-             * while slightly reducing it only
-             * if necessary for readability.
-             */
+            /* Keep the introduction prominent */
 
             .intro {
 
                 font-size:
-                    1.25rem;
+                    1.5rem;
 
                 line-height:
                     1.7;
@@ -542,6 +600,61 @@
                     left;
             }
 
+
+
+            /* =================================================
+               MOBILE FIGURE
+               ================================================= */
+
+            .research-figure {
+
+                margin:
+                    30px 0 50px;
+
+                text-align:
+                    center;
+            }
+
+
+            .research-figure img {
+
+                width:
+                    100%;
+
+                max-width:
+                    100%;
+
+                height:
+                    auto;
+
+                display:
+                    block;
+
+                margin:
+                    0 auto;
+            }
+
+
+            .research-figure figcaption {
+
+                font-size:
+                    1.5rem;
+
+                line-height:
+                    1.5;
+
+                margin-top:
+                    12px;
+
+                text-align:
+                    center;
+            }
+
+
+
+            /* =================================================
+               RESEARCH TOPICS ON MOBILE
+               ================================================= */
 
             .research-topic,
             .research-topic.reverse {
@@ -577,24 +690,12 @@
                     1.6rem;
             }
 
-            .research-figure {
-                margin: 30px 0;
-                text-align: center;
-                }
 
-            .research-figure img {
-                max-width: 100%;
-                height: auto;
-                display: block;
-                margin: 0 auto;
-                }
+            .current-research {
 
-            .research-figure figcaption {
-                font-size: 1.5rem;
-                color: #4B4B4B;
-                margin-top: 12px;
-                line-height: 1.5;
-                }
+                padding:
+                    25px;
+            }
 
         }
 
@@ -633,18 +734,22 @@
                 Home
             </a>
 
+
             <a href="research.html"
                class="active">
                 Research
             </a>
 
+
             <a href="publications.html">
                 Publications
             </a>
 
+
             <a href="cv.html">
                 CV
             </a>
+
 
             <a href="contact.html">
                 Contact
@@ -665,12 +770,17 @@
 <main>
 
 
+    <!-- =====================================================
+         PAGE TITLE
+         ===================================================== -->
+
     <h1 class="page-title">
         Research
     </h1>
 
 
     <div class="gold-line"></div>
+
 
 
     <!-- =====================================================
@@ -680,31 +790,276 @@
     <p class="intro">
 
         My research focuses on applying advanced signal processing
-        and artificial intelligence techniques to develop solutions for biomedical
-        applications, including brain-computer interfaces and the
-        diagnosis and prognosis of various clinical conditions.
-        One of the key translational challenges in this area is the
-        variability of biomedical signals due to physiological,
-        hardware, and environmental factors. The variability hinders
-        the generalisability of an algorithm over time and across
-        users. My research investigates the sources of variability,
-        explores potential markers that describe variability, and
-        develops reproducible pattern recognition solutions.
+        and artificial intelligence techniques to develop solutions
+        for biomedical applications, including brain-computer
+        interfaces and the diagnosis and prognosis of various
+        clinical conditions. One of the key translational challenges
+        in this area is the variability of biomedical signals due to
+        physiological, hardware, and environmental factors. The
+        variability hinders the generalisability of an algorithm over
+        time and across users. My research investigates the sources
+        of variability, explores potential markers that describe
+        variability, and develops reproducible pattern recognition
+        solutions.
 
     </p>
 
+
+
+    <!-- =====================================================
+         MAIN RESEARCH FIGURE
+         ===================================================== -->
+
     <figure class="research-figure">
 
-    <img
-        src="images/neural_decoding.jpg"
-        alt="Description of the figure"
-    >
+        <img
+            src="images/neural_decoding.jpg"
+            alt="Neural decoding for clinical diagnosis, prognosis and brain-computer interface applications"
+        >
 
-    <figcaption>
-        Neural decoding for clinical diagnosis, prognosis and brain-computer interface applications.
-    </figcaption>
+        <figcaption>
+
+            Neural decoding for clinical diagnosis, prognosis and
+            brain-computer interface applications.
+
+        </figcaption>
 
     </figure>
+
+
+
+    <!-- =====================================================
+         RESEARCH TOPIC 1
+         ===================================================== -->
+
+    <section class="research-topic">
+
+        <div class="research-image">
+
+            <img
+                src="images/research1.jpg"
+                alt="Research Topic 1"
+            >
+
+        </div>
+
+
+        <div class="research-content">
+
+            <h2>
+                Research Topic One
+            </h2>
+
+
+            <p>
+
+                Describe your first research area here. Explain the
+                main question you are investigating, the methods you
+                use, and why this research is important.
+
+            </p>
+
+
+            <p>
+
+                You can briefly mention your current projects,
+                collaborations, datasets, experiments, or applications.
+
+            </p>
+
+
+            <a
+                href="#"
+                class="research-link"
+            >
+                Learn more →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESEARCH TOPIC 2
+         ===================================================== -->
+
+    <section class="research-topic reverse">
+
+        <div class="research-image">
+
+            <img
+                src="images/research2.jpg"
+                alt="Research Topic 2"
+            >
+
+        </div>
+
+
+        <div class="research-content">
+
+            <h2>
+                Research Topic Two
+            </h2>
+
+
+            <p>
+
+                Describe your second research area here. This section
+                can focus on a different research question, methodology,
+                or application.
+
+            </p>
+
+
+            <p>
+
+                Keep the description concise and highlight what makes
+                this area of research interesting or significant.
+
+            </p>
+
+
+            <a
+                href="#"
+                class="research-link"
+            >
+                Learn more →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESEARCH TOPIC 3
+         ===================================================== -->
+
+    <section class="research-topic">
+
+        <div class="research-image">
+
+            <img
+                src="images/research3.jpg"
+                alt="Research Topic 3"
+            >
+
+        </div>
+
+
+        <div class="research-content">
+
+            <h2>
+                Research Topic Three
+            </h2>
+
+
+            <p>
+
+                Describe your third research area here. You can discuss
+                your approach, key research questions, or practical
+                applications.
+
+            </p>
+
+
+            <p>
+
+                This could also be used for an interdisciplinary research
+                theme or an emerging area of your work.
+
+            </p>
+
+
+            <a
+                href="#"
+                class="research-link"
+            >
+                Learn more →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESEARCH TOPIC 4
+         ===================================================== -->
+
+    <section class="research-topic reverse">
+
+        <div class="research-image">
+
+            <img
+                src="images/research4.jpg"
+                alt="Research Topic 4"
+            >
+
+        </div>
+
+
+        <div class="research-content">
+
+            <h2>
+                Research Topic Four
+            </h2>
+
+
+            <p>
+
+                Add another research theme, project, or area of
+                expertise here if needed.
+
+            </p>
+
+
+            <a
+                href="#"
+                class="research-link"
+            >
+                Learn more →
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CURRENT RESEARCH
+         ===================================================== -->
+
+    <section class="current-research">
+
+        <h2>
+            Current Research
+        </h2>
+
+
+        <p>
+
+            I am currently working on
+            <strong>
+                [title or short description of your current project]
+            </strong>.
+
+            This project investigates
+            [brief description of the research question and approach].
+
+        </p>
+
+    </section>
+
+
+</main>
+
+
 
 <!-- =========================================================
      FOOTER
@@ -712,7 +1067,10 @@
 
 <footer>
 
-    <span class="gold">©</span>
+    <span class="gold">
+        ©
+    </span>
+
     2026 Dr. Simanto Saha
 
 </footer>
