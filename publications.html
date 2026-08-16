@@ -3,578 +3,428 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<title>Publications | Dr. Simanto Saha</title>
 
-    <title>Publications | Dr. Simanto Saha</title>
+<style>
 
+:root {
+    --sydney-blue: #0B3C5D;
+    --sydney-dark-blue: #062C43;
+    --sydney-gold: #E5A823;
 
-    <style>
+    --text: #222222;
+    --muted: #5F6368;
+    --light-grey: #F5F6F7;
+    --border: #D9DDE1;
+    --white: #FFFFFF;
+}
 
-        :root {
-            --sydney-blue: #0B3C5D;
-            --sydney-dark-blue: #062C43;
-            --sydney-gold: #E5A823;
+* {
+    box-sizing: border-box;
+}
 
-            --text: #222222;
-            --muted: #5F6368;
-            --light-grey: #F5F6F7;
-            --border: #D9DDE1;
-            --white: #FFFFFF;
-        }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.7;
+}
 
 
-        * {
-            box-sizing: border-box;
-        }
+/* =========================================================
+   HEADER
+   ========================================================= */
 
+header {
+    background: var(--sydney-blue);
+    border-bottom: 5px solid var(--sydney-gold);
+}
 
-        body {
-            margin: 0;
+.nav-container {
+    max-width: 1100px;
+    margin: auto;
 
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-            color: var(--text);
+    min-height: 75px;
+    padding: 0 25px;
+}
 
-            background: var(--white);
+.site-name {
+    color: white;
 
-            line-height: 1.7;
-        }
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
+    font-size: 1.35rem;
+    font-weight: bold;
 
-        /* =====================================================
-           HEADER
-           ===================================================== */
+    text-decoration: none;
+}
 
-        header {
-            background: var(--sydney-blue);
+.site-subtitle {
+    color: #DCE8EF;
+    font-size: 0.85rem;
+    margin-left: 8px;
+}
 
-            border-bottom:
-                5px solid var(--sydney-gold);
-        }
+.nav-links {
+    display: flex;
+    align-items: center;
+}
 
+.nav-links a {
+    color: white;
+    text-decoration: none;
 
-        .nav-container {
-            max-width: 1100px;
+    padding: 27px 15px;
 
-            margin: auto;
+    font-size: 0.95rem;
 
-            display: flex;
+    border-bottom: 4px solid transparent;
 
-            align-items: center;
+    transition: 0.2s ease;
+}
 
-            justify-content: space-between;
+.nav-links a:hover,
+.nav-links a.active {
+    background: var(--sydney-dark-blue);
+    border-bottom-color: var(--sydney-gold);
+}
 
-            min-height: 75px;
 
-            padding: 0 25px;
-        }
+/* =========================================================
+   MAIN
+   ========================================================= */
 
+main {
+    max-width: 950px;
+    margin: 60px auto;
+    padding: 0 30px;
+}
 
-        .site-name {
-            color: white;
+.page-title {
+    color: var(--sydney-blue);
 
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
-            font-size: 1.35rem;
+    font-size: 2.7rem;
+    margin: 0;
+}
 
-            font-weight: bold;
+.gold-line {
+    width: 60px;
+    height: 4px;
 
-            text-decoration: none;
-        }
+    background: var(--sydney-gold);
 
+    margin: 20px 0 30px;
+}
 
-        .site-subtitle {
-            color: #DCE8EF;
 
-            font-size: 0.85rem;
+/* =========================================================
+   GOOGLE SCHOLAR
+   ========================================================= */
 
-            margin-left: 8px;
-        }
+.scholar-link {
+    display: inline-flex;
 
+    align-items: center;
 
-        .nav-links {
-            display: flex;
+    margin-bottom: 40px;
 
-            align-items: center;
-        }
+    text-decoration: none;
 
+    color: var(--sydney-blue);
 
-        .nav-links a {
-            color: white;
+    font-weight: bold;
 
-            text-decoration: none;
+    font-size: 1rem;
+}
 
-            padding: 27px 15px;
+.scholar-link img {
+    width: 52px;
+    height: 52px;
 
-            font-size: 0.95rem;
+    object-fit: contain;
 
-            border-bottom:
-                4px solid transparent;
+    margin-right: 12px;
+}
 
-            transition:
-                0.2s ease;
-        }
+.scholar-link:hover {
+    color: var(--sydney-gold);
+}
 
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            background:
-                var(--sydney-dark-blue);
+/* =========================================================
+   INTRO
+   ========================================================= */
 
-            border-bottom-color:
-                var(--sydney-gold);
-        }
+.intro {
+    color: #555;
 
+    font-size: 1.05rem;
 
-        /* =====================================================
-           MAIN CONTENT
-           ===================================================== */
+    max-width: 850px;
 
-        main {
-            max-width: 950px;
+    margin-bottom: 50px;
+}
 
-            margin: 60px auto;
 
-            padding: 0 30px;
-        }
+/* =========================================================
+   LOADING / ERROR
+   ========================================================= */
 
+#loading {
+    color: var(--muted);
 
-        .page-title {
-            color: var(--sydney-blue);
+    padding: 20px 0;
 
-            font-family:
-                Georgia,
-                "Times New Roman",
-                serif;
+    font-style: italic;
+}
 
-            font-size: 2.7rem;
+#error {
+    display: none;
 
-            margin: 0;
-        }
+    padding: 20px;
 
+    background: #FFF4F4;
 
-        .gold-line {
-            width: 60px;
+    border-left: 4px solid #B42318;
 
-            height: 4px;
+    color: #8A1C1C;
 
-            background:
-                var(--sydney-gold);
+    margin-bottom: 40px;
+}
 
-            margin:
-                20px 0 25px;
-        }
 
+/* =========================================================
+   PUBLICATION
+   ========================================================= */
 
-        .intro {
-            color: #555;
+.publication {
+    display: grid;
 
-            font-size: 1.05rem;
+    grid-template-columns: 115px 1fr;
 
-            max-width: 850px;
+    gap: 25px;
 
-            margin-bottom: 35px;
-        }
+    padding: 22px 10px;
 
+    border-bottom: 1px solid var(--border);
 
-        /* =====================================================
-           GOOGLE SCHOLAR
-           ===================================================== */
+    transition: background 0.2s ease;
+}
 
-        .scholar-link {
-            margin-top: -10px;
+.publication:hover {
+    background: var(--light-grey);
+}
 
-            margin-bottom: 35px;
-        }
 
+/* =========================================================
+   YEAR + TYPE
+   ========================================================= */
 
-        .scholar-link a {
-            display: inline-flex;
+.publication-marker {
+    display: flex;
 
-            align-items: center;
+    flex-direction: column;
 
-            gap: 14px;
+    align-items: flex-start;
 
-            color: var(--sydney-blue);
+    padding-top: 2px;
+}
 
-            text-decoration: none;
+.publication-year {
+    color: var(--sydney-blue);
 
-            font-size: 1.15rem;
+    font-size: 1.05rem;
 
-            font-weight: bold;
+    font-weight: bold;
 
-            padding: 14px 22px;
+    line-height: 1.3;
 
-            border:
-                2px solid var(--sydney-blue);
+    white-space: nowrap;
+}
 
-            border-radius: 7px;
+.publication-type {
+    color: var(--muted);
 
-            background: var(--white);
+    font-size: 0.68rem;
 
-            box-shadow:
-                0 2px 6px rgba(
-                    0,
-                    0,
-                    0,
-                    0.08
-                );
+    font-weight: bold;
 
-            transition:
-                color 0.2s ease,
-                background 0.2s ease,
-                border-color 0.2s ease,
-                transform 0.2s ease,
-                box-shadow 0.2s ease;
-        }
+    text-transform: uppercase;
 
+    letter-spacing: 0.05em;
 
-        .scholar-link a:hover {
-            color: white;
+    line-height: 1.4;
 
-            background:
-                var(--sydney-blue);
+    margin-top: 5px;
+}
 
-            border-color:
-                var(--sydney-blue);
 
-            transform:
-                translateY(-2px);
+/* =========================================================
+   CITATION
+   ========================================================= */
 
-            box-shadow:
-                0 5px 12px rgba(
-                    0,
-                    0,
-                    0,
-                    0.15
-                );
-        }
+.publication-text {
+    color: #333;
 
+    font-size: 0.98rem;
 
-        .scholar-icon {
-            font-size: 2rem;
+    line-height: 1.7;
+}
 
-            line-height: 1;
-        }
+.citation-journal,
+.citation-conference {
+    font-style: italic;
+}
 
+.my-name {
+    font-weight: bold;
+}
 
-        /* =====================================================
-           LOADING / ERROR
-           ===================================================== */
 
-        #loading {
-            color: var(--muted);
+/* =========================================================
+   DOI
+   ========================================================= */
 
-            padding: 20px 0;
+.doi-link {
+    color: var(--sydney-blue);
 
-            font-style: italic;
-        }
+    text-decoration: none;
 
+    white-space: nowrap;
+}
 
-        #error {
-            display: none;
+.doi-link:hover {
+    color: var(--sydney-gold);
 
-            padding: 20px;
+    text-decoration: underline;
+}
 
-            background: #FFF4F4;
 
-            border-left:
-                4px solid #B42318;
+/* =========================================================
+   EMPTY
+   ========================================================= */
 
-            color: #8A1C1C;
+.empty-message {
+    color: var(--muted);
 
-            margin-bottom: 40px;
-        }
+    font-style: italic;
 
+    padding: 15px 0;
+}
 
-        /* =====================================================
-           PUBLICATION LIST
-           ===================================================== */
 
-        #publications {
-            width: 100%;
-        }
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
+footer {
+    background: var(--sydney-dark-blue);
 
-        .publication {
-            display: grid;
+    color: #DCE8EF;
 
-            grid-template-columns:
-                115px 1fr;
+    margin-top: 90px;
 
-            gap: 25px;
+    padding: 30px;
 
-            padding:
-                22px 10px;
+    text-align: center;
 
-            border-bottom:
-                1px solid var(--border);
+    font-size: 0.9rem;
+}
 
-            transition:
-                background 0.2s ease;
-        }
+footer .gold {
+    color: var(--sydney-gold);
+}
 
 
-        .publication:hover {
-            background:
-                var(--light-grey);
-        }
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
+@media (max-width: 750px) {
 
-        /* =====================================================
-           YEAR + TYPE
-           ===================================================== */
+    .nav-container {
+        flex-direction: column;
 
-        .publication-marker {
-            display: flex;
+        padding:
+            15px 10px 0;
+    }
 
-            flex-direction: column;
+    .site-name {
+        margin-bottom: 10px;
 
-            align-items: flex-start;
+        text-align: center;
+    }
 
-            padding-top: 2px;
-        }
+    .site-subtitle {
+        display: block;
 
+        margin:
+            5px 0 0;
+    }
 
-        .publication-year {
-            color:
-                var(--sydney-blue);
+    .nav-links {
+        width: 100%;
 
-            font-size: 1.05rem;
+        justify-content: center;
 
-            font-weight: bold;
+        flex-wrap: wrap;
+    }
 
-            line-height: 1.3;
+    .nav-links a {
+        padding:
+            12px 10px;
 
-            white-space: nowrap;
-        }
+        font-size: 0.9rem;
+    }
 
+    main {
+        margin-top: 40px;
 
-        .publication-type {
-            color:
-                var(--muted);
+        padding:
+            0 20px;
+    }
 
-            font-size: 0.68rem;
+    .page-title {
+        font-size: 2.2rem;
+    }
 
-            font-weight: bold;
+    .publication {
+        grid-template-columns:
+            85px 1fr;
 
-            text-transform: uppercase;
+        gap: 15px;
 
-            letter-spacing: 0.05em;
+        padding:
+            18px 5px;
+    }
 
-            line-height: 1.4;
+    .publication-text {
+        font-size: 0.93rem;
+    }
 
-            margin-top: 5px;
-        }
+    .publication-type {
+        font-size: 0.62rem;
+    }
 
+}
 
-        /* =====================================================
-           CITATION
-           ===================================================== */
-
-        .publication-text {
-            color: #333;
-
-            font-size: 0.98rem;
-
-            line-height: 1.7;
-        }
-
-
-        .citation-journal {
-            font-style: italic;
-        }
-
-
-        .citation-conference {
-            font-style: italic;
-        }
-
-
-        .my-name {
-            font-weight: bold;
-
-            color: #222;
-        }
-
-
-        /* =====================================================
-           DOI
-           ===================================================== */
-
-        .doi-link {
-            color:
-                var(--sydney-blue);
-
-            text-decoration: none;
-
-            word-break: break-word;
-        }
-
-
-        .doi-link:hover {
-            color:
-                var(--sydney-gold);
-
-            text-decoration:
-                underline;
-        }
-
-
-        /* =====================================================
-           EMPTY STATE
-           ===================================================== */
-
-        .empty-message {
-            color:
-                var(--muted);
-
-            font-style: italic;
-
-            padding:
-                15px 0;
-        }
-
-
-        /* =====================================================
-           FOOTER
-           ===================================================== */
-
-        footer {
-            background:
-                var(--sydney-dark-blue);
-
-            color: #DCE8EF;
-
-            margin-top:
-                90px;
-
-            padding:
-                30px;
-
-            text-align:
-                center;
-
-            font-size:
-                0.9rem;
-        }
-
-
-        footer .gold {
-            color:
-                var(--sydney-gold);
-        }
-
-
-        /* =====================================================
-           MOBILE
-           ===================================================== */
-
-        @media (max-width: 750px) {
-
-            .nav-container {
-                flex-direction:
-                    column;
-
-                padding:
-                    15px 10px 0;
-            }
-
-
-            .site-name {
-                margin-bottom:
-                    10px;
-            }
-
-
-            .nav-links {
-                width:
-                    100%;
-
-                justify-content:
-                    center;
-
-                flex-wrap:
-                    wrap;
-            }
-
-
-            .nav-links a {
-                padding:
-                    12px 10px;
-
-                font-size:
-                    0.9rem;
-            }
-
-
-            main {
-                margin-top:
-                    40px;
-
-                padding:
-                    0 20px;
-            }
-
-
-            .page-title {
-                font-size:
-                    2.2rem;
-            }
-
-
-            .publication {
-                grid-template-columns:
-                    85px 1fr;
-
-                gap:
-                    15px;
-
-                padding:
-                    18px 5px;
-            }
-
-
-            .publication-text {
-                font-size:
-                    0.93rem;
-            }
-
-
-            .publication-type {
-                font-size:
-                    0.62rem;
-            }
-
-
-            .scholar-link a {
-                font-size:
-                    1.05rem;
-
-                padding:
-                    13px 18px;
-            }
-
-
-            .scholar-icon {
-                font-size:
-                    1.8rem;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -588,51 +438,44 @@
 
 <header>
 
-    <div class="nav-container">
+<div class="nav-container">
+
+<a href="index.html" class="site-name">
+
+Dr. Simanto Saha
+
+<span class="site-subtitle">
+Asymptote towards technological freedom!
+</span>
+
+</a>
 
 
-        <a
-            href="index.html"
-            class="site-name"
-        >
+<nav class="nav-links">
 
-            Dr. Simanto Saha
+<a href="index.html">
+Home
+</a>
 
-            <span class="site-subtitle">
-                Asymptote towards technological freedom!
-            </span>
+<a href="research.html">
+Research
+</a>
 
-        </a>
+<a href="publications.html" class="active">
+Publications
+</a>
 
+<a href="cv.html">
+CV
+</a>
 
-        <nav class="nav-links">
+<a href="contact.html">
+Contact
+</a>
 
-            <a href="index.html">
-                Home
-            </a>
+</nav>
 
-            <a href="research.html">
-                Research
-            </a>
-
-            <a
-                href="publications.html"
-                class="active"
-            >
-                Publications
-            </a>
-
-            <a href="cv.html">
-                CV
-            </a>
-
-            <a href="contact.html">
-                Contact
-            </a>
-
-        </nav>
-
-    </div>
+</div>
 
 </header>
 
@@ -645,58 +488,53 @@
 <main>
 
 
-    <h1 class="page-title">
-        Publications
-    </h1>
+<h1 class="page-title">
+Publications
+</h1>
+
+<div class="gold-line"></div>
 
 
-    <div class="gold-line"></div>
+<!-- =========================================================
+     GOOGLE SCHOLAR
+     ========================================================= -->
+
+<a
+    class="scholar-link"
+    href="https://scholar.google.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+>
+
+<img
+    src="https://scholar.google.com/favicon.ico"
+    alt="Google Scholar"
+>
+
+<span>
+View my publications on Google Scholar
+</span>
+
+</a>
 
 
-    <!-- =====================================================
-         GOOGLE SCHOLAR
-         ===================================================== -->
+<p class="intro">
 
-    <div class="scholar-link">
+My publications include peer-reviewed journal articles,
+conference papers, and conference abstracts. They are
+listed in reverse chronological order.
 
-        <a
-            href="YOUR_GOOGLE_SCHOLAR_PROFILE_URL"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Google Scholar profile"
-        >
-
-            <span class="scholar-icon">
-                🎓
-            </span>
-
-            <span>
-                Google Scholar
-            </span>
-
-        </a>
-
-    </div>
+</p>
 
 
-    <p class="intro">
+<div id="error"></div>
 
-        My publications include peer-reviewed journal articles,
-        conference papers, and conference abstracts. They are
-        listed in reverse chronological order.
-
-    </p>
+<div id="loading">
+Loading publications...
+</div>
 
 
-    <div id="error"></div>
-
-
-    <div id="loading">
-        Loading publications...
-    </div>
-
-
-    <div id="publications"></div>
+<div id="publications"></div>
 
 
 </main>
@@ -709,146 +547,121 @@
 
 <footer>
 
-    <span class="gold">©</span>
-    2026 Dr. Simanto Saha
+<span class="gold">©</span>
+2026 Dr. Simanto Saha
 
 </footer>
 
 
 
-<!-- =========================================================
-     JAVASCRIPT
-     ========================================================= -->
-
 <script>
 
 
-/* ==========================================================
+/* =========================================================
    CONFIGURATION
-   ========================================================== */
-
-const YOUR_NAME = "Saha, Simanto";
+   ========================================================= */
 
 const BIB_FILE = "publications.bib";
 
+const YOUR_LAST_NAME = "Saha";
+
+const YOUR_FIRST_NAME = "Simanto";
 
 
-/* ==========================================================
-   LOAD PUBLICATIONS
-   ========================================================== */
+
+/* =========================================================
+   LOAD BIBTEX
+   ========================================================= */
 
 fetch(BIB_FILE)
 
-    .then(response => {
+.then(response => {
 
-        if (!response.ok) {
+    if (!response.ok) {
 
-            throw new Error(
-                "Could not find publications.bib"
-            );
-
-        }
-
-        return response.text();
-
-    })
-
-    .then(bibtex => {
-
-        const publications =
-            parseBibTeX(bibtex);
-
-
-        displayPublications(
-            publications
+        throw new Error(
+            "Could not find publications.bib"
         );
 
+    }
 
-        document.getElementById(
-            "loading"
-        ).style.display = "none";
+    return response.text();
 
-    })
+})
 
-    .catch(error => {
+.then(text => {
 
-        document.getElementById(
-            "loading"
-        ).style.display = "none";
+    const publications =
+        parseBibTeX(text);
 
+    displayPublications(
+        publications
+    );
 
-        const errorBox =
-            document.getElementById(
-                "error"
-            );
+    document.getElementById(
+        "loading"
+    ).style.display = "none";
 
+})
 
-        errorBox.style.display =
-            "block";
+.catch(error => {
 
+    document.getElementById(
+        "loading"
+    ).style.display = "none";
 
-        errorBox.innerHTML =
+    const errorBox =
+        document.getElementById("error");
 
-            "<strong>Unable to load publications.</strong><br><br>" +
+    errorBox.style.display = "block";
 
-            escapeHTML(
-                error.message
-            ) +
+    errorBox.innerHTML =
+        "<strong>Unable to load publications.</strong><br><br>" +
+        escapeHTML(error.message) +
+        "<br><br>" +
+        "Make sure that <strong>publications.bib</strong> " +
+        "is in the same folder as " +
+        "<strong>publications.html</strong>.";
 
-            "<br><br>" +
-
-            "Make sure that " +
-
-            "<strong>publications.bib</strong> " +
-
-            "is in the same folder as " +
-
-            "<strong>publications.html</strong>.";
-
-    });
+});
 
 
 
-/* ==========================================================
-   PARSE BIBTEX
-   ========================================================== */
+/* =========================================================
+   ROBUST BIBTEX PARSER
+   ========================================================= */
+
+/*
+ * This parser deliberately does NOT use the previous
+ * regular expression that caused:
+ *
+ * r = 2019
+ * e = ...
+ *
+ * errors.
+ *
+ * It reads each BibTeX entry and tracks braces correctly.
+ */
 
 function parseBibTeX(text) {
 
     const publications = [];
 
-
-    text = text.replace(
-        /^[ \t]*%.*$/gm,
-        ""
-    );
-
-
     let position = 0;
 
-
-    while (
-        position < text.length
-    ) {
+    while (position < text.length) {
 
         const at =
-            text.indexOf(
-                "@",
-                position
-            );
-
+            text.indexOf("@", position);
 
         if (at === -1) {
             break;
         }
 
-
         const typeMatch =
-            text.substring(at)
-                .match(
-                    /^@([a-zA-Z]+)\s*\{/
-                );
-
+            text.slice(at).match(
+                /^@([A-Za-z]+)\s*\{/
+            );
 
         if (!typeMatch) {
 
@@ -856,350 +669,444 @@ function parseBibTeX(text) {
                 at + 1;
 
             continue;
-
         }
-
 
         const type =
             typeMatch[1].toLowerCase();
 
+        const entryStart =
+            at + typeMatch[0].length;
 
-        const openingBrace =
-            text.indexOf(
-                "{",
-                at
-            );
+        /*
+         * Find the matching closing brace.
+         */
 
+        let depth = 1;
 
-        if (
-            openingBrace === -1
-        ) {
-            break;
-        }
+        let i = entryStart;
 
+        let inQuotes = false;
 
-        let depth = 0;
-
-        let closingBrace = -1;
-
-
-        for (
-            let i = openingBrace;
-            i < text.length;
-            i++
+        while (
+            i < text.length &&
+            depth > 0
         ) {
 
-            if (
-                text[i] === "{"
-            ) {
+            const char =
+                text[i];
 
-                depth++;
+            if (char === '"' &&
+                text[i - 1] !== "\\") {
 
+                inQuotes =
+                    !inQuotes;
             }
-            else if (
-                text[i] === "}"
-            ) {
 
-                depth--;
+            if (!inQuotes) {
 
-                if (
-                    depth === 0
-                ) {
+                if (char === "{") {
+                    depth++;
+                }
 
-                    closingBrace = i;
-
-                    break;
-
+                else if (char === "}") {
+                    depth--;
                 }
 
             }
 
+            i++;
         }
 
-
-        if (
-            closingBrace === -1
-        ) {
+        if (depth !== 0) {
             break;
         }
 
-
-        const entry =
-            text.substring(
-                openingBrace + 1,
-                closingBrace
+        const content =
+            text.slice(
+                entryStart,
+                i - 1
             );
-
 
         const comma =
-            entry.indexOf(",");
-
-
-        if (
-            comma === -1
-        ) {
-
-            position =
-                closingBrace + 1;
-
-            continue;
-
-        }
-
-
-        const key =
-            entry
-                .substring(
-                    0,
-                    comma
-                )
-                .trim();
-
-
-        const body =
-            entry.substring(
-                comma + 1
+            findTopLevelComma(
+                content
             );
 
+        if (comma === -1) {
+
+            position = i;
+
+            continue;
+        }
+
+        const key =
+            content
+                .slice(0, comma)
+                .trim();
+
+        const body =
+            content
+                .slice(comma + 1);
 
         const fields =
-            parseFields(body);
-
+            parseFieldsSafely(
+                body
+            );
 
         publications.push({
 
-            type: type,
+            type,
 
-            key: key,
+            key,
 
             ...fields
 
         });
 
-
-        position =
-            closingBrace + 1;
-
+        position = i;
     }
 
-
     return publications;
-
 }
 
 
 
-/* ==========================================================
-   PARSE FIELDS
-   ========================================================== */
+/* =========================================================
+   FIND TOP LEVEL COMMA
+   ========================================================= */
 
-function parseFields(body) {
+function findTopLevelComma(text) {
+
+    let depth = 0;
+
+    let inQuotes = false;
+
+    for (
+        let i = 0;
+        i < text.length;
+        i++
+    ) {
+
+        const char =
+            text[i];
+
+        if (
+            char === '"' &&
+            text[i - 1] !== "\\"
+        ) {
+
+            inQuotes =
+                !inQuotes;
+
+            continue;
+        }
+
+        if (inQuotes) {
+            continue;
+        }
+
+        if (char === "{") {
+            depth++;
+        }
+
+        else if (char === "}") {
+            depth--;
+        }
+
+        else if (
+            char === "," &&
+            depth === 0
+        ) {
+
+            return i;
+
+        }
+
+    }
+
+    return -1;
+}
+
+
+
+/* =========================================================
+   PARSE FIELDS SAFELY
+   ========================================================= */
+
+function parseFieldsSafely(body) {
 
     const fields = {};
 
-    let position = 0;
+    let i = 0;
 
+    while (i < body.length) {
 
-    while (
-        position < body.length
-    ) {
-
-        const match =
-            body.substring(position)
-                .match(
-                    /([a-zA-Z][a-zA-Z0-9_-]*)\s*=/
-                );
-
-
-        if (!match) {
-            break;
-        }
-
-
-        const fieldName =
-            match[1].toLowerCase();
-
-
-        const equalsPosition =
-            position +
-            match[0].lastIndexOf("=");
-
-
-        let valueStart =
-            equalsPosition + 1;
-
+        /*
+         * Skip whitespace and commas.
+         */
 
         while (
-            /\s/.test(
-                body[valueStart] || ""
+            i < body.length &&
+            (
+                /\s/.test(body[i]) ||
+                body[i] === ","
             )
         ) {
 
-            valueStart++;
-
+            i++;
         }
 
-
-        let value = "";
-
+        if (i >= body.length) {
+            break;
+        }
 
         /*
-         * Braced value
+         * Read field name.
+         */
+
+        const nameStart = i;
+
+        while (
+            i < body.length &&
+            /[A-Za-z0-9_-]/.test(body[i])
+        ) {
+
+            i++;
+        }
+
+        const fieldName =
+            body
+                .slice(
+                    nameStart,
+                    i
+                )
+                .toLowerCase();
+
+        /*
+         * Skip whitespace.
+         */
+
+        while (
+            i < body.length &&
+            /\s/.test(body[i])
+        ) {
+
+            i++;
+        }
+
+        /*
+         * Expect equals sign.
          */
 
         if (
-            body[valueStart] === "{"
+            body[i] !== "="
         ) {
+
+            /*
+             * Skip malformed text
+             * instead of interpreting it
+             * as a field.
+             */
+
+            while (
+                i < body.length &&
+                body[i] !== ","
+            ) {
+
+                i++;
+            }
+
+            continue;
+        }
+
+        i++;
+
+        /*
+         * Skip whitespace.
+         */
+
+        while (
+            i < body.length &&
+            /\s/.test(body[i])
+        ) {
+
+            i++;
+        }
+
+        /*
+         * Read value.
+         */
+
+        let value = "";
+
+        if (
+            body[i] === "{"
+        ) {
+
+            const start = i;
 
             let depth = 0;
 
-            let end = valueStart;
-
-
-            for (
-                let i = valueStart;
-                i < body.length;
-                i++
-            ) {
-
-                if (
-                    body[i] === "{"
-                ) {
-
-                    depth++;
-
-                }
-                else if (
-                    body[i] === "}"
-                ) {
-
-                    depth--;
-
-                    if (
-                        depth === 0
-                    ) {
-
-                        end = i;
-
-                        break;
-
-                    }
-
-                }
-
-            }
-
-
-            value =
-                body.substring(
-                    valueStart + 1,
-                    end
-                );
-
-
-            position =
-                end + 1;
-
-        }
-
-
-        /*
-         * Quoted value
-         */
-
-        else if (
-            body[valueStart] === '"'
-        ) {
-
-            let end =
-                valueStart + 1;
-
+            let inQuotes = false;
 
             while (
-                end < body.length
+                i < body.length
             ) {
 
+                const char =
+                    body[i];
+
                 if (
-                    body[end] === '"' &&
-                    body[end - 1] !== "\\"
+                    char === '"' &&
+                    body[i - 1] !== "\\"
                 ) {
 
-                    break;
-
+                    inQuotes =
+                        !inQuotes;
                 }
 
-                end++;
+                if (!inQuotes) {
 
+                    if (char === "{") {
+                        depth++;
+                    }
+
+                    else if (
+                        char === "}"
+                    ) {
+
+                        depth--;
+
+                        if (
+                            depth === 0
+                        ) {
+
+                            i++;
+
+                            break;
+                        }
+                    }
+                }
+
+                i++;
             }
 
-
             value =
-                body.substring(
-                    valueStart + 1,
-                    end
+                body.slice(
+                    start,
+                    i
                 );
-
-
-            position =
-                end + 1;
 
         }
 
+        else if (
+            body[i] === '"'
+        ) {
 
-        /*
-         * Unquoted value
-         */
+            i++;
+
+            while (
+                i < body.length
+            ) {
+
+                const char =
+                    body[i];
+
+                if (
+                    char === '"' &&
+                    body[i - 1] !== "\\"
+                ) {
+
+                    i++;
+
+                    break;
+                }
+
+                value += char;
+
+                i++;
+            }
+
+        }
 
         else {
 
-            let end =
-                valueStart;
-
+            const start = i;
 
             while (
-                end < body.length &&
-                body[end] !== ","
+                i < body.length &&
+                body[i] !== ","
             ) {
 
-                end++;
-
+                i++;
             }
 
-
             value =
-                body.substring(
-                    valueStart,
-                    end
+                body.slice(
+                    start,
+                    i
                 );
 
-
-            position =
-                end + 1;
-
         }
-
 
         fields[fieldName] =
             cleanBibValue(value);
 
     }
 
-
     return fields;
-
 }
 
 
 
-/* ==========================================================
-   CLEAN BIBTEX VALUES
-   ========================================================== */
+/* =========================================================
+   CLEAN BIBTEX VALUE
+   ========================================================= */
 
 function cleanBibValue(value) {
 
     value =
         value.trim();
 
+    /*
+     * Remove outer braces only.
+     */
+
+    if (
+        value.startsWith("{") &&
+        value.endsWith("}")
+    ) {
+
+        value =
+            value.slice(
+                1,
+                -1
+            );
+
+    }
+
+    /*
+     * Remove outer quotes.
+     */
+
+    if (
+        value.startsWith('"') &&
+        value.endsWith('"')
+    ) {
+
+        value =
+            value.slice(
+                1,
+                -1
+            );
+
+    }
+
+    /*
+     * Preserve useful braces
+     * for capitalization but remove
+     * unnecessary ones.
+     */
 
     value =
         value.replace(
@@ -1207,13 +1114,11 @@ function cleanBibValue(value) {
             "&"
         );
 
-
     value =
         value.replace(
             /\\%/g,
             "%"
         );
-
 
     value =
         value.replace(
@@ -1221,20 +1126,11 @@ function cleanBibValue(value) {
             "_"
         );
 
-
     value =
         value.replace(
-            /\\#/g,
-            "#"
+            /\\-/g,
+            "-"
         );
-
-
-    value =
-        value.replace(
-            /\\textendash/g,
-            "–"
-        );
-
 
     value =
         value.replace(
@@ -1242,20 +1138,25 @@ function cleanBibValue(value) {
             "–"
         );
 
-
     value =
         value.replace(
             /~/g,
             " "
         );
 
+    /*
+     * Remove remaining BibTeX braces.
+     */
 
     value =
         value.replace(
-            /{([^{}]+)}/g,
-            "$1"
+            /[{}]/g,
+            ""
         );
 
+    /*
+     * Normalize whitespace.
+     */
 
     value =
         value.replace(
@@ -1263,16 +1164,14 @@ function cleanBibValue(value) {
             " "
         );
 
-
     return value.trim();
-
 }
 
 
 
-/* ==========================================================
-   DISPLAY PUBLICATIONS
-   ========================================================== */
+/* =========================================================
+   DISPLAY
+   ========================================================= */
 
 function displayPublications(
     publications
@@ -1284,42 +1183,39 @@ function displayPublications(
             const yearA =
                 parseInt(a.year) || 0;
 
-
             const yearB =
                 parseInt(b.year) || 0;
-
 
             if (
                 yearA !== yearB
             ) {
 
-                return yearB - yearA;
+                return (
+                    yearB - yearA
+                );
 
             }
 
-
             return (
                 (a.title || "")
-                    .localeCompare(
-                        b.title || ""
-                    )
+                .localeCompare(
+                    b.title || ""
+                )
             );
 
         }
     );
 
-
     renderPublications(
         publications
     );
-
 }
 
 
 
-/* ==========================================================
-   RENDER PUBLICATIONS
-   ========================================================== */
+/* =========================================================
+   RENDER
+   ========================================================= */
 
 function renderPublications(
     publications
@@ -1330,26 +1226,19 @@ function renderPublications(
             "publications"
         );
 
-
     container.innerHTML = "";
-
 
     if (
         publications.length === 0
     ) {
 
         container.innerHTML =
-
             '<div class="empty-message">' +
-
             'No publications listed.' +
-
             '</div>';
 
         return;
-
     }
-
 
     publications.forEach(
         publication => {
@@ -1359,10 +1248,8 @@ function renderPublications(
                     "article"
                 );
 
-
             item.className =
                 "publication";
-
 
             /*
              * YEAR + TYPE
@@ -1373,49 +1260,36 @@ function renderPublications(
                     "div"
                 );
 
-
             marker.className =
                 "publication-marker";
-
 
             const year =
                 document.createElement(
                     "div"
                 );
 
-
             year.className =
                 "publication-year";
 
-
             year.textContent =
                 publication.year || "";
-
 
             const type =
                 document.createElement(
                     "div"
                 );
 
-
             type.className =
                 "publication-type";
-
 
             type.textContent =
                 getPublicationType(
                     publication
                 );
 
+            marker.appendChild(year);
 
-            marker.appendChild(
-                year
-            );
-
-
-            marker.appendChild(
-                type
-            );
+            marker.appendChild(type);
 
 
             /*
@@ -1427,10 +1301,8 @@ function renderPublications(
                     "div"
                 );
 
-
             text.className =
                 "publication-text";
-
 
             text.innerHTML =
                 formatIEEE(
@@ -1438,85 +1310,51 @@ function renderPublications(
                 );
 
 
-            item.appendChild(
-                marker
-            );
+            item.appendChild(marker);
 
+            item.appendChild(text);
 
-            item.appendChild(
-                text
-            );
-
-
-            container.appendChild(
-                item
-            );
+            container.appendChild(item);
 
         }
     );
-
 }
 
 
 
-/* ==========================================================
+/* =========================================================
    PUBLICATION TYPE
-   ========================================================== */
+   ========================================================= */
 
 function getPublicationType(
     publication
 ) {
 
-    switch (
-        publication.type
+    if (
+        publication.type === "article"
     ) {
 
-        case "article":
-
-            return "Journal Article";
-
-
-        case "inproceedings":
-
-            return "Conference Paper";
-
-
-        case "conference":
-
-            return "Conference Paper";
-
-
-        case "incollection":
-
-            return "Conference Paper";
-
-
-        case "misc":
-
-            if (
-                publication.booktitle
-            ) {
-
-                return "Conference Abstract";
-
-            }
-
-            return "Publication";
-
-
-        default:
-
-            return "Publication";
+        return "Journal Article";
 
     }
 
+    if (
+        publication.type === "inproceedings" ||
+        publication.type === "conference"
+    ) {
+
+        return "Conference Paper";
+
+    }
+
+    return "Publication";
 }
 
 
 
-/* ==========================================================
-   FORMAT IEEE CITATION
-   ========================================================== */
+/* =========================================================
+   IEEE FORMAT
+   ========================================================= */
 
 function formatIEEE(
     publication
@@ -1538,7 +1376,6 @@ function formatIEEE(
                 publication.author
             );
 
-
         citation += ", ";
 
     }
@@ -1553,22 +1390,17 @@ function formatIEEE(
     ) {
 
         citation +=
-
             "“" +
-
             escapeHTML(
-                formatTitle(
-                    publication.title
-                )
+                publication.title
             ) +
-
             ",” ";
 
     }
 
 
     /*
-     * JOURNAL ARTICLE
+     * JOURNAL
      */
 
     if (
@@ -1580,56 +1412,44 @@ function formatIEEE(
         ) {
 
             citation +=
-
                 '<span class="citation-journal">' +
-
                 escapeHTML(
                     publication.journal
                 ) +
-
                 "</span>";
 
         }
-
 
         if (
             publication.volume
         ) {
 
             citation +=
-
                 ", vol. " +
-
                 escapeHTML(
                     publication.volume
                 );
 
         }
 
-
         if (
             publication.number
         ) {
 
             citation +=
-
                 ", no. " +
-
                 escapeHTML(
                     publication.number
                 );
 
         }
 
-
         if (
             publication.pages
         ) {
 
             citation +=
-
                 ", pp. " +
-
                 escapeHTML(
                     publication.pages
                 );
@@ -1640,7 +1460,7 @@ function formatIEEE(
 
 
     /*
-     * CONFERENCE PAPER
+     * CONFERENCE
      */
 
     else {
@@ -1650,43 +1470,33 @@ function formatIEEE(
         ) {
 
             citation +=
-
                 "in " +
-
                 '<span class="citation-conference">' +
-
                 escapeHTML(
                     publication.booktitle
                 ) +
-
                 "</span>";
 
         }
-
 
         if (
             publication.volume
         ) {
 
             citation +=
-
                 ", vol. " +
-
                 escapeHTML(
                     publication.volume
                 );
 
         }
 
-
         if (
             publication.pages
         ) {
 
             citation +=
-
                 ", pp. " +
-
                 escapeHTML(
                     publication.pages
                 );
@@ -1697,7 +1507,10 @@ function formatIEEE(
 
 
     /*
-     * PERIOD
+     * YEAR
+     *
+     * Year is already displayed in the
+     * left-hand marker, so do not repeat it.
      */
 
     citation += ".";
@@ -1706,104 +1519,73 @@ function formatIEEE(
     /*
      * DOI
      *
-     * The DOI is the only clickable
-     * publication link.
+     * The DOI itself is clickable.
+     * No additional [DOI] link.
      */
 
     if (
         publication.doi
     ) {
 
-        const doi =
-            cleanDOI(
-                publication.doi
+        let doi =
+            publication.doi.trim();
+
+        doi =
+            doi.replace(
+                /^https?:\/\/(dx\.)?doi\.org\//i,
+                ""
             );
 
+        doi =
+            doi.replace(
+                /^doi:\s*/i,
+                ""
+            );
 
         citation +=
-
-            ' doi: ' +
-
-            '<a ' +
-
-            'class="doi-link" ' +
-
+            ' <a class="doi-link" ' +
             'href="https://doi.org/' +
-
-            encodeURIComponent(
-                doi
-            ) +
-
-            '" ' +
-
-            'target="_blank" ' +
-
+            encodeURI(doi) +
+            '" target="_blank" ' +
             'rel="noopener noreferrer">' +
-
-            escapeHTML(
-                doi
-            ) +
-
-            "</a>.";
+            'doi:' +
+            escapeHTML(doi) +
+            '</a>.';
 
     }
 
 
     return citation;
-
 }
 
 
 
-/* ==========================================================
-   FORMAT AUTHORS
-   ========================================================== */
+/* =========================================================
+   AUTHOR FORMATTING
+   ========================================================= */
 
 function formatAuthors(
     authorString
 ) {
 
     /*
-     * Split BibTeX authors using "and".
+     * BibTeX separates authors with "and".
      */
 
     const authors =
-        authorString
+        splitAuthors(
+            authorString
+        );
 
-            .split(
-                /\s+and\s+/i
-            )
-
-            .map(
-                author =>
-                    author.trim()
-            )
-
-            .filter(
-                author =>
-                    author.length > 0
-            );
-
-
-    /*
-     * Format EVERY author.
-     *
-     * No et al.
-     */
 
     const formatted =
         authors.map(
             author => {
 
-                const formattedName =
+                const name =
                     formatAuthorName(
                         author
                     );
-
-
-                /*
-                 * Bold Simanto Saha.
-                 */
 
                 if (
                     isYourName(
@@ -1812,30 +1594,23 @@ function formatAuthors(
                 ) {
 
                     return (
-
                         '<span class="my-name">' +
-
-                        escapeHTML(
-                            formattedName
-                        ) +
-
-                        "</span>"
-
+                        escapeHTML(name) +
+                        '</span>'
                     );
 
                 }
 
-
-                return escapeHTML(
-                    formattedName
-                );
+                return escapeHTML(name);
 
             }
         );
 
 
     /*
-     * IEEE-style punctuation.
+     * IEEE:
+     *
+     * A. Author, B. Author, and C. Author
      */
 
     if (
@@ -1846,80 +1621,63 @@ function formatAuthors(
 
     }
 
-
     if (
         formatted.length === 2
     ) {
 
         return (
-
             formatted[0] +
-
             " and " +
-
             formatted[1]
-
         );
 
     }
 
-
     return (
-
         formatted
             .slice(0, -1)
             .join(", ") +
-
         ", and " +
-
         formatted[
             formatted.length - 1
         ]
-
     );
-
 }
 
 
 
-/* ==========================================================
-   CHECK YOUR NAME
-   ========================================================== */
+/* =========================================================
+   SPLIT AUTHORS
+   ========================================================= */
 
-function isYourName(
-    author
+function splitAuthors(
+    authorString
 ) {
 
-    const normalize =
-        value =>
+    /*
+     * Since your BibTeX uses "and" between authors,
+     * this is safe and preserves names such as
+     * "Alam, Raquib-ul".
+     */
 
-            value
-                .toLowerCase()
-                .replace(
-                    /[{}]/g,
-                    ""
-                )
-                .replace(
-                    /\s+/g,
-                    " "
-                )
-                .trim();
-
-
-    return (
-
-        normalize(author) ===
-        normalize(YOUR_NAME)
-
-    );
+    return authorString
+        .split(/\s+and\s+/i)
+        .map(
+            author =>
+                author.trim()
+        )
+        .filter(
+            author =>
+                author.length > 0
+        );
 
 }
 
 
 
-/* ==========================================================
-   FORMAT AUTHOR NAME
-   ========================================================== */
+/* =========================================================
+   AUTHOR NAME
+   ========================================================= */
 
 function formatAuthorName(
     author
@@ -1935,58 +1693,54 @@ function formatAuthorName(
 
 
     /*
-     * BibTeX:
+     * BibTeX format:
      *
      * Saha, Simanto
-     *
-     * becomes:
-     *
-     * S. Saha
      */
 
     if (
         author.includes(",")
     ) {
 
-        const parts =
-            author.split(",");
-
+        const comma =
+            author.indexOf(",");
 
         const lastName =
-            parts[0].trim();
-
-
-        const firstName =
-            parts
-                .slice(1)
-                .join(",")
+            author
+                .slice(
+                    0,
+                    comma
+                )
                 .trim();
 
+        const firstName =
+            author
+                .slice(
+                    comma + 1
+                )
+                .trim();
 
         return (
-
-            formatFirstName(
+            formatInitials(
                 firstName
             ) +
-
             " " +
-
             lastName
-
         );
 
     }
 
 
     /*
-     * First Last
+     * Fallback:
+     *
+     * Simanto Saha
      */
 
     const parts =
         author
-            .trim()
-            .split(/\s+/);
-
+            .split(/\s+/)
+            .filter(Boolean);
 
     if (
         parts.length === 1
@@ -1996,209 +1750,185 @@ function formatAuthorName(
 
     }
 
-
     const lastName =
         parts.pop();
 
+    return (
+        formatInitials(
+            parts.join(" ")
+        ) +
+        " " +
+        lastName
+    );
+}
 
-    const firstName =
-        parts.join(" ");
+
+
+/* =========================================================
+   INITIALS
+   ========================================================= */
+
+function formatInitials(
+    name
+) {
+
+    /*
+     * Handles:
+     *
+     * Simanto
+     * Khawza Iftekhar Uddin
+     * Raquib-ul
+     * Michael Loong-Siong
+     */
+
+    const words =
+        name
+            .replace(
+                /[{}]/g,
+                ""
+            )
+            .split(/\s+/)
+            .filter(Boolean);
+
+
+    const initials = [];
+
+
+    words.forEach(
+        word => {
+
+            /*
+             * Remove LaTeX commands.
+             */
+
+            word =
+                word.replace(
+                    /\\[a-zA-Z]+/g,
+                    ""
+                );
+
+
+            /*
+             * Ignore punctuation around
+             * the word.
+             */
+
+            word =
+                word.replace(
+                    /^[^A-Za-zÀ-ÿ]+|[^A-Za-zÀ-ÿ-]+$/g,
+                    ""
+                );
+
+
+            if (!word) {
+                return;
+            }
+
+
+            /*
+             * IEEE initials.
+             *
+             * For a hyphenated given name:
+             *
+             * Loong-Siong
+             *
+             * → L.-S.
+             */
+
+            if (
+                word.includes("-")
+            ) {
+
+                const pieces =
+                    word
+                        .split("-")
+                        .filter(Boolean);
+
+                if (
+                    pieces.length > 1
+                ) {
+
+                    initials.push(
+                        pieces
+                            .map(
+                                piece =>
+                                    piece
+                                        .charAt(0)
+                                        .toUpperCase() +
+                                    "."
+                            )
+                            .join("-")
+                    );
+
+                }
+
+                else {
+
+                    initials.push(
+                        word
+                            .charAt(0)
+                            .toUpperCase() +
+                        "."
+                    );
+
+                }
+
+            }
+
+            else {
+
+                initials.push(
+                    word
+                        .charAt(0)
+                        .toUpperCase() +
+                    "."
+                );
+
+            }
+
+        }
+    );
+
+
+    return initials.join(" ");
+}
+
+
+
+/* =========================================================
+   IDENTIFY YOUR NAME
+   ========================================================= */
+
+function isYourName(
+    author
+) {
+
+    const normalized =
+        author
+            .replace(
+                /[{}]/g,
+                ""
+            )
+            .toLowerCase()
+            .replace(
+                /\s+/g,
+                " "
+            )
+            .trim();
 
 
     return (
-
-        formatFirstName(
-            firstName
-        ) +
-
-        " " +
-
-        lastName
-
+        normalized ===
+        "saha, simanto"
     );
 
 }
 
 
 
-/* ==========================================================
-   FORMAT FIRST NAME
-   ========================================================== */
-
-function formatFirstName(
-    name
-) {
-
-    const words =
-        name
-            .trim()
-            .split(/\s+/)
-            .filter(
-                word =>
-                    word.length > 0
-            );
-
-
-    return words
-
-        .map(
-            word => {
-
-                word =
-                    word.replace(
-                        /[{}]/g,
-                        ""
-                    );
-
-
-                /*
-                 * Handle hyphenated names:
-                 *
-                 * Raquib-ul
-                 * ->
-                 * R.-U.
-                 *
-                 * Loong-Siong
-                 * ->
-                 * L.-S.
-                 */
-
-                if (
-                    word.includes("-")
-                ) {
-
-                    const parts =
-                        word
-                            .split("-")
-                            .filter(
-                                part =>
-                                    part.length > 0
-                            );
-
-
-                    return (
-
-                        parts
-                            .map(
-                                part =>
-                                    getInitial(
-                                        part
-                                    )
-                            )
-                            .join("-") +
-
-                        "."
-
-                    );
-
-                }
-
-
-                return (
-                    getInitial(
-                        word
-                    ) +
-                    "."
-                );
-
-            }
-        )
-
-        .join(" ");
-
-}
-
-
-
-/* ==========================================================
-   GET INITIAL
-   ========================================================== */
-
-function getInitial(
-    word
-) {
-
-    const cleaned =
-        word.replace(
-            /[^A-Za-zÀ-ÖØ-öø-ÿ]/g,
-            ""
-        );
-
-
-    if (
-        cleaned.length === 0
-    ) {
-
-        return "";
-
-    }
-
-
-    return cleaned
-        .charAt(0)
-        .toUpperCase();
-
-}
-
-
-
-/* ==========================================================
-   TITLE FORMATTING
-   ========================================================== */
-
-function formatTitle(
-    title
-) {
-
-    return title
-
-        .replace(
-            /\s+/g,
-            " "
-        )
-
-        .trim();
-
-}
-
-
-
-/* ==========================================================
-   CLEAN DOI
-   ========================================================== */
-
-function cleanDOI(
-    doi
-) {
-
-    return doi
-
-        .trim()
-
-        .replace(
-            /^https?:\/\/doi\.org\//i,
-            ""
-        )
-
-        .replace(
-            /^doi:\s*/i,
-            ""
-        )
-
-        .replace(
-            /\.$/,
-            ""
-        )
-
-        .trim();
-
-}
-
-
-
-/* ==========================================================
+/* =========================================================
    ESCAPE HTML
-   ========================================================== */
+   ========================================================= */
 
 function escapeHTML(
     text
@@ -2209,15 +1939,11 @@ function escapeHTML(
             "div"
         );
 
-
     div.textContent =
         text;
 
-
     return div.innerHTML;
-
 }
-
 
 </script>
 
