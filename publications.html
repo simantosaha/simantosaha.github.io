@@ -39,16 +39,12 @@
            ===================================================== */
 
         * {
-
             box-sizing: border-box;
-
         }
 
 
         html {
-
             scroll-behavior: smooth;
-
         }
 
 
@@ -61,12 +57,14 @@
                 Helvetica,
                 sans-serif;
 
-            color: var(--text);
+            color:
+                var(--text);
 
             background:
                 var(--white);
 
-            line-height: 1.7;
+            line-height:
+                1.7;
 
         }
 
@@ -209,7 +207,7 @@
 
 
         /* =====================================================
-           MAIN
+           MAIN CONTENT
            ===================================================== */
 
         main {
@@ -328,7 +326,7 @@
 
 
         /* =====================================================
-           PUBLICATION
+           PUBLICATION LIST
            ===================================================== */
 
         #publications {
@@ -417,7 +415,7 @@
                 var(--muted);
 
             font-size:
-                0.66rem;
+                0.65rem;
 
             font-weight:
                 bold;
@@ -494,6 +492,9 @@
             word-break:
                 break-word;
 
+            transition:
+                color 0.2s ease;
+
         }
 
 
@@ -515,7 +516,7 @@
         .publication-links {
 
             margin-top:
-                10px;
+                9px;
 
         }
 
@@ -540,11 +541,8 @@
             margin-right:
                 18px;
 
-            border-bottom:
-                1px solid transparent;
-
             transition:
-                0.2s ease;
+                color 0.2s ease;
 
         }
 
@@ -552,9 +550,6 @@
         .publication-links a:hover {
 
             color:
-                var(--sydney-gold);
-
-            border-bottom-color:
                 var(--sydney-gold);
 
         }
@@ -718,7 +713,48 @@
             .publication-type {
 
                 font-size:
-                    0.60rem;
+                    0.58rem;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           VERY SMALL SCREENS
+           ===================================================== */
+
+        @media (max-width: 480px) {
+
+            .publication {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    8px;
+
+            }
+
+
+            .publication-marker {
+
+                flex-direction:
+                    row;
+
+                align-items:
+                    baseline;
+
+                gap:
+                    10px;
+
+            }
+
+
+            .publication-type {
+
+                margin-top:
+                    0;
 
             }
 
@@ -845,7 +881,7 @@
 
 
 /*
- * Your name as it appears in publications.bib.
+ * Your name exactly as used in publications.bib.
  */
 
 const YOUR_NAME =
@@ -853,7 +889,7 @@ const YOUR_NAME =
 
 
 /*
- * BibTeX file.
+ * BibTeX file location.
  */
 
 const BIB_FILE =
@@ -862,7 +898,7 @@ const BIB_FILE =
 
 
 /* ==========================================================
-   LOAD PUBLICATIONS
+   LOAD BIBTEX
    ========================================================== */
 
 fetch(BIB_FILE)
@@ -877,11 +913,9 @@ fetch(BIB_FILE)
 
         }
 
-
         return response.text();
 
     })
-
 
     .then(bibtex => {
 
@@ -900,7 +934,6 @@ fetch(BIB_FILE)
             "none";
 
     })
-
 
     .catch(error => {
 
@@ -947,7 +980,7 @@ fetch(BIB_FILE)
 
 
 /* ==========================================================
-   PARSE BIBTEX
+   PARSE BIBTEX ENTRIES
    ========================================================== */
 
 function parseBibTeX(text) {
@@ -956,7 +989,7 @@ function parseBibTeX(text) {
 
 
     /*
-     * Remove comments.
+     * Remove BibTeX comments.
      */
 
     text =
@@ -967,10 +1000,10 @@ function parseBibTeX(text) {
 
 
     /*
-     * Locate entries.
+     * Locate each @article, @inproceedings, etc.
      */
 
-    const entryStart =
+    const entryRegex =
         /@([a-zA-Z]+)\s*\{\s*([^,]+),/g;
 
 
@@ -979,24 +1012,28 @@ function parseBibTeX(text) {
 
     while (
         (match =
-            entryStart.exec(text)) !== null
+            entryRegex.exec(text)) !== null
     ) {
 
 
-        const type =
+        const entryType =
             match[1].toLowerCase();
 
 
-        const key =
+        const entryKey =
             match[2].trim();
 
 
         const bodyStart =
-            entryStart.lastIndex;
+            entryRegex.lastIndex;
 
 
         /*
-         * Find matching closing brace.
+         * Find the matching closing brace.
+         *
+         * This is important because publication
+         * titles and fields can themselves contain
+         * braces.
          */
 
         let depth = 1;
@@ -1004,8 +1041,7 @@ function parseBibTeX(text) {
         let position =
             bodyStart;
 
-        let inQuotes =
-            false;
+        let inQuotes = false;
 
 
         while (
@@ -1038,7 +1074,6 @@ function parseBibTeX(text) {
 
                 }
 
-
                 else if (
                     character === "}"
                 ) {
@@ -1069,17 +1104,21 @@ function parseBibTeX(text) {
         publications.push({
 
             type:
-                type,
+                entryType,
 
             key:
-                key,
+                entryKey,
 
             ...fields
 
         });
 
 
-        entryStart.lastIndex =
+        /*
+         * Continue searching after this entry.
+         */
+
+        entryRegex.lastIndex =
             position;
 
     }
@@ -1107,8 +1146,16 @@ function parseFields(body) {
     ) {
 
 
+        /*
+         * Find next field name.
+         */
+
+        const remaining =
+            body.substring(i);
+
+
         const fieldMatch =
-            body.substring(i).match(
+            remaining.match(
                 /([a-zA-Z][a-zA-Z0-9_-]*)\s*=\s*/
             );
 
@@ -1128,6 +1175,10 @@ function parseFields(body) {
             fieldMatch[0].length;
 
 
+        /*
+         * Skip whitespace.
+         */
+
         while (
             i < body.length &&
             /\s/.test(body[i])
@@ -1141,9 +1192,9 @@ function parseFields(body) {
         let value = "";
 
 
-        /*
-         * Braced value.
-         */
+        /* --------------------------------------------------
+           BRACED VALUE
+           -------------------------------------------------- */
 
         if (
             body[i] === "{"
@@ -1153,7 +1204,8 @@ function parseFields(body) {
 
             i++;
 
-            const start = i;
+            const start =
+                i;
 
 
             while (
@@ -1162,16 +1214,17 @@ function parseFields(body) {
             ) {
 
                 if (
-                    body[i] === "{"
+                    body[i] === "{" &&
+                    body[i - 1] !== "\\"
                 ) {
 
                     depth++;
 
                 }
 
-
                 else if (
-                    body[i] === "}"
+                    body[i] === "}" &&
+                    body[i - 1] !== "\\"
                 ) {
 
                     depth--;
@@ -1193,9 +1246,9 @@ function parseFields(body) {
         }
 
 
-        /*
-         * Quoted value.
-         */
+        /* --------------------------------------------------
+           QUOTED VALUE
+           -------------------------------------------------- */
 
         else if (
             body[i] === '"'
@@ -1203,7 +1256,8 @@ function parseFields(body) {
 
             i++;
 
-            const start = i;
+            const start =
+                i;
 
 
             while (
@@ -1237,13 +1291,14 @@ function parseFields(body) {
         }
 
 
-        /*
-         * Plain value.
-         */
+        /* --------------------------------------------------
+           PLAIN VALUE
+           -------------------------------------------------- */
 
         else {
 
-            const start = i;
+            const start =
+                i;
 
 
             while (
@@ -1270,7 +1325,7 @@ function parseFields(body) {
 
 
         /*
-         * Move past comma/whitespace.
+         * Skip comma and whitespace.
          */
 
         while (
@@ -1305,7 +1360,7 @@ function cleanBibValue(value) {
 
 
     /*
-     * Common LaTeX characters.
+     * Common LaTeX escapes.
      */
 
     value =
@@ -1337,7 +1392,7 @@ function cleanBibValue(value) {
 
 
     /*
-     * Convert BibTeX dash.
+     * BibTeX dashes.
      */
 
     value =
@@ -1355,7 +1410,7 @@ function cleanBibValue(value) {
 
 
     /*
-     * Convert non-breaking spaces.
+     * Non-breaking spaces.
      */
 
     value =
@@ -1366,7 +1421,25 @@ function cleanBibValue(value) {
 
 
     /*
-     * Remove simple LaTeX braces.
+     * Remove outer braces if present.
+     */
+
+    if (
+        value.startsWith("{") &&
+        value.endsWith("}")
+    ) {
+
+        value =
+            value.substring(
+                1,
+                value.length - 1
+            );
+
+    }
+
+
+    /*
+     * Remove remaining simple braces.
      */
 
     value =
@@ -1392,7 +1465,7 @@ function displayPublications(
 
 
     /*
-     * Newest first.
+     * Newest year first.
      */
 
     publications.sort(
@@ -1416,8 +1489,8 @@ function displayPublications(
 
 
             /*
-             * Same year:
-             * alphabetical by title.
+             * For the same year, sort
+             * alphabetically by title.
              */
 
             return (
@@ -1454,7 +1527,8 @@ function renderPublications(
         );
 
 
-    container.innerHTML = "";
+    container.innerHTML =
+        "";
 
 
     if (
@@ -1478,10 +1552,6 @@ function renderPublications(
         publication => {
 
 
-            /*
-             * Publication container.
-             */
-
             const item =
                 document.createElement(
                     "article"
@@ -1493,9 +1563,9 @@ function renderPublications(
 
 
             /*
-             * ------------------------------------------
-             * YEAR
-             * ------------------------------------------
+             * ------------------------------------------------
+             * YEAR + TYPE
+             * ------------------------------------------------
              */
 
             const marker =
@@ -1521,12 +1591,6 @@ function renderPublications(
             year.textContent =
                 publication.year || "";
 
-
-            /*
-             * ------------------------------------------
-             * TYPE
-             * ------------------------------------------
-             */
 
             const type =
                 document.createElement(
@@ -1555,9 +1619,9 @@ function renderPublications(
 
 
             /*
-             * ------------------------------------------
+             * ------------------------------------------------
              * CITATION
-             * ------------------------------------------
+             * ------------------------------------------------
              */
 
             const text =
@@ -1577,9 +1641,9 @@ function renderPublications(
 
 
             /*
-             * ------------------------------------------
-             * PDF / GENERAL LINKS
-             * ------------------------------------------
+             * ------------------------------------------------
+             * OPTIONAL PDF / URL
+             * ------------------------------------------------
              */
 
             const links =
@@ -1598,9 +1662,9 @@ function renderPublications(
 
 
             /*
-             * ------------------------------------------
-             * ADD TO PAGE
-             * ------------------------------------------
+             * ------------------------------------------------
+             * ADD ELEMENTS
+             * ------------------------------------------------
              */
 
             item.appendChild(
@@ -1704,14 +1768,14 @@ function formatIEEE(
     publication
 ) {
 
-
-    let citation = "";
+    let citation =
+        "";
 
 
     /*
-     * ------------------------------------------
+     * --------------------------------------------------------
      * AUTHORS
-     * ------------------------------------------
+     * --------------------------------------------------------
      */
 
     if (
@@ -1731,9 +1795,9 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------
+     * --------------------------------------------------------
      * TITLE
-     * ------------------------------------------
+     * --------------------------------------------------------
      */
 
     if (
@@ -1756,9 +1820,9 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------
+     * --------------------------------------------------------
      * JOURNAL ARTICLE
-     * ------------------------------------------
+     * --------------------------------------------------------
      */
 
     if (
@@ -1822,7 +1886,9 @@ function formatIEEE(
                 ", pp. " +
 
                 escapeHTML(
-                    publication.pages
+                    formatPages(
+                        publication.pages
+                    )
                 );
 
         }
@@ -1831,9 +1897,9 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------
-     * CONFERENCE PAPER
-     * ------------------------------------------
+     * --------------------------------------------------------
+     * CONFERENCE PUBLICATION
+     * --------------------------------------------------------
      */
 
     else {
@@ -1897,7 +1963,9 @@ function formatIEEE(
                 ", pp. " +
 
                 escapeHTML(
-                    publication.pages
+                    formatPages(
+                        publication.pages
+                    )
                 );
 
         }
@@ -1906,9 +1974,9 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------
+     * --------------------------------------------------------
      * YEAR
-     * ------------------------------------------
+     * --------------------------------------------------------
      */
 
     if (
@@ -1926,21 +1994,19 @@ function formatIEEE(
     }
 
 
-    citation += ".";
+    citation +=
+        ".";
 
 
     /*
-     * ------------------------------------------
+     * --------------------------------------------------------
      * DOI
-     * ------------------------------------------
+     * --------------------------------------------------------
      *
-     * DOI is displayed directly in the citation.
+     * The DOI itself is the clickable link.
      *
-     * Example:
-     *
-     * https://doi.org/10.xxxx/xxxxx
-     *
-     * There is deliberately NO separate DOI button.
+     * No separate [DOI] button is created.
+     * --------------------------------------------------------
      */
 
     if (
@@ -1949,40 +2015,34 @@ function formatIEEE(
 
 
         let doi =
-            publication.doi.trim();
-
-
-        doi =
-            doi.replace(
-                /^https?:\/\/doi\.org\//i,
-                ""
+            cleanDOI(
+                publication.doi
             );
 
 
-        doi =
-            doi.replace(
-                /^doi:\s*/i,
-                ""
-            );
+        if (doi) {
 
+            citation +=
 
-        citation +=
+                ' <a class="doi-link" ' +
 
-            ' <a class="doi-link" ' +
+                'href="https://doi.org/' +
 
-            'href="https://doi.org/' +
+                encodeURI(doi) +
 
-            encodeURI(doi) +
+                '" ' +
 
-            '" target="_blank" ' +
+                'target="_blank" ' +
 
-            'rel="noopener noreferrer">' +
+                'rel="noopener noreferrer">' +
 
-            'https://doi.org/' +
+                'https://doi.org/' +
 
-            escapeHTML(doi) +
+                escapeHTML(doi) +
 
-            '</a>.';
+                '</a>.';
+
+        }
 
     }
 
@@ -2003,9 +2063,9 @@ function formatAuthors(
 
 
     /*
-     * BibTeX separates authors using:
+     * BibTeX author separator:
      *
-     * " and "
+     * author={A and B and C}
      */
 
     const authors =
@@ -2026,16 +2086,12 @@ function formatAuthors(
             );
 
 
-    /*
-     * Convert every author.
-     */
-
-    const formattedAuthors =
+    const formatted =
         authors.map(
             author => {
 
 
-                const formattedName =
+                const name =
                     formatAuthorName(
                         author
                     );
@@ -2055,9 +2111,7 @@ function formatAuthors(
 
                         '<span class="my-name">' +
 
-                        escapeHTML(
-                            formattedName
-                        ) +
+                        escapeHTML(name) +
 
                         '</span>'
 
@@ -2067,7 +2121,7 @@ function formatAuthors(
 
 
                 return escapeHTML(
-                    formattedName
+                    name
                 );
 
             }
@@ -2079,10 +2133,10 @@ function formatAuthors(
      */
 
     if (
-        formattedAuthors.length === 1
+        formatted.length === 1
     ) {
 
-        return formattedAuthors[0];
+        return formatted[0];
 
     }
 
@@ -2092,16 +2146,16 @@ function formatAuthors(
      */
 
     if (
-        formattedAuthors.length === 2
+        formatted.length === 2
     ) {
 
         return (
 
-            formattedAuthors[0] +
+            formatted[0] +
 
             " and " +
 
-            formattedAuthors[1]
+            formatted[1]
 
         );
 
@@ -2110,22 +2164,18 @@ function formatAuthors(
 
     /*
      * Three or more authors.
-     *
-     * IEEE-style:
-     *
-     * A. Smith, B. Jones, and C. Brown
      */
 
     return (
 
-        formattedAuthors
+        formatted
             .slice(0, -1)
             .join(", ") +
 
         ", and " +
 
-        formattedAuthors[
-            formattedAuthors.length - 1
+        formatted[
+            formatted.length - 1
         ]
 
     );
@@ -2135,7 +2185,7 @@ function formatAuthors(
 
 
 /* ==========================================================
-   CHECK WHETHER AUTHOR IS YOU
+   CHECK YOUR NAME
    ========================================================== */
 
 function isYourName(
@@ -2143,74 +2193,63 @@ function isYourName(
 ) {
 
 
-    const cleanAuthor =
-        author
-
-            .toLowerCase()
-
-            .replace(
-                /[{}]/g,
-                ""
-            )
-
-            .replace(
-                /\s+/g,
-                " "
-            )
-
-            .trim();
-
-
-    const cleanYourName =
-        YOUR_NAME
-
-            .toLowerCase()
-
-            .replace(
-                /[{}]/g,
-                ""
-            )
-
-            .replace(
-                /\s+/g,
-                " "
-            )
-
-            .trim();
+    const normalized =
+        normalizeAuthor(
+            author
+        );
 
 
     /*
-     * Exact BibTeX match.
+     * The supplied BibTeX uses:
+     *
+     * Saha, Simanto
      */
 
-    if (
-        cleanAuthor ===
-        cleanYourName
-    ) {
+    return (
 
-        return true;
+        normalized ===
+            "saha simanto"
 
-    }
+        ||
 
+        normalized ===
+            "simanto saha"
 
-    /*
-     * Additional accepted forms.
-     */
-
-    const alternatives = [
-
-        "saha, simanto",
-
-        "simanto saha",
-
-        "saha, s."
-
-    ];
-
-
-    return alternatives.includes(
-        cleanAuthor
     );
+
+}
+
+
+
+/* ==========================================================
+   NORMALIZE AUTHOR
+   ========================================================== */
+
+function normalizeAuthor(
+    author
+) {
+
+
+    return author
+
+        .replace(
+            /[{}]/g,
+            ""
+        )
+
+        .replace(
+            /\./g,
+            ""
+        )
+
+        .replace(
+            /\s+/g,
+            " "
+        )
+
+        .trim()
+
+        .toLowerCase();
 
 }
 
@@ -2233,13 +2272,17 @@ function formatAuthorName(
                 ""
             )
 
+            .replace(
+                /\s+/g,
+                " "
+            )
+
             .trim();
 
 
     /*
-     * ------------------------------------------
-     * LAST NAME, FIRST NAME
-     * ------------------------------------------
+     * ======================================================
+     * BibTeX surname-first format
      *
      * Saha, Simanto
      * →
@@ -2252,6 +2295,7 @@ function formatAuthorName(
      * Khandoker, AH
      * →
      * A. H. Khandoker
+     * ======================================================
      */
 
     if (
@@ -2263,11 +2307,11 @@ function formatAuthorName(
             author.split(",");
 
 
-        const lastName =
+        const surname =
             parts[0].trim();
 
 
-        const firstName =
+        const givenNames =
             parts
                 .slice(1)
                 .join(",")
@@ -2277,12 +2321,12 @@ function formatAuthorName(
         return (
 
             makeInitials(
-                firstName
+                givenNames
             ) +
 
             " " +
 
-            lastName
+            surname
 
         );
 
@@ -2290,13 +2334,13 @@ function formatAuthorName(
 
 
     /*
-     * ------------------------------------------
-     * FIRST NAME LAST NAME
-     * ------------------------------------------
+     * ======================================================
+     * First-name-first format
      *
      * Simanto Saha
      * →
      * S. Saha
+     * ======================================================
      */
 
     const parts =
@@ -2317,23 +2361,23 @@ function formatAuthorName(
     }
 
 
-    const lastName =
+    const surname =
         parts.pop();
 
 
-    const firstName =
+    const givenNames =
         parts.join(" ");
 
 
     return (
 
         makeInitials(
-            firstName
+            givenNames
         ) +
 
         " " +
 
-        lastName
+        surname
 
     );
 
@@ -2342,7 +2386,7 @@ function formatAuthorName(
 
 
 /* ==========================================================
-   MAKE INITIALS
+   MAKE IEEE INITIALS
    ========================================================== */
 
 function makeInitials(
@@ -2352,10 +2396,12 @@ function makeInitials(
 
     name =
         name
+
             .replace(
                 /[{}]/g,
                 ""
             )
+
             .trim();
 
 
@@ -2366,35 +2412,34 @@ function makeInitials(
     }
 
 
-    /*
-     * Split into components.
-     */
-
-    const parts =
-        name.split(/\s+/);
-
-
-    const result = [];
+    const words =
+        name
+            .split(/\s+/)
+            .filter(
+                word =>
+                    word.length > 0
+            );
 
 
-    parts.forEach(
-        part => {
+    const initials = [];
+
+
+    words.forEach(
+        word => {
 
 
             /*
-             * Remove periods.
+             * Remove punctuation.
              */
 
             const cleaned =
-                part.replace(
+                word.replace(
                     /[^A-Za-zÀ-ÿ]/g,
                     ""
                 );
 
 
-            if (
-                !cleaned
-            ) {
+            if (!cleaned) {
 
                 return;
 
@@ -2402,14 +2447,13 @@ function makeInitials(
 
 
             /*
-             * Handle uppercase
-             * abbreviations.
+             * ------------------------------------------------
+             * Already abbreviated uppercase initials.
              *
              * AH → A. H.
-             *
              * KI → K. I.
-             *
              * IU → I. U.
+             * ------------------------------------------------
              */
 
             if (
@@ -2425,9 +2469,14 @@ function makeInitials(
                     i++
                 ) {
 
-                    result.push(
-                        cleaned[i].toUpperCase() +
+                    initials.push(
+
+                        cleaned
+                            .charAt(i)
+                            .toUpperCase() +
+
                         "."
+
                     );
 
                 }
@@ -2439,12 +2488,17 @@ function makeInitials(
 
 
             /*
-             * Normal full name.
+             * ------------------------------------------------
+             * Normal name.
              *
-             * Simanto → S.
+             * Ahsan → A.
+             * Khawza → K.
+             * Iftekhar → I.
+             * Uddin → U.
+             * ------------------------------------------------
              */
 
-            result.push(
+            initials.push(
 
                 cleaned
                     .charAt(0)
@@ -2458,7 +2512,7 @@ function makeInitials(
     );
 
 
-    return result.join(" ");
+    return initials.join(" ");
 
 }
 
@@ -2487,6 +2541,76 @@ function formatTitle(
 
 
 /* ==========================================================
+   FORMAT PAGE RANGE
+   ========================================================== */
+
+function formatPages(
+    pages
+) {
+
+
+    return pages
+
+        .replace(
+            /--/g,
+            "–"
+        )
+
+        .replace(
+            /-/g,
+            "–"
+        );
+
+}
+
+
+
+/* ==========================================================
+   CLEAN DOI
+   ========================================================== */
+
+function cleanDOI(
+    doi
+) {
+
+
+    return doi
+
+        .trim()
+
+        .replace(
+            /^https?:\/\/doi\.org\//i,
+            ""
+        )
+
+        .replace(
+            /^https?:\/\/dx\.doi\.org\//i,
+            ""
+        )
+
+        .replace(
+            /^doi:\s*/i,
+            ""
+        )
+
+        .replace(
+            /^doi\s+/i,
+            ""
+        )
+
+        .replace(
+            /\.$/,
+            ""
+
+        )
+
+        .trim();
+
+}
+
+
+
+/* ==========================================================
    ADDITIONAL LINKS
    ========================================================== */
 
@@ -2499,7 +2623,9 @@ function createPublicationLinks(
 
 
     /*
-     * PDF.
+     * ------------------------------------------------------
+     * PDF
+     * ------------------------------------------------------
      */
 
     if (
@@ -2519,7 +2645,9 @@ function createPublicationLinks(
 
 
     /*
-     * General URL.
+     * ------------------------------------------------------
+     * General URL
+     * ------------------------------------------------------
      */
 
     if (
@@ -2541,12 +2669,11 @@ function createPublicationLinks(
     /*
      * IMPORTANT:
      *
-     * DOI is NOT added here.
+     * DOI is intentionally NOT added here.
      *
-     * It is already displayed directly
-     * in the citation.
+     * It is already displayed as the clickable DOI
+     * inside the IEEE citation.
      */
-
 
     if (
         links.length === 0
@@ -2644,7 +2771,6 @@ function escapeHTML(
     return div.innerHTML;
 
 }
-
 
 </script>
 
