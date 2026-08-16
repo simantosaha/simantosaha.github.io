@@ -16,7 +16,7 @@
     <style>
 
         /* =====================================================
-           COLOURS
+           COLOUR THEME
            ===================================================== */
 
         :root {
@@ -37,26 +37,12 @@
 
             --white: #FFFFFF;
 
-            --link: #0B3C5D;
-
         }
 
-
-
-        /* =====================================================
-           GLOBAL
-           ===================================================== */
 
         * {
 
             box-sizing: border-box;
-
-        }
-
-
-        html {
-
-            scroll-behavior: smooth;
 
         }
 
@@ -77,7 +63,6 @@
             line-height: 1.7;
 
         }
-
 
 
         /* =====================================================
@@ -129,8 +114,6 @@
 
             text-decoration: none;
 
-            white-space: nowrap;
-
         }
 
 
@@ -143,7 +126,7 @@
                 Helvetica,
                 sans-serif;
 
-            font-size: 0.82rem;
+            font-size: 0.85rem;
 
             font-weight: normal;
 
@@ -167,8 +150,7 @@
 
             text-decoration: none;
 
-            padding:
-                27px 15px;
+            padding: 27px 15px;
 
             font-size: 0.95rem;
 
@@ -176,14 +158,12 @@
                 4px solid transparent;
 
             transition:
-                background 0.2s ease,
-                border-color 0.2s ease;
+                0.2s ease;
 
         }
 
 
         .nav-links a:hover,
-
         .nav-links a.active {
 
             background:
@@ -195,20 +175,17 @@
         }
 
 
-
         /* =====================================================
-           MAIN
+           MAIN CONTENT
            ===================================================== */
 
         main {
 
             max-width: 1000px;
 
-            margin:
-                60px auto;
+            margin: 60px auto;
 
-            padding:
-                0 30px;
+            padding: 0 30px;
 
         }
 
@@ -223,14 +200,9 @@
                 "Times New Roman",
                 serif;
 
-            font-size:
-                2.7rem;
+            font-size: 2.7rem;
 
-            line-height:
-                1.2;
-
-            margin:
-                0;
+            margin: 0;
 
         }
 
@@ -245,31 +217,117 @@
                 var(--sydney-gold);
 
             margin:
-                20px 0 40px;
+                20px 0 25px;
 
         }
 
 
         .intro {
 
-            color:
-                #555;
+            color: #555;
 
-            font-size:
-                1.05rem;
+            font-size: 1.05rem;
 
-            max-width:
-                850px;
+            max-width: 900px;
 
-            margin:
-                0 0 45px;
+            margin-bottom: 35px;
 
         }
 
 
+        /* =====================================================
+           GOOGLE SCHOLAR
+           ===================================================== */
+
+        .scholar-link {
+
+            margin-top: 5px;
+
+            margin-bottom: 35px;
+
+        }
+
+
+        .scholar-link a {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            color:
+                var(--sydney-blue);
+
+            text-decoration: none;
+
+            font-size: 1.15rem;
+
+            font-weight: bold;
+
+            padding: 14px 22px;
+
+            border:
+                2px solid var(--sydney-blue);
+
+            border-radius: 7px;
+
+            background:
+                var(--white);
+
+            box-shadow:
+                0 2px 6px rgba(
+                    0,
+                    0,
+                    0,
+                    0.08
+                );
+
+            transition:
+                color 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        .scholar-link a:hover {
+
+            color: white;
+
+            background:
+                var(--sydney-blue);
+
+            border-color:
+                var(--sydney-blue);
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 5px 12px rgba(
+                    0,
+                    0,
+                    0,
+                    0.15
+                );
+
+        }
+
+
+        .scholar-icon {
+
+            font-size: 2rem;
+
+            line-height: 1;
+
+        }
+
 
         /* =====================================================
-           LOADING
+           LOADING / ERROR
            ===================================================== */
 
         #loading {
@@ -280,24 +338,16 @@
             padding:
                 20px 0;
 
-            font-style:
-                italic;
+            font-style: italic;
 
         }
 
 
-
-        /* =====================================================
-           ERROR
-           ===================================================== */
-
         #error {
 
-            display:
-                none;
+            display: none;
 
-            padding:
-                20px;
+            padding: 20px;
 
             background:
                 #FFF4F4;
@@ -314,29 +364,25 @@
         }
 
 
-
         /* =====================================================
-           PUBLICATIONS
+           PUBLICATION LIST
            ===================================================== */
 
         #publications {
 
-            width:
-                100%;
+            width: 100%;
 
         }
 
 
         .publication {
 
-            display:
-                grid;
+            display: grid;
 
             grid-template-columns:
                 125px 1fr;
 
-            gap:
-                25px;
+            gap: 25px;
 
             padding:
                 24px 10px;
@@ -358,24 +404,19 @@
         }
 
 
-
         /* =====================================================
            YEAR + TYPE
            ===================================================== */
 
         .publication-marker {
 
-            display:
-                flex;
+            display: flex;
 
-            flex-direction:
-                column;
+            flex-direction: column;
 
-            align-items:
-                flex-start;
+            align-items: flex-start;
 
-            padding-top:
-                2px;
+            padding-top: 2px;
 
         }
 
@@ -385,17 +426,13 @@
             color:
                 var(--sydney-blue);
 
-            font-size:
-                1.05rem;
+            font-size: 1.05rem;
 
-            font-weight:
-                bold;
+            font-weight: bold;
 
-            line-height:
-                1.3;
+            line-height: 1.3;
 
-            white-space:
-                nowrap;
+            white-space: nowrap;
 
         }
 
@@ -405,26 +442,19 @@
             color:
                 var(--muted);
 
-            font-size:
-                0.67rem;
+            font-size: 0.67rem;
 
-            font-weight:
-                bold;
+            font-weight: bold;
 
-            text-transform:
-                uppercase;
+            text-transform: uppercase;
 
-            letter-spacing:
-                0.05em;
+            letter-spacing: 0.05em;
 
-            line-height:
-                1.4;
+            line-height: 1.4;
 
-            margin-top:
-                5px;
+            margin-top: 5px;
 
         }
-
 
 
         /* =====================================================
@@ -433,67 +463,56 @@
 
         .publication-text {
 
-            color:
-                #333;
+            color: #333;
 
-            font-size:
-                0.98rem;
+            font-size: 0.98rem;
 
-            line-height:
-                1.75;
+            line-height: 1.75;
 
         }
 
 
-        .citation-journal,
+        .citation-journal {
+
+            font-style: italic;
+
+        }
+
 
         .citation-conference {
 
-            font-style:
-                italic;
+            font-style: italic;
 
         }
 
 
         .my-name {
 
-            font-weight:
-                bold;
+            font-weight: bold;
 
             color:
-                #111;
+                var(--sydney-blue);
 
         }
-
 
 
         /* =====================================================
            DOI
            ===================================================== */
 
-        .doi {
-
-            white-space:
-                nowrap;
-
-        }
-
-
-        .doi a {
+        .doi-link {
 
             color:
-                var(--link);
+                var(--sydney-blue);
 
-            text-decoration:
-                none;
+            text-decoration: none;
 
-            font-weight:
-                500;
+            word-break: break-word;
 
         }
 
 
-        .doi a:hover {
+        .doi-link:hover {
 
             color:
                 var(--sydney-gold);
@@ -504,9 +523,8 @@
         }
 
 
-
         /* =====================================================
-           EMPTY MESSAGE
+           EMPTY STATE
            ===================================================== */
 
         .empty-message {
@@ -514,14 +532,12 @@
             color:
                 var(--muted);
 
-            font-style:
-                italic;
+            font-style: italic;
 
             padding:
                 15px 0;
 
         }
-
 
 
         /* =====================================================
@@ -559,12 +575,11 @@
         }
 
 
-
         /* =====================================================
            MOBILE
            ===================================================== */
 
-        @media (max-width: 800px) {
+        @media (max-width: 750px) {
 
             .nav-container {
 
@@ -578,9 +593,6 @@
 
 
             .site-name {
-
-                white-space:
-                    normal;
 
                 text-align:
                     center;
@@ -649,7 +661,7 @@
             .publication {
 
                 grid-template-columns:
-                    90px 1fr;
+                    85px 1fr;
 
                 gap:
                     15px;
@@ -675,40 +687,22 @@
 
             }
 
-        }
 
+            .scholar-link a {
 
-        @media (max-width: 520px) {
+                font-size:
+                    1.05rem;
 
-            .publication {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    8px;
+                padding:
+                    13px 18px;
 
             }
 
 
-            .publication-marker {
+            .scholar-icon {
 
-                flex-direction:
-                    row;
-
-                align-items:
-                    baseline;
-
-                gap:
-                    10px;
-
-            }
-
-
-            .publication-type {
-
-                margin-top:
-                    0;
+                font-size:
+                    1.8rem;
 
             }
 
@@ -719,9 +713,7 @@
 </head>
 
 
-
 <body>
-
 
 
 <!-- =========================================================
@@ -797,34 +789,39 @@
     <div class="gold-line"></div>
 
 
+    <!-- =====================================================
+         GOOGLE SCHOLAR
+         ===================================================== -->
+
+    <div class="scholar-link">
+
+        <a
+            href="YOUR_GOOGLE_SCHOLAR_PROFILE_URL"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Google Scholar profile"
+        >
+
+            <span class="scholar-icon">
+                🎓
+            </span>
+
+            <span>
+                Google Scholar
+            </span>
+
+        </a>
+
+    </div>
+
+
     <p class="intro">
 
         My publications include peer-reviewed journal articles,
-        conference papers, and conference abstracts. All authors
-        are displayed, and publications are listed in reverse
-        chronological order.
+        conference papers, and conference abstracts. They are
+        listed in reverse chronological order.
 
     </p>
-
-    <div class="gold-line"></div>
-
-    <p class="intro">
-
-        <div class="gold-line"></div>
-
-    <div class="scholar-link">
-        <a
-        href="https://scholar.google.com/citations?user=oBT6BD0AAAAJ&hl=en"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Google Scholar profile"
-        >
-        <span class="scholar-icon">🎓</span>
-        <span>Google Scholar</span>
-        </a>
-    </div>
-
-<p class="intro">
 
 
     <div id="error"></div>
@@ -855,6 +852,10 @@
 
 
 
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
 <script>
 
 
@@ -864,18 +865,14 @@
 
 
 /*
- * Your name exactly as it appears in publications.bib.
- *
- * This is used to bold your name.
+ * Your name as it appears in publications.bib.
  */
 
 const YOUR_NAME = "Saha, Simanto";
 
 
 /*
- * BibTeX file.
- *
- * It must be in the same directory as this HTML file.
+ * BibTeX database.
  */
 
 const BIB_FILE = "publications.bib";
@@ -883,7 +880,7 @@ const BIB_FILE = "publications.bib";
 
 
 /* ==========================================================
-   LOAD BIBTEX
+   LOAD PUBLICATIONS
    ========================================================== */
 
 fetch(BIB_FILE)
@@ -962,7 +959,7 @@ function parseBibTeX(text) {
 
 
     /*
-     * Remove BibTeX comments.
+     * Remove comments.
      */
 
     text = text.replace(
@@ -972,11 +969,12 @@ function parseBibTeX(text) {
 
 
     /*
-     * Locate every @article, @inproceedings, etc.
+     * Find each BibTeX entry by
+     * balancing braces.
      *
-     * This parser uses balanced braces rather than
-     * a simple regular expression, making it safer
-     * for titles containing braces.
+     * This is more reliable than a
+     * simple regular expression for
+     * titles containing braces.
      */
 
     let position = 0;
@@ -984,26 +982,26 @@ function parseBibTeX(text) {
 
     while (position < text.length) {
 
-        const atIndex =
+        const at =
             text.indexOf("@", position);
 
 
-        if (atIndex === -1) {
+        if (at === -1) {
             break;
         }
 
 
         const typeMatch =
-            text.slice(atIndex)
+            text.substring(at)
                 .match(
-                    /^@([a-zA-Z]+)\s*\{/ 
+                    /^@([a-zA-Z]+)\s*\{/
                 );
 
 
         if (!typeMatch) {
 
             position =
-                atIndex + 1;
+                at + 1;
 
             continue;
 
@@ -1015,9 +1013,15 @@ function parseBibTeX(text) {
 
 
         const openingBrace =
-            atIndex +
-            typeMatch[0].length -
-            1;
+            text.indexOf(
+                "{",
+                at
+            );
+
+
+        if (openingBrace === -1) {
+            break;
+        }
 
 
         let depth = 0;
@@ -1036,7 +1040,9 @@ function parseBibTeX(text) {
                 depth++;
 
             }
-            else if (text[i] === "}") {
+            else if (
+                text[i] === "}"
+            ) {
 
                 depth--;
 
@@ -1059,17 +1065,17 @@ function parseBibTeX(text) {
 
 
         const entry =
-            text.slice(
+            text.substring(
                 openingBrace + 1,
                 closingBrace
             );
 
 
-        const commaIndex =
+        const comma =
             entry.indexOf(",");
 
 
-        if (commaIndex === -1) {
+        if (comma === -1) {
 
             position =
                 closingBrace + 1;
@@ -1081,13 +1087,17 @@ function parseBibTeX(text) {
 
         const key =
             entry
-                .slice(0, commaIndex)
+                .substring(
+                    0,
+                    comma
+                )
                 .trim();
 
 
         const body =
-            entry
-                .slice(commaIndex + 1);
+            entry.substring(
+                comma + 1
+            );
 
 
         const fields =
@@ -1132,66 +1142,33 @@ function parseFields(body) {
         position < body.length
     ) {
 
-
         /*
-         * Skip whitespace and commas.
+         * Find next field name.
          */
 
-        while (
-
-            position < body.length &&
-
-            (
-                /\s/.test(body[position]) ||
-                body[position] === ","
-            )
-
-        ) {
-
-            position++;
-
-        }
+        const match =
+            body.substring(position)
+                .match(
+                    /([a-zA-Z][a-zA-Z0-9_-]*)\s*=/
+                );
 
 
-        if (
-            position >= body.length
-        ) {
-
+        if (!match) {
             break;
-
-        }
-
-
-        /*
-         * Read field name.
-         */
-
-        const fieldStart =
-            position;
-
-
-        while (
-
-            position < body.length &&
-
-            /[a-zA-Z0-9_-]/.test(
-                body[position]
-            )
-
-        ) {
-
-            position++;
-
         }
 
 
         const fieldName =
-            body
-                .slice(
-                    fieldStart,
-                    position
-                )
-                .toLowerCase();
+            match[1].toLowerCase();
+
+
+        const equalsPosition =
+            position +
+            match[0].lastIndexOf("=");
+
+
+        let valueStart =
+            equalsPosition + 1;
 
 
         /*
@@ -1199,96 +1176,54 @@ function parseFields(body) {
          */
 
         while (
-
-            position < body.length &&
-
             /\s/.test(
-                body[position]
+                body[valueStart] || ""
             )
-
         ) {
 
-            position++;
+            valueStart++;
 
         }
 
-
-        /*
-         * Expect "=".
-         */
-
-        if (
-            body[position] !== "="
-        ) {
-
-            position++;
-
-            continue;
-
-        }
-
-
-        position++;
-
-
-        /*
-         * Skip whitespace.
-         */
-
-        while (
-
-            position < body.length &&
-
-            /\s/.test(
-                body[position]
-            )
-
-        ) {
-
-            position++;
-
-        }
-
-
-        /*
-         * Read value.
-         */
 
         let value = "";
 
 
+        /*
+         * Braced value.
+         */
+
         if (
-            body[position] === "{"
+            body[valueStart] === "{"
         ) {
 
             let depth = 0;
 
-            const valueStart =
-                position;
+            let end = valueStart;
 
 
-            while (
-                position < body.length
+            for (
+                let i = valueStart;
+                i < body.length;
+                i++
             ) {
 
                 if (
-                    body[position] === "{"
+                    body[i] === "{"
                 ) {
 
                     depth++;
 
                 }
                 else if (
-                    body[position] === "}"
+                    body[i] === "}"
                 ) {
 
                     depth--;
 
-                    if (
-                        depth === 0
-                    ) {
+                    if (depth === 0) {
 
-                        position++;
+                        end = i;
 
                         break;
 
@@ -1296,90 +1231,94 @@ function parseFields(body) {
 
                 }
 
-
-                position++;
-
             }
 
 
             value =
-                body.slice(
-                    valueStart,
-                    position
+                body.substring(
+                    valueStart + 1,
+                    end
                 );
+
+
+            position =
+                end + 1;
 
         }
 
+
+        /*
+         * Quoted value.
+         */
+
         else if (
-            body[position] === '"'
+            body[valueStart] === '"'
         ) {
 
-            position++;
-
-            const valueStart =
-                position;
+            let end =
+                valueStart + 1;
 
 
             while (
-                position < body.length
+                end < body.length
             ) {
 
                 if (
-                    body[position] === '"' &&
-                    body[position - 1] !== "\\"
+                    body[end] === '"' &&
+                    body[end - 1] !== "\\"
                 ) {
 
                     break;
 
                 }
 
-
-                position++;
+                end++;
 
             }
 
 
             value =
-                body.slice(
-                    valueStart,
-                    position
+                body.substring(
+                    valueStart + 1,
+                    end
                 );
 
 
-            if (
-                body[position] === '"'
-            ) {
-
-                position++;
-
-            }
+            position =
+                end + 1;
 
         }
 
+
+        /*
+         * Unquoted value.
+         */
+
         else {
 
-            const valueStart =
-                position;
+            let end =
+                valueStart;
 
 
             while (
-
-                position < body.length &&
-
-                body[position] !== ","
-
+                end < body.length &&
+                body[end] !== ","
             ) {
 
-                position++;
+                end++;
 
             }
 
 
             value =
-                body.slice(
+                body.substring(
                     valueStart,
-                    position
+                    end
                 );
+
+
+            position =
+                end + 1;
 
         }
 
@@ -1397,7 +1336,7 @@ function parseFields(body) {
 
 
 /* ==========================================================
-   CLEAN BIBTEX VALUE
+   CLEAN BIBTEX VALUES
    ========================================================== */
 
 function cleanBibValue(value) {
@@ -1407,50 +1346,7 @@ function cleanBibValue(value) {
 
 
     /*
-     * Remove outer braces.
-     */
-
-    if (
-
-        value.startsWith("{") &&
-
-        value.endsWith("}")
-
-    ) {
-
-        value =
-            value.slice(
-                1,
-                -1
-            );
-
-    }
-
-
-    /*
-     * Remove quotation marks.
-     */
-
-    if (
-
-        value.startsWith('"') &&
-
-        value.endsWith('"')
-
-    ) {
-
-        value =
-            value.slice(
-                1,
-                -1
-            );
-
-    }
-
-
-    /*
-     * Preserve important LaTeX constructs
-     * while converting common formatting.
+     * LaTeX special characters.
      */
 
     value =
@@ -1476,10 +1372,32 @@ function cleanBibValue(value) {
 
     value =
         value.replace(
+            /\\#/g,
+            "#"
+        );
+
+
+    value =
+        value.replace(
+            /\\textendash/g,
+            "–"
+        );
+
+
+    /*
+     * BibTeX double hyphen.
+     */
+
+    value =
+        value.replace(
             /--/g,
             "–"
         );
 
+
+    /*
+     * Non-breaking spaces.
+     */
 
     value =
         value.replace(
@@ -1489,13 +1407,26 @@ function cleanBibValue(value) {
 
 
     /*
-     * Remove remaining braces.
+     * Remove remaining outer braces
+     * around individual LaTeX-protected
+     * words while preserving text.
      */
 
     value =
         value.replace(
-            /[{}]/g,
-            ""
+            /{([^{}]+)}/g,
+            "$1"
+        );
+
+
+    /*
+     * Normalize whitespace.
+     */
+
+    value =
+        value.replace(
+            /\s+/g,
+            " "
         );
 
 
@@ -1515,7 +1446,7 @@ function displayPublications(
 
 
     /*
-     * Newest → oldest.
+     * Newest first.
      */
 
     publications.sort(
@@ -1533,9 +1464,7 @@ function displayPublications(
                 yearA !== yearB
             ) {
 
-                return (
-                    yearB - yearA
-                );
+                return yearB - yearA;
 
             }
 
@@ -1572,7 +1501,6 @@ function renderPublications(
     publications
 ) {
 
-
     const container =
         document.getElementById(
             "publications"
@@ -1602,7 +1530,6 @@ function renderPublications(
     publications.forEach(
         publication => {
 
-
             const item =
                 document.createElement(
                     "article"
@@ -1615,7 +1542,7 @@ function renderPublications(
 
             /*
              * ------------------------------------------
-             * YEAR
+             * YEAR + TYPE
              * ------------------------------------------
              */
 
@@ -1642,12 +1569,6 @@ function renderPublications(
             year.textContent =
                 publication.year || "";
 
-
-            /*
-             * ------------------------------------------
-             * TYPE
-             * ------------------------------------------
-             */
 
             const type =
                 document.createElement(
@@ -1697,10 +1618,6 @@ function renderPublications(
                 );
 
 
-            /*
-             * Add publication.
-             */
-
             item.appendChild(
                 marker
             );
@@ -1730,7 +1647,6 @@ function getPublicationType(
     publication
 ) {
 
-
     switch (
         publication.type
     ) {
@@ -1753,6 +1669,11 @@ function getPublicationType(
         case "incollection":
 
             return "Conference Paper";
+
+
+        case "proceedings":
+
+            return "Conference";
 
 
         case "misc":
@@ -1779,7 +1700,7 @@ function getPublicationType(
 
 
 /* ==========================================================
-   IEEE CITATION
+   FORMAT IEEE CITATION
    ========================================================== */
 
 function formatIEEE(
@@ -1803,6 +1724,7 @@ function formatIEEE(
             formatAuthors(
                 publication.author
             );
+
 
         citation += ", ";
 
@@ -1836,14 +1758,13 @@ function formatIEEE(
 
     /*
      * ------------------------------------------
-     * JOURNAL
+     * JOURNAL ARTICLE
      * ------------------------------------------
      */
 
     if (
         publication.type === "article"
     ) {
-
 
         if (
             publication.journal
@@ -1911,12 +1832,11 @@ function formatIEEE(
 
     /*
      * ------------------------------------------
-     * CONFERENCE
+     * CONFERENCE PAPER
      * ------------------------------------------
      */
 
     else {
-
 
         if (
             publication.booktitle
@@ -1975,8 +1895,8 @@ function formatIEEE(
      * ------------------------------------------
      *
      * The year is already displayed in the
-     * left marker, so it is intentionally not
-     * repeated in the citation.
+     * left marker, so it is not repeated
+     * in the citation.
      */
 
 
@@ -1987,8 +1907,6 @@ function formatIEEE(
      * ------------------------------------------
      * DOI
      * ------------------------------------------
-     *
-     * DOI is displayed exactly once.
      */
 
     if (
@@ -2003,17 +1921,21 @@ function formatIEEE(
 
         citation +=
 
-            ' <span class="doi">doi: ' +
+            ' doi: ' +
 
-            '<a href="' +
+            '<a ' +
 
-            'https://doi.org/' +
+            'class="doi-link" ' +
+
+            'href="https://doi.org/' +
 
             encodeURIComponent(
                 doi
             ) +
 
-            '" target="_blank" ' +
+            '" ' +
+
+            'target="_blank" ' +
 
             'rel="noopener noreferrer">' +
 
@@ -2021,7 +1943,7 @@ function formatIEEE(
                 doi
             ) +
 
-            "</a></span>.";
+            "</a>.";
 
     }
 
@@ -2033,7 +1955,7 @@ function formatIEEE(
 
 
 /* ==========================================================
-   FORMAT ALL AUTHORS
+   FORMAT AUTHORS
    ========================================================== */
 
 function formatAuthors(
@@ -2042,25 +1964,29 @@ function formatAuthors(
 
 
     /*
-     * IMPORTANT:
+     * BibTeX uses:
      *
-     * There is deliberately NO et al.
-     * in this function.
-     *
-     * Every author in publications.bib
-     * is displayed.
+     * Author One and Author Two and Author Three
      */
 
     const authors =
-        splitAuthors(
-            authorString
-        );
+        authorString
+            .split(
+                /\s+and\s+/i
+            )
+            .map(
+                author =>
+                    author.trim()
+            )
+            .filter(
+                author =>
+                    author.length > 0
+            );
 
 
-    const formattedAuthors =
+    const formatted =
         authors.map(
             author => {
-
 
                 const formattedName =
                     formatAuthorName(
@@ -2102,55 +2028,50 @@ function formatAuthors(
 
 
     /*
-     * One author.
+     * IMPORTANT:
+     *
+     * No "et al."
+     *
+     * Every author is displayed.
      */
 
+
     if (
-        formattedAuthors.length === 1
+        formatted.length === 1
     ) {
 
-        return formattedAuthors[0];
+        return formatted[0];
 
     }
 
 
-    /*
-     * Two authors.
-     */
-
     if (
-        formattedAuthors.length === 2
+        formatted.length === 2
     ) {
 
         return (
 
-            formattedAuthors[0] +
+            formatted[0] +
 
             " and " +
 
-            formattedAuthors[1]
+            formatted[1]
 
         );
 
     }
 
 
-    /*
-     * Three or more authors.
-     *
-     * ALL authors are retained.
-     */
-
     return (
 
-        formattedAuthors
+        formatted
             .slice(0, -1)
             .join(", ") +
 
         ", and " +
 
-        formattedAuthors[
-            formattedAuthors.length - 1
+        formatted[
+            formatted.length - 1
         ]
 
     );
@@ -2160,97 +2081,36 @@ function formatAuthors(
 
 
 /* ==========================================================
-   SPLIT AUTHORS
-   ========================================================== */
-
-function splitAuthors(
-    authorString
-) {
-
-
-    /*
-     * BibTeX separates authors with:
-     *
-     *     and
-     *
-     * Example:
-     *
-     * Saha, Simanto and Baumert, Mathias
-     */
-
-    return authorString
-
-        .split(
-            /\s+and\s+/i
-        )
-
-        .map(
-            author =>
-                author.trim()
-        )
-
-        .filter(
-            author =>
-                author.length > 0
-        );
-
-}
-
-
-
-/* ==========================================================
-   CHECK YOUR NAME
+   CHECK WHETHER AUTHOR IS YOUR NAME
    ========================================================== */
 
 function isYourName(
     author
 ) {
 
+    const normalize =
+        value =>
 
-    const cleanAuthor =
-        normalizeAuthor(
-            author
-        );
-
-
-    const cleanYourName =
-        normalizeAuthor(
-            YOUR_NAME
-        );
+            value
+                .toLowerCase()
+                .replace(
+                    /[{}]/g,
+                    ""
+                )
+                .replace(
+                    /\s+/g,
+                    " "
+                )
+                .trim();
 
 
     return (
-        cleanAuthor ===
-        cleanYourName
+
+        normalize(author) ===
+
+        normalize(YOUR_NAME)
+
     );
-
-}
-
-
-
-/* ==========================================================
-   NORMALIZE AUTHOR
-   ========================================================== */
-
-function normalizeAuthor(
-    name
-) {
-
-    return name
-
-        .toLowerCase()
-
-        .replace(
-            /[{}]/g,
-            ""
-        )
-
-        .replace(
-            /\s+/g,
-            " "
-        )
-
-        .trim();
 
 }
 
@@ -2275,44 +2135,33 @@ function formatAuthorName(
 
 
     /*
-     * BibTeX format:
-     *
-     * Last Name, First Name
-     *
-     * becomes:
-     *
-     * F. N. Last Name
+     * ------------------------------------------
+     * BibTeX "Last, First"
+     * ------------------------------------------
      */
 
     if (
         author.includes(",")
     ) {
 
-
-        const commaIndex =
-            author.indexOf(",");
+        const parts =
+            author.split(",");
 
 
         const lastName =
-            author
-                .slice(
-                    0,
-                    commaIndex
-                )
-                .trim();
+            parts[0].trim();
 
 
         const firstName =
-            author
-                .slice(
-                    commaIndex + 1
-                )
+            parts
+                .slice(1)
+                .join(",")
                 .trim();
 
 
         return (
 
-            initials(
+            formatFirstName(
                 firstName
             ) +
 
@@ -2326,20 +2175,15 @@ function formatAuthorName(
 
 
     /*
-     * Alternative format:
-     *
-     * First Name Last Name
+     * ------------------------------------------
+     * "First Last"
+     * ------------------------------------------
      */
 
     const parts =
         author
-            .split(
-                /\s+/
-            )
-            .filter(
-                part =>
-                    part.length > 0
-            );
+            .trim()
+            .split(/\s+/);
 
 
     if (
@@ -2361,7 +2205,7 @@ function formatAuthorName(
 
     return (
 
-        initials(
+        formatFirstName(
             firstName
         ) +
 
@@ -2376,97 +2220,156 @@ function formatAuthorName(
 
 
 /* ==========================================================
-   AUTHOR INITIALS
+   FORMAT FIRST NAME / INITIALS
    ========================================================== */
 
-function initials(
+function formatFirstName(
     name
 ) {
 
 
     /*
-     * Handle names such as:
+     * Handles:
      *
-     * Khawza Iftekhar Uddin
+     * Simanto
+     * Raquib-ul
+     * Michael Loong-Siong
      *
-     * -> K. I. U.
+     * as:
      *
-     * Also handles existing initials.
+     * S.
+     * R.-U.
+     * M. L.-S.
      */
 
-    return name
+    const words =
+        name
+            .trim()
+            .split(/\s+/)
+            .filter(
+                word =>
+                    word.length > 0
+            );
 
-        .replace(
-            /[-]+/g,
-            " "
-        )
 
-        .split(
-            /\s+/
-        )
-
-        .filter(
-            part =>
-                part.length > 0
-        )
-
-        .map(
-            part => {
-
+    const initials =
+        words.map(
+            word => {
 
                 /*
-                 * Remove punctuation while
-                 * preserving accented characters.
+                 * Remove BibTeX braces.
                  */
 
-                const cleaned =
-                    part.replace(
-                        /[^A-Za-zÀ-ÖØ-öø-ÿ]/g,
+                word =
+                    word.replace(
+                        /[{}]/g,
                         ""
                     );
 
 
+                /*
+                 * Handle hyphenated names.
+                 *
+                 * Raquib-ul
+                 * ->
+                 * R.-U.
+                 *
+                 * Loong-Siong
+                 * ->
+                 * L.-S.
+                 */
+
                 if (
-                    cleaned.length === 0
+                    word.includes("-")
                 ) {
 
-                    return "";
+                    const parts =
+                        word
+                            .split("-")
+                            .filter(
+                                part =>
+                                    part.length > 0
+                            );
+
+
+                    return (
+
+                        parts
+                            .map(
+                                part =>
+                                    getInitial(
+                                        part
+                                    )
+                            )
+                            .join("-") +
+
+                        "."
+
+                    );
 
                 }
 
 
                 return (
-
-                    cleaned
-                        .charAt(0)
-                        .toUpperCase() +
-
-                    "."
-
+                    getInitial(
+                        word
+                    ) + "."
                 );
 
             }
-        )
+        );
 
-        .filter(
-            value =>
-                value.length > 0
-        )
 
-        .join(" ");
+    return initials.join(" ");
 
 }
 
 
 
 /* ==========================================================
-   TITLE
+   GET INITIAL
+   ========================================================== */
+
+function getInitial(
+    word
+) {
+
+    /*
+     * Unicode-aware first character.
+     */
+
+    const cleaned =
+        word
+            .replace(
+                /[^A-Za-zÀ-ÖØ-öø-ÿ]/g,
+                ""
+            );
+
+
+    if (
+        cleaned.length === 0
+    ) {
+
+        return "";
+
+    }
+
+
+    return cleaned
+        .charAt(0)
+        .toUpperCase();
+
+}
+
+
+
+/* ==========================================================
+   TITLE FORMATTING
    ========================================================== */
 
 function formatTitle(
     title
 ) {
-
 
     return title
 
@@ -2488,7 +2391,6 @@ function formatTitle(
 function cleanDOI(
     doi
 ) {
-
 
     return doi
 
@@ -2523,7 +2425,6 @@ function escapeHTML(
     text
 ) {
 
-
     const div =
         document.createElement(
             "div"
@@ -2540,7 +2441,6 @@ function escapeHTML(
 
 
 </script>
-
 
 
 </body>
