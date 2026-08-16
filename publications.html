@@ -15,40 +15,25 @@
 
     <style>
 
-        /* =====================================================
-           COLOUR THEME
-           ===================================================== */
-
         :root {
-
             --sydney-blue: #0B3C5D;
-
             --sydney-dark-blue: #062C43;
-
             --sydney-gold: #E5A823;
 
             --text: #222222;
-
             --muted: #5F6368;
-
             --light-grey: #F5F6F7;
-
             --border: #D9DDE1;
-
             --white: #FFFFFF;
-
         }
 
 
         * {
-
             box-sizing: border-box;
-
         }
 
 
         body {
-
             margin: 0;
 
             font-family:
@@ -61,7 +46,6 @@
             background: var(--white);
 
             line-height: 1.7;
-
         }
 
 
@@ -70,18 +54,14 @@
            ===================================================== */
 
         header {
-
-            background:
-                var(--sydney-blue);
+            background: var(--sydney-blue);
 
             border-bottom:
                 5px solid var(--sydney-gold);
-
         }
 
 
         .nav-container {
-
             max-width: 1100px;
 
             margin: auto;
@@ -95,12 +75,10 @@
             min-height: 75px;
 
             padding: 0 25px;
-
         }
 
 
         .site-name {
-
             color: white;
 
             font-family:
@@ -113,39 +91,26 @@
             font-weight: bold;
 
             text-decoration: none;
-
         }
 
 
         .site-subtitle {
-
             color: #DCE8EF;
-
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
 
             font-size: 0.85rem;
 
-            font-weight: normal;
-
             margin-left: 8px;
-
         }
 
 
         .nav-links {
-
             display: flex;
 
             align-items: center;
-
         }
 
 
         .nav-links a {
-
             color: white;
 
             text-decoration: none;
@@ -159,19 +124,16 @@
 
             transition:
                 0.2s ease;
-
         }
 
 
         .nav-links a:hover,
         .nav-links a.active {
-
             background:
                 var(--sydney-dark-blue);
 
             border-bottom-color:
                 var(--sydney-gold);
-
         }
 
 
@@ -180,20 +142,16 @@
            ===================================================== */
 
         main {
-
-            max-width: 1000px;
+            max-width: 950px;
 
             margin: 60px auto;
 
             padding: 0 30px;
-
         }
 
 
         .page-title {
-
-            color:
-                var(--sydney-blue);
+            color: var(--sydney-blue);
 
             font-family:
                 Georgia,
@@ -203,12 +161,10 @@
             font-size: 2.7rem;
 
             margin: 0;
-
         }
 
 
         .gold-line {
-
             width: 60px;
 
             height: 4px;
@@ -218,20 +174,17 @@
 
             margin:
                 20px 0 25px;
-
         }
 
 
         .intro {
-
             color: #555;
 
             font-size: 1.05rem;
 
-            max-width: 900px;
+            max-width: 850px;
 
             margin-bottom: 35px;
-
         }
 
 
@@ -240,24 +193,20 @@
            ===================================================== */
 
         .scholar-link {
-
-            margin-top: 5px;
+            margin-top: -10px;
 
             margin-bottom: 35px;
-
         }
 
 
         .scholar-link a {
-
             display: inline-flex;
 
             align-items: center;
 
             gap: 14px;
 
-            color:
-                var(--sydney-blue);
+            color: var(--sydney-blue);
 
             text-decoration: none;
 
@@ -272,8 +221,7 @@
 
             border-radius: 7px;
 
-            background:
-                var(--white);
+            background: var(--white);
 
             box-shadow:
                 0 2px 6px rgba(
@@ -289,12 +237,10 @@
                 border-color 0.2s ease,
                 transform 0.2s ease,
                 box-shadow 0.2s ease;
-
         }
 
 
         .scholar-link a:hover {
-
             color: white;
 
             background:
@@ -313,16 +259,13 @@
                     0,
                     0.15
                 );
-
         }
 
 
         .scholar-icon {
-
             font-size: 2rem;
 
             line-height: 1;
-
         }
 
 
@@ -331,36 +274,27 @@
            ===================================================== */
 
         #loading {
+            color: var(--muted);
 
-            color:
-                var(--muted);
-
-            padding:
-                20px 0;
+            padding: 20px 0;
 
             font-style: italic;
-
         }
 
 
         #error {
-
             display: none;
 
             padding: 20px;
 
-            background:
-                #FFF4F4;
+            background: #FFF4F4;
 
             border-left:
                 4px solid #B42318;
 
-            color:
-                #8A1C1C;
+            color: #8A1C1C;
 
-            margin-bottom:
-                40px;
-
+            margin-bottom: 40px;
         }
 
 
@@ -369,38 +303,32 @@
            ===================================================== */
 
         #publications {
-
             width: 100%;
-
         }
 
 
         .publication {
-
             display: grid;
 
             grid-template-columns:
-                125px 1fr;
+                115px 1fr;
 
             gap: 25px;
 
             padding:
-                24px 10px;
+                22px 10px;
 
             border-bottom:
                 1px solid var(--border);
 
             transition:
                 background 0.2s ease;
-
         }
 
 
         .publication:hover {
-
             background:
                 var(--light-grey);
-
         }
 
 
@@ -409,7 +337,6 @@
            ===================================================== */
 
         .publication-marker {
-
             display: flex;
 
             flex-direction: column;
@@ -417,12 +344,10 @@
             align-items: flex-start;
 
             padding-top: 2px;
-
         }
 
 
         .publication-year {
-
             color:
                 var(--sydney-blue);
 
@@ -433,16 +358,14 @@
             line-height: 1.3;
 
             white-space: nowrap;
-
         }
 
 
         .publication-type {
-
             color:
                 var(--muted);
 
-            font-size: 0.67rem;
+            font-size: 0.68rem;
 
             font-weight: bold;
 
@@ -453,7 +376,6 @@
             line-height: 1.4;
 
             margin-top: 5px;
-
         }
 
 
@@ -462,37 +384,28 @@
            ===================================================== */
 
         .publication-text {
-
             color: #333;
 
             font-size: 0.98rem;
 
-            line-height: 1.75;
-
+            line-height: 1.7;
         }
 
 
         .citation-journal {
-
             font-style: italic;
-
         }
 
 
         .citation-conference {
-
             font-style: italic;
-
         }
 
 
         .my-name {
-
             font-weight: bold;
 
-            color:
-                var(--sydney-blue);
-
+            color: #222;
         }
 
 
@@ -501,25 +414,21 @@
            ===================================================== */
 
         .doi-link {
-
             color:
                 var(--sydney-blue);
 
             text-decoration: none;
 
             word-break: break-word;
-
         }
 
 
         .doi-link:hover {
-
             color:
                 var(--sydney-gold);
 
             text-decoration:
                 underline;
-
         }
 
 
@@ -528,7 +437,6 @@
            ===================================================== */
 
         .empty-message {
-
             color:
                 var(--muted);
 
@@ -536,7 +444,6 @@
 
             padding:
                 15px 0;
-
         }
 
 
@@ -545,12 +452,10 @@
            ===================================================== */
 
         footer {
-
             background:
                 var(--sydney-dark-blue);
 
-            color:
-                #DCE8EF;
+            color: #DCE8EF;
 
             margin-top:
                 90px;
@@ -563,15 +468,12 @@
 
             font-size:
                 0.9rem;
-
         }
 
 
         footer .gold {
-
             color:
                 var(--sydney-gold);
-
         }
 
 
@@ -582,40 +484,21 @@
         @media (max-width: 750px) {
 
             .nav-container {
-
                 flex-direction:
                     column;
 
                 padding:
                     15px 10px 0;
-
             }
 
 
             .site-name {
-
-                text-align:
-                    center;
-
                 margin-bottom:
                     10px;
-
-            }
-
-
-            .site-subtitle {
-
-                display:
-                    block;
-
-                margin:
-                    5px 0 0;
-
             }
 
 
             .nav-links {
-
                 width:
                     100%;
 
@@ -624,42 +507,34 @@
 
                 flex-wrap:
                     wrap;
-
             }
 
 
             .nav-links a {
-
                 padding:
                     12px 10px;
 
                 font-size:
                     0.9rem;
-
             }
 
 
             main {
-
                 margin-top:
                     40px;
 
                 padding:
                     0 20px;
-
             }
 
 
             .page-title {
-
                 font-size:
                     2.2rem;
-
             }
 
 
             .publication {
-
                 grid-template-columns:
                     85px 1fr;
 
@@ -667,43 +542,34 @@
                     15px;
 
                 padding:
-                    20px 5px;
-
+                    18px 5px;
             }
 
 
             .publication-text {
-
                 font-size:
                     0.93rem;
-
             }
 
 
             .publication-type {
-
                 font-size:
-                    0.60rem;
-
+                    0.62rem;
             }
 
 
             .scholar-link a {
-
                 font-size:
                     1.05rem;
 
                 padding:
                     13px 18px;
-
             }
 
 
             .scholar-icon {
-
                 font-size:
                     1.8rem;
-
             }
 
         }
@@ -733,9 +599,7 @@
             Dr. Simanto Saha
 
             <span class="site-subtitle">
-
                 Asymptote towards technological freedom!
-
             </span>
 
         </a>
@@ -863,17 +727,7 @@
    CONFIGURATION
    ========================================================== */
 
-
-/*
- * Your name as it appears in publications.bib.
- */
-
 const YOUR_NAME = "Saha, Simanto";
-
-
-/*
- * BibTeX database.
- */
 
 const BIB_FILE = "publications.bib";
 
@@ -924,7 +778,9 @@ fetch(BIB_FILE)
 
 
         const errorBox =
-            document.getElementById("error");
+            document.getElementById(
+                "error"
+            );
 
 
         errorBox.style.display =
@@ -935,11 +791,15 @@ fetch(BIB_FILE)
 
             "<strong>Unable to load publications.</strong><br><br>" +
 
-            escapeHTML(error.message) +
+            escapeHTML(
+                error.message
+            ) +
 
             "<br><br>" +
 
-            "Make sure that <strong>publications.bib</strong> " +
+            "Make sure that " +
+
+            "<strong>publications.bib</strong> " +
 
             "is in the same folder as " +
 
@@ -950,7 +810,7 @@ fetch(BIB_FILE)
 
 
 /* ==========================================================
-   PARSE BIBTEX ENTRIES
+   PARSE BIBTEX
    ========================================================== */
 
 function parseBibTeX(text) {
@@ -958,32 +818,24 @@ function parseBibTeX(text) {
     const publications = [];
 
 
-    /*
-     * Remove comments.
-     */
-
     text = text.replace(
         /^[ \t]*%.*$/gm,
         ""
     );
 
 
-    /*
-     * Find each BibTeX entry by
-     * balancing braces.
-     *
-     * This is more reliable than a
-     * simple regular expression for
-     * titles containing braces.
-     */
-
     let position = 0;
 
 
-    while (position < text.length) {
+    while (
+        position < text.length
+    ) {
 
         const at =
-            text.indexOf("@", position);
+            text.indexOf(
+                "@",
+                position
+            );
 
 
         if (at === -1) {
@@ -1019,7 +871,9 @@ function parseBibTeX(text) {
             );
 
 
-        if (openingBrace === -1) {
+        if (
+            openingBrace === -1
+        ) {
             break;
         }
 
@@ -1035,7 +889,9 @@ function parseBibTeX(text) {
             i++
         ) {
 
-            if (text[i] === "{") {
+            if (
+                text[i] === "{"
+            ) {
 
                 depth++;
 
@@ -1046,7 +902,9 @@ function parseBibTeX(text) {
 
                 depth--;
 
-                if (depth === 0) {
+                if (
+                    depth === 0
+                ) {
 
                     closingBrace = i;
 
@@ -1059,7 +917,9 @@ function parseBibTeX(text) {
         }
 
 
-        if (closingBrace === -1) {
+        if (
+            closingBrace === -1
+        ) {
             break;
         }
 
@@ -1075,7 +935,9 @@ function parseBibTeX(text) {
             entry.indexOf(",");
 
 
-        if (comma === -1) {
+        if (
+            comma === -1
+        ) {
 
             position =
                 closingBrace + 1;
@@ -1128,7 +990,7 @@ function parseBibTeX(text) {
 
 
 /* ==========================================================
-   PARSE BIBTEX FIELDS
+   PARSE FIELDS
    ========================================================== */
 
 function parseFields(body) {
@@ -1141,10 +1003,6 @@ function parseFields(body) {
     while (
         position < body.length
     ) {
-
-        /*
-         * Find next field name.
-         */
 
         const match =
             body.substring(position)
@@ -1171,10 +1029,6 @@ function parseFields(body) {
             equalsPosition + 1;
 
 
-        /*
-         * Skip whitespace.
-         */
-
         while (
             /\s/.test(
                 body[valueStart] || ""
@@ -1190,7 +1044,7 @@ function parseFields(body) {
 
 
         /*
-         * Braced value.
+         * Braced value
          */
 
         if (
@@ -1221,7 +1075,9 @@ function parseFields(body) {
 
                     depth--;
 
-                    if (depth === 0) {
+                    if (
+                        depth === 0
+                    ) {
 
                         end = i;
 
@@ -1248,7 +1104,7 @@ function parseFields(body) {
 
 
         /*
-         * Quoted value.
+         * Quoted value
          */
 
         else if (
@@ -1291,7 +1147,7 @@ function parseFields(body) {
 
 
         /*
-         * Unquoted value.
+         * Unquoted value
          */
 
         else {
@@ -1345,10 +1201,6 @@ function cleanBibValue(value) {
         value.trim();
 
 
-    /*
-     * LaTeX special characters.
-     */
-
     value =
         value.replace(
             /\\&/g,
@@ -1384,20 +1236,12 @@ function cleanBibValue(value) {
         );
 
 
-    /*
-     * BibTeX double hyphen.
-     */
-
     value =
         value.replace(
             /--/g,
             "–"
         );
 
-
-    /*
-     * Non-breaking spaces.
-     */
 
     value =
         value.replace(
@@ -1406,22 +1250,12 @@ function cleanBibValue(value) {
         );
 
 
-    /*
-     * Remove remaining outer braces
-     * around individual LaTeX-protected
-     * words while preserving text.
-     */
-
     value =
         value.replace(
             /{([^{}]+)}/g,
             "$1"
         );
 
-
-    /*
-     * Normalize whitespace.
-     */
 
     value =
         value.replace(
@@ -1444,11 +1278,6 @@ function displayPublications(
     publications
 ) {
 
-
-    /*
-     * Newest first.
-     */
-
     publications.sort(
         (a, b) => {
 
@@ -1468,11 +1297,6 @@ function displayPublications(
 
             }
 
-
-            /*
-             * Same year:
-             * alphabetical by title.
-             */
 
             return (
                 (a.title || "")
@@ -1541,9 +1365,7 @@ function renderPublications(
 
 
             /*
-             * ------------------------------------------
              * YEAR + TYPE
-             * ------------------------------------------
              */
 
             const marker =
@@ -1597,9 +1419,7 @@ function renderPublications(
 
 
             /*
-             * ------------------------------------------
              * CITATION
-             * ------------------------------------------
              */
 
             const text =
@@ -1671,11 +1491,6 @@ function getPublicationType(
             return "Conference Paper";
 
 
-        case "proceedings":
-
-            return "Conference";
-
-
         case "misc":
 
             if (
@@ -1711,9 +1526,7 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------
      * AUTHORS
-     * ------------------------------------------
      */
 
     if (
@@ -1732,9 +1545,7 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------
      * TITLE
-     * ------------------------------------------
      */
 
     if (
@@ -1757,9 +1568,7 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------
      * JOURNAL ARTICLE
-     * ------------------------------------------
      */
 
     if (
@@ -1831,9 +1640,7 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------
      * CONFERENCE PAPER
-     * ------------------------------------------
      */
 
     else {
@@ -1890,23 +1697,17 @@ function formatIEEE(
 
 
     /*
-     * ------------------------------------------
-     * YEAR
-     * ------------------------------------------
-     *
-     * The year is already displayed in the
-     * left marker, so it is not repeated
-     * in the citation.
+     * PERIOD
      */
-
 
     citation += ".";
 
 
     /*
-     * ------------------------------------------
      * DOI
-     * ------------------------------------------
+     *
+     * The DOI is the only clickable
+     * publication link.
      */
 
     if (
@@ -1962,27 +1763,33 @@ function formatAuthors(
     authorString
 ) {
 
-
     /*
-     * BibTeX uses:
-     *
-     * Author One and Author Two and Author Three
+     * Split BibTeX authors using "and".
      */
 
     const authors =
         authorString
+
             .split(
                 /\s+and\s+/i
             )
+
             .map(
                 author =>
                     author.trim()
             )
+
             .filter(
                 author =>
                     author.length > 0
             );
 
+
+    /*
+     * Format EVERY author.
+     *
+     * No et al.
+     */
 
     const formatted =
         authors.map(
@@ -2028,13 +1835,8 @@ function formatAuthors(
 
 
     /*
-     * IMPORTANT:
-     *
-     * No "et al."
-     *
-     * Every author is displayed.
+     * IEEE-style punctuation.
      */
-
 
     if (
         formatted.length === 1
@@ -2081,7 +1883,7 @@ function formatAuthors(
 
 
 /* ==========================================================
-   CHECK WHETHER AUTHOR IS YOUR NAME
+   CHECK YOUR NAME
    ========================================================== */
 
 function isYourName(
@@ -2107,7 +1909,6 @@ function isYourName(
     return (
 
         normalize(author) ===
-
         normalize(YOUR_NAME)
 
     );
@@ -2124,7 +1925,6 @@ function formatAuthorName(
     author
 ) {
 
-
     author =
         author
             .replace(
@@ -2135,9 +1935,13 @@ function formatAuthorName(
 
 
     /*
-     * ------------------------------------------
-     * BibTeX "Last, First"
-     * ------------------------------------------
+     * BibTeX:
+     *
+     * Saha, Simanto
+     *
+     * becomes:
+     *
+     * S. Saha
      */
 
     if (
@@ -2175,9 +1979,7 @@ function formatAuthorName(
 
 
     /*
-     * ------------------------------------------
-     * "First Last"
-     * ------------------------------------------
+     * First Last
      */
 
     const parts =
@@ -2220,27 +2022,12 @@ function formatAuthorName(
 
 
 /* ==========================================================
-   FORMAT FIRST NAME / INITIALS
+   FORMAT FIRST NAME
    ========================================================== */
 
 function formatFirstName(
     name
 ) {
-
-
-    /*
-     * Handles:
-     *
-     * Simanto
-     * Raquib-ul
-     * Michael Loong-Siong
-     *
-     * as:
-     *
-     * S.
-     * R.-U.
-     * M. L.-S.
-     */
 
     const words =
         name
@@ -2252,13 +2039,10 @@ function formatFirstName(
             );
 
 
-    const initials =
-        words.map(
-            word => {
+    return words
 
-                /*
-                 * Remove BibTeX braces.
-                 */
+        .map(
+            word => {
 
                 word =
                     word.replace(
@@ -2268,7 +2052,7 @@ function formatFirstName(
 
 
                 /*
-                 * Handle hyphenated names.
+                 * Handle hyphenated names:
                  *
                  * Raquib-ul
                  * ->
@@ -2313,14 +2097,14 @@ function formatFirstName(
                 return (
                     getInitial(
                         word
-                    ) + "."
+                    ) +
+                    "."
                 );
 
             }
-        );
+        )
 
-
-    return initials.join(" ");
+        .join(" ");
 
 }
 
@@ -2334,16 +2118,11 @@ function getInitial(
     word
 ) {
 
-    /*
-     * Unicode-aware first character.
-     */
-
     const cleaned =
-        word
-            .replace(
-                /[^A-Za-zÀ-ÖØ-öø-ÿ]/g,
-                ""
-            );
+        word.replace(
+            /[^A-Za-zÀ-ÖØ-öø-ÿ]/g,
+            ""
+        );
 
 
     if (
