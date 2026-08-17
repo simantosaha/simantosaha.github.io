@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Dr. Simanto Saha</title>
 
+    <!-- Font Awesome icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
     <style>
+
         :root {
             --sydney-blue: #0B3C5D;
             --sydney-dark-blue: #062C43;
@@ -20,422 +29,909 @@
             --white: #FFFFFF;
         }
 
+
         * {
             box-sizing: border-box;
         }
 
+
         body {
             margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
             color: var(--text);
+
             background: var(--white);
+
             line-height: 1.65;
         }
 
-        /* =========================
+
+
+        /* =====================================================
            HEADER / NAVIGATION
-           ========================= */
+           ===================================================== */
 
         header {
-            background: var(--sydney-blue);
-            border-bottom: 5px solid var(--sydney-gold);
+            background:
+                var(--sydney-blue);
+
+            border-bottom:
+                5px solid var(--sydney-gold);
         }
 
+
         .nav-container {
+
             max-width: 1100px;
+
             margin: auto;
+
             display: flex;
+
             align-items: center;
+
             justify-content: space-between;
+
             min-height: 75px;
+
             padding: 0 25px;
         }
 
+
         .site-name {
+
             color: white;
-            font-family: Georgia, "Times New Roman", serif;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
             font-size: 1.35rem;
+
             font-weight: bold;
+
             text-decoration: none;
         }
 
+
         .site-subtitle {
+
             color: #DCE8EF;
+
             font-size: 0.85rem;
+
             margin-left: 8px;
         }
 
+
         .nav-links {
+
             display: flex;
+
             align-items: center;
         }
 
+
         .nav-links a {
+
             color: white;
+
             text-decoration: none;
+
             padding: 27px 15px;
+
             font-size: 0.95rem;
-            border-bottom: 4px solid transparent;
-            transition: 0.2s ease;
+
+            border-bottom:
+                4px solid transparent;
+
+            transition:
+                0.2s ease;
         }
+
 
         .nav-links a:hover,
         .nav-links a.active {
-            background: var(--sydney-dark-blue);
-            border-bottom-color: var(--sydney-gold);
+
+            background:
+                var(--sydney-dark-blue);
+
+            border-bottom-color:
+                var(--sydney-gold);
         }
 
-        /* =========================
+
+
+        /* =====================================================
            MAIN CONTENT
-           ========================= */
+           ===================================================== */
 
         main {
+
             max-width: 1000px;
+
             margin: 65px auto;
+
             padding: 0 30px;
         }
 
+
         .about {
+
             display: flex;
+
             align-items: center;
+
             gap: 60px;
         }
 
-        /* Profile image */
+
+
+        /* =====================================================
+           PROFILE IMAGE
+           ===================================================== */
 
         .photo-container {
+
             flex-shrink: 0;
         }
 
+
         .profile-photo {
+
             width: 230px;
+
             height: 230px;
+
             object-fit: cover;
+
             border-radius: 50%;
+
             border: 6px solid white;
-            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+
+            box-shadow:
+                0 3px 15px
+                rgba(0, 0, 0, 0.15);
         }
 
-        /* About text */
+
+
+        /* =====================================================
+           ABOUT TEXT
+           ===================================================== */
 
         .about-text {
+
             max-width: 650px;
         }
 
+
         .about-text h1 {
+
             margin: 0;
-            color: var(--sydney-blue);
-            font-family: Georgia, "Times New Roman", serif;
+
+            color:
+                var(--sydney-blue);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
             font-size: 2.7rem;
+
             line-height: 1.2;
         }
 
+
         .about-text h2 {
-            margin: 10px 0 25px;
-            color: var(--muted);
+
+            margin:
+                10px 0 25px;
+
+            color:
+                var(--muted);
+
             font-size: 1.75rem;
+
             font-weight: normal;
         }
+
 
         .about-text h3 {
-            margin: 10px 0 25px;
-            color: var(--muted);
+
+            margin:
+                10px 0 25px;
+
+            color:
+                var(--muted);
+
             font-size: 1.25rem;
+
             font-weight: normal;
         }
 
+
         .gold-line {
+
             width: 60px;
+
             height: 4px;
-            background: var(--sydney-gold);
-            margin: 20px 0;
+
+            background:
+                var(--sydney-gold);
+
+            margin:
+                20px 0;
         }
+
 
         .about-text p {
+
             font-size: 1.05rem;
+
             color: #444;
+
             margin-bottom: 25px;
         }
 
-        /* =========================
+
+
+        /* =====================================================
+           ACADEMIC / PROFESSIONAL PROFILE LINKS
+           ===================================================== */
+
+        .profile-links {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 22px;
+
+            margin-top: 25px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .profile-links a {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 48px;
+
+            height: 48px;
+
+            color:
+                var(--sydney-blue);
+
+            background:
+                transparent;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-size: 1.8rem;
+
+            transition:
+                color 0.2s ease,
+                background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .profile-links a:hover {
+
+            color:
+                white;
+
+            background:
+                var(--sydney-blue);
+
+            border-color:
+                var(--sydney-blue);
+
+            transform:
+                translateY(-3px);
+        }
+
+
+        /*
+         * Individual hover colours.
+         */
+
+        .profile-links a.scholar:hover {
+
+            background:
+                #4285F4;
+
+            border-color:
+                #4285F4;
+        }
+
+
+        .profile-links a.orcid:hover {
+
+            background:
+                #A6CE39;
+
+            border-color:
+                #A6CE39;
+        }
+
+
+        .profile-links a.researchgate:hover {
+
+            background:
+                #00CCBB;
+
+            border-color:
+                #00CCBB;
+        }
+
+
+        .profile-links a.linkedin:hover {
+
+            background:
+                #0A66C2;
+
+            border-color:
+                #0A66C2;
+        }
+
+
+        .profile-links a.github:hover {
+
+            background:
+                #24292F;
+
+            border-color:
+                #24292F;
+        }
+
+
+
+        /* =====================================================
+           PROFILE LINK LABEL
+           ===================================================== */
+
+        .profile-link-label {
+
+            position: absolute;
+
+            width: 1px;
+
+            height: 1px;
+
+            padding: 0;
+
+            margin: -1px;
+
+            overflow: hidden;
+
+            clip: rect(0, 0, 0, 0);
+
+            white-space: nowrap;
+
+            border: 0;
+        }
+
+
+
+        /* =====================================================
            QUICK LINKS
-           ========================= */
+           ===================================================== */
 
         .quick-links {
+
             margin-top: 65px;
+
             padding-top: 35px;
-            border-top: 1px solid var(--border);
+
+            border-top:
+                1px solid var(--border);
         }
 
+
         .quick-links h2 {
-            color: var(--sydney-blue);
-            font-family: Georgia, "Times New Roman", serif;
+
+            color:
+                var(--sydney-blue);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
             font-size: 1.6rem;
+
             margin-bottom: 25px;
         }
 
+
         .link-grid {
+
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 15px;
         }
 
+
         .quick-link {
+
             display: block;
+
             padding: 18px;
-            background: var(--light-grey);
-            border-left: 4px solid var(--sydney-blue);
-            color: var(--sydney-blue);
+
+            background:
+                var(--light-grey);
+
+            border-left:
+                4px solid var(--sydney-blue);
+
+            color:
+                var(--sydney-blue);
+
             text-decoration: none;
+
             font-weight: 600;
-            transition: 0.2s ease;
+
+            transition:
+                0.2s ease;
         }
+
 
         .quick-link:hover {
-            background: var(--sydney-blue);
+
+            background:
+                var(--sydney-blue);
+
             color: white;
-            border-left-color: var(--sydney-gold);
-            transform: translateY(-2px);
+
+            border-left-color:
+                var(--sydney-gold);
+
+            transform:
+                translateY(-2px);
         }
 
-        /* =========================
+
+
+        /* =====================================================
            FOOTER
-           ========================= */
+           ===================================================== */
 
         footer {
-            background: var(--sydney-dark-blue);
+
+            background:
+                var(--sydney-dark-blue);
+
             color: #DCE8EF;
+
             margin-top: 90px;
+
             padding: 30px;
+
             text-align: center;
+
             font-size: 0.9rem;
         }
 
+
         footer .gold {
-            color: var(--sydney-gold);
+
+            color:
+                var(--sydney-gold);
         }
 
-        /* =========================
+
+
+        /* =====================================================
            MOBILE
-           ========================= */
+           ===================================================== */
 
         @media (max-width: 750px) {
 
             .nav-container {
-                flex-direction: column;
-                padding: 15px 10px 0;
+
+                flex-direction:
+                    column;
+
+                padding:
+                    15px 10px 0;
             }
+
 
             .site-name {
-                margin-bottom: 10px;
+
+                margin-bottom:
+                    10px;
+
+                text-align:
+                    center;
             }
+
 
             .nav-links {
+
                 width: 100%;
-                justify-content: center;
-                flex-wrap: wrap;
+
+                justify-content:
+                    center;
+
+                flex-wrap:
+                    wrap;
             }
+
 
             .nav-links a {
-                padding: 12px 10px;
-                font-size: 0.9rem;
+
+                padding:
+                    12px 10px;
+
+                font-size:
+                    0.9rem;
             }
+
 
             main {
-                margin-top: 45px;
+
+                margin-top:
+                    45px;
             }
+
 
             .about {
-                flex-direction: column;
-                text-align: center;
-                gap: 30px;
+
+                flex-direction:
+                    column;
+
+                text-align:
+                    center;
+
+                gap:
+                    30px;
             }
+
 
             .profile-photo {
-                width: 180px;
-                height: 180px;
+
+                width:
+                    180px;
+
+                height:
+                    180px;
             }
+
 
             .about-text h1 {
-                font-size: 2.2rem;
+
+                font-size:
+                    2.2rem;
             }
+
 
             .gold-line {
-                margin: 20px auto;
+
+                margin:
+                    20px auto;
             }
 
-            .link-grid {
-                grid-template-columns: 1fr 1fr;
+
+            .profile-links {
+
+                justify-content:
+                    center;
+
+                gap:
+                    16px;
             }
+
+
+            .profile-links a {
+
+                width:
+                    46px;
+
+                height:
+                    46px;
+
+                font-size:
+                    1.7rem;
+            }
+
+
+            .link-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
         }
+
 
         @media (max-width: 450px) {
+
             .link-grid {
-                grid-template-columns: 1fr;
+
+                grid-template-columns:
+                    1fr;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- =========================
+
+    <!-- =====================================================
          HEADER
-         ========================= -->
+         ===================================================== -->
 
     <header>
+
         <div class="nav-container">
 
-            <a href="index.html" class="site-name">
+
+            <a
+                href="index.html"
+                class="site-name"
+            >
+
                 Dr. Simanto Saha
+
                 <span class="site-subtitle"></span>
+
             </a>
 
 
             <nav class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="research.html">Research</a>
-                <a href="publications.html">Publications</a>
-                <!--  
-                <a href="cv.html">CV</a>
-                <a href="contact.html">Contact</a>
+
+                <a
+                    href="index.html"
+                    class="active"
+                >
+                    Home
+                </a>
+
+                <a href="research.html">
+                    Research
+                </a>
+
+                <a href="publications.html">
+                    Publications
+                </a>
+
+                <!--
+                <a href="cv.html">
+                    CV
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
                 -->
+
             </nav>
 
-
         </div>
+
     </header>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          MAIN
-         ========================= -->
+         ===================================================== -->
 
     <main>
 
+
         <section class="about">
 
+
+            <!-- PROFILE PHOTO -->
+
             <div class="photo-container">
+
                 <img
                     src="profile.JPG"
-                    alt=""
+                    alt="Dr. Simanto Saha"
                     class="profile-photo"
                 >
+
             </div>
+
+
+
+            <!-- ABOUT TEXT -->
 
             <div class="about-text">
 
-                <h1>Dr. Simanto Saha</h1>
+
+                <h1>
+                    Dr. Simanto Saha
+                </h1>
+
 
                 <h2>
-                    Biomedical Signal Processing & AI Engineer | 10+ Years Experience
+                    Biomedical Signal Processing &amp; AI Engineer | 10+ Years Experience
                 </h2>
+
 
                 <div class="gold-line"></div>
 
+
                 <h3>
-                    Brain-Computer Interfaces | Digital Signal Processing | Pattern Recognition | Medical Technologies
+                    Brain-Computer Interfaces |
+                    Digital Signal Processing |
+                    Pattern Recognition |
+                    Medical Technologies
                 </h3>
+
+
+
+                <!-- =================================================
+                     ACADEMIC / PROFESSIONAL PROFILE ICONS
+                     ================================================= -->
+
+                <div class="profile-links">
+
+
+                    <!-- Google Scholar -->
+
+                    <a
+                        href="https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
+                        class="scholar"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Google Scholar"
+                        title="Google Scholar"
+                    >
+
+                        <i class="fa-brands fa-google-scholar"></i>
+
+                        <span class="profile-link-label">
+                            Google Scholar
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- ORCID -->
+
+                    <a
+                        href="https://orcid.org/YOUR_ORCID_ID"
+                        class="orcid"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="ORCID"
+                        title="ORCID"
+                    >
+
+                        <i class="fa-brands fa-orcid"></i>
+
+                        <span class="profile-link-label">
+                            ORCID
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- ResearchGate -->
+
+                    <a
+                        href="https://www.researchgate.net/profile/YOUR_PROFILE"
+                        class="researchgate"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="ResearchGate"
+                        title="ResearchGate"
+                    >
+
+                        <i class="fa-brands fa-researchgate"></i>
+
+                        <span class="profile-link-label">
+                            ResearchGate
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- LinkedIn -->
+
+                    <a
+                        href="https://www.linkedin.com/in/YOUR_PROFILE"
+                        class="linkedin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        title="LinkedIn"
+                    >
+
+                        <i class="fa-brands fa-linkedin"></i>
+
+                        <span class="profile-link-label">
+                            LinkedIn
+                        </span>
+
+                    </a>
+
+
+
+                    <!-- GitHub -->
+
+                    <a
+                        href="https://github.com/YOUR_USERNAME"
+                        class="github"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                        title="GitHub"
+                    >
+
+                        <i class="fa-brands fa-github"></i>
+
+                        <span class="profile-link-label">
+                            GitHub
+                        </span>
+
+                    </a>
+
+
+                </div>
+
 
             </div>
 
         </section>
 
 
-
-
-        <section class="cv-section">
-
-        <h2 class="section-title">
-            Education
-        </h2>
-
-
-        <div class="cv-entry">
-
-            <div class="cv-date">
-                2023 – Present
-            </div>
-
-            <div class="cv-content">
-
-                <h3>
-                    PhD in Your Research Area
-                </h3>
-
-                <div class="institution">
-                    The University of Sydney
-                </div>
-
-                <p>
-                    Research focus: Your research topic or
-                    thesis title.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-entry">
-
-            <div class="cv-date">
-                2020 – 2022
-            </div>
-
-            <div class="cv-content">
-
-                <h3>
-                    Master of Your Degree
-                </h3>
-
-                <div class="institution">
-                    University Name
-                </div>
-
-                <p>
-                    Specialisation or relevant academic
-                    information.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="cv-entry">
-
-            <div class="cv-date">
-                2016 – 2020
-            </div>
-
-            <div class="cv-content">
-
-                <h3>
-                    Bachelor of Your Degree
-                </h3>
-
-                <div class="institution">
-                    University Name
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-        
-        
     </main>
 
 
-    <!-- =========================
+
+    <!-- =====================================================
          FOOTER
-         ========================= -->
+         ===================================================== -->
 
     <footer>
-        <span class="gold">©</span> 2026 Dr. Simanto Saha
+
+        <span class="gold">
+            ©
+        </span>
+
+        2026 Dr. Simanto Saha
+
     </footer>
 
+
 </body>
+
 </html>
